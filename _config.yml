@@ -78,5 +78,4 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: {https://github.com/thebedroomlaboratory/thebedroomlaboratory.github.io.git} #(e.g. https://github.com/hmemcpy/hmemcpy.com.git)
-  branch: master
+  repo: git@github.com:thebedroomlaboratory/thebedroomlaboratory.github.io.git #(e.g. https://github.com/hmemcpy/hmemcpy.com.git)
