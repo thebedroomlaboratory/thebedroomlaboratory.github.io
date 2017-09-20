@@ -24,13 +24,13 @@ What we need:
   * 4. 8 x 220 Ω resistors
   * 5. 8 x LEDs
 
-It isn&#8217;t essential to have 8 LEDS/Resistors, you can have less or more you just need to have a resistor for each LED and a digital out on the Arduino.
+It isn't essential to have 8 LEDS/Resistors, you can have less or more you just need to have a resistor for each LED and a digital out on the Arduino.
 
 Put all the components together as shown in the image below
   
 [<img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-1024x621.png" alt="full LED Light Bar circuit" width="700" height="424" class="alignleft size-large wp-image-561" />](http://localhost/wp-content/uploads/2014/11/full-circuit1.png)
 
-In case that circuit is a little overwhelming here is a circuit with just a single LED wired up. All the other LED&#8217;s follow the same layout but with their input from a different digital out on the Arduino.
+In case that circuit is a little overwhelming here is a circuit with just a single LED wired up. All the other LED's follow the same layout but with their input from a different digital out on the Arduino.
   
 [<img src="http://thebedlab.com/wp-content/uploads/2014/11/single-circuit-1024x553.png" alt="single circuit" width="700" height="378" class="alignleft size-large wp-image-562" />](http://localhost/wp-content/uploads/2014/11/single-circuit1.png)
 
@@ -118,7 +118,7 @@ Plug in the Arduino to a power supply and There you have it, an LED Light bar.
 
 ## Issues I experienced
 
-While doing this project I came across an issue where the last LED would not light up for me. I tried swapping LED&#8217;s, resistors and cables but found nothing was faulty. Could the breadboard of been faulty? Sort of, but not really. I basically didn&#8217;t realise the was a break in the ground rail on the bottom. So I had to bridge the break ( see the image below).
+While doing this project I came across an issue where the last LED would not light up for me. I tried swapping LED's, resistors and cables but found nothing was faulty. Could the breadboard of been faulty? Sort of, but not really. I basically didn't realise the was a break in the ground rail on the bottom. So I had to bridge the break ( see the image below).
 
 [<img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-fix-1024x623.png" alt="full circuit with bridge fix" width="700" height="425" class="alignleft size-large wp-image-565" />](http://localhost/wp-content/uploads/2014/11/full-circuit-fix1.png)
 

@@ -1,6 +1,6 @@
 ---
 id: 148
-title: 'The Deconstruction &#8211; A testimonial'
+title: 'The Deconstruction - A testimonial'
 date: 2013-02-24T23:52:42+00:00
 author: gregario
 layout: post
@@ -22,7 +22,7 @@ The guys (Greg, Martin, John, Colin and John from left to right) put together a 
 
 **About Me
   
-** Oh hi there, that&#8217;s me on the left in the jaunty hat. I&#8217;m an engineer in a renewable energy company in Ireland. I&#8217;m one half of the bedroom laboratory (www.thebedroomlaboratory.com) which is a new site which is all about design and electronic design for the open source world.
+** Oh hi there, that's me on the left in the jaunty hat. I'm an engineer in a renewable energy company in Ireland. I'm one half of the bedroom laboratory (www.thebedroomlaboratory.com) which is a new site which is all about design and electronic design for the open source world.
 
 **What I Did
   
@@ -30,13 +30,13 @@ The guys (Greg, Martin, John, Colin and John from left to right) put together a 
 
 **How did I find the Event
   
-** I just want to say personally I think the deconstruction.org carried out an excellent idea perfectly and I&#8217;ll be first in line to take part in the competition this time next year! For me this was all about learning, it was my first time working on most elements of this projects and what more could you want really??? I also got to chat to the presenters about what we&#8217;re doing, which was great fun (4G is for 4 Guinness in Ireland, I&#8217;ve totally stolen that joke!)
+** I just want to say personally I think the deconstruction.org carried out an excellent idea perfectly and I'll be first in line to take part in the competition this time next year! For me this was all about learning, it was my first time working on most elements of this projects and what more could you want really??? I also got to chat to the presenters about what we're doing, which was great fun (4G is for 4 Guinness in Ireland, I've totally stolen that joke!)
 
 ## Martin
 
 **About Me
   
-** I&#8217;m Martin and I&#8217;m a Ph.D. student in Dublin City University (DCU). My areas of interest are in energy-aware mobile device optimization, wireless multimedia streaming and embedded device electronic projects. Outside of the work arena, I love music and play a couple of instruments. In order to get more involved in hobby electronics, Greg and I set up the Bedroom Laboratory in the last couple of weeks and we were immediately hooked on the idea of competing in this event.
+** I'm Martin and I'm a Ph.D. student in Dublin City University (DCU). My areas of interest are in energy-aware mobile device optimization, wireless multimedia streaming and embedded device electronic projects. Outside of the work arena, I love music and play a couple of instruments. In order to get more involved in hobby electronics, Greg and I set up the Bedroom Laboratory in the last couple of weeks and we were immediately hooked on the idea of competing in this event.
 
 <div>
   <p>
@@ -44,7 +44,7 @@ The guys (Greg, Martin, John, Colin and John from left to right) put together a 
   </p>
   
   <p>
-    <strong>How did I find the Event<br /> </strong>This event was absolutely brilliant because it was loads of fun (in a majorly geeky way) and gave me a chance to work on stuff I&#8217;ve never tried before. Also, it was great working with these lads and seeing my bits of work slotting in with the things the others did. The sense of satisfaction in seeing the whole project working together was amazing!
+    <strong>How did I find the Event<br /> </strong>This event was absolutely brilliant because it was loads of fun (in a majorly geeky way) and gave me a chance to work on stuff I've never tried before. Also, it was great working with these lads and seeing my bits of work slotting in with the things the others did. The sense of satisfaction in seeing the whole project working together was amazing!
   </p>
 </div>
 
@@ -52,7 +52,7 @@ The guys (Greg, Martin, John, Colin and John from left to right) put together a 
 
 **About me
   
-** I&#8217;m John, there in the middle. I&#8217;m a software Engineer who works mainly with web development and Java, and (Unfortunately ) Oracle. I know the lads through college (started in Mechatronics with Greg and changed to Digital Media Engineering with Martin and Colin), as for John, he just followed me home one day
+** I'm John, there in the middle. I'm a software Engineer who works mainly with web development and Java, and (Unfortunately ) Oracle. I know the lads through college (started in Mechatronics with Greg and changed to Digital Media Engineering with Martin and Colin), as for John, he just followed me home one day
 
 **What I did
   
@@ -64,7 +64,7 @@ I worked with martin on the main python script by creating functions which commu
 
 **How did I find the event
   
-** The deconstruction is the most productive I have ever been in my life (outside of work and college which don&#8217;t count). I had loads of fun and finally learned to do more then install xbmc on my Raspberry Pi. I definitely intend to continue this with the lads and hope to make it a regular thing.
+** The deconstruction is the most productive I have ever been in my life (outside of work and college which don't count). I had loads of fun and finally learned to do more then install xbmc on my Raspberry Pi. I definitely intend to continue this with the lads and hope to make it a regular thing.
 
 ## Colin
 
@@ -74,15 +74,15 @@ I worked with martin on the main python script by creating functions which commu
 
 **What I did
   
-** &#8211; Was involved in setting up Apache, MySQL and PHP running on all the Pis.
+** - Was involved in setting up Apache, MySQL and PHP running on all the Pis.
   
-&#8211; Worked with Martin for a bit to try get the ZigBee&#8217;s talking to each other.
+- Worked with Martin for a bit to try get the ZigBee's talking to each other.
   
-&#8211; Created a database, using phpmyadmin, and also created two new tables in it.
+- Created a database, using phpmyadmin, and also created two new tables in it.
   
-&#8211; Coded the server side logic that communicated with the database to pull in data.
+- Coded the server side logic that communicated with the database to pull in data.
   
-&#8211; Coded the php that displayed the updated temp,humidity,light and occupancy.
+- Coded the php that displayed the updated temp,humidity,light and occupancy.
 
 **How did I find the event
   
@@ -96,7 +96,7 @@ I worked with martin on the main python script by creating functions which commu
 
 **What I did
   
-** I worked with Greg on the Arduino. This is an area that I am hoping to get more into and I tried to use this project to learn as much as I could. I also worked on getting the web interface to display the data from the web server. I&#8217;ve also put a lot of time into planning the group video and put a lot of time into the planning of the event!
+** I worked with Greg on the Arduino. This is an area that I am hoping to get more into and I tried to use this project to learn as much as I could. I also worked on getting the web interface to display the data from the web server. I've also put a lot of time into planning the group video and put a lot of time into the planning of the event!
 
 **How did I find the event
   

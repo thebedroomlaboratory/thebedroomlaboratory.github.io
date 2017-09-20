@@ -12,18 +12,18 @@ categories:
 ---
 So I made a map. What do you think?
 
-It was surprisingly straightforward. I used illustrator to draw over an existing map (Kavrayskiy VII map projection for the map nerds amongst) and &#8220;laser&#8221; cut it on some 5mm laser ply at the institute of making over in UCL. I think it came out pretty well, I&#8217;m going to make a few little tweaks, such as:
+It was surprisingly straightforward. I used illustrator to draw over an existing map (Kavrayskiy VII map projection for the map nerds amongst) and &#8220;laser&#8221; cut it on some 5mm laser ply at the institute of making over in UCL. I think it came out pretty well, I'm going to make a few little tweaks, such as:
 
 <p style="text-align: left;">
-  &#8211; South Africa is a little flat on the bottom
+  - South Africa is a little flat on the bottom
 </p>
 
 <p style="text-align: left;">
-  &#8211; Give New Zealand a little more love
+  - Give New Zealand a little more love
 </p>
 
 <p style="text-align: left;">
-  &#8211; Canada/Greenland boundary needs cleaning up
+  - Canada/Greenland boundary needs cleaning up
 </p>
 
 <p style="text-align: left;">
@@ -33,9 +33,9 @@ It was surprisingly straightforward. I used illustrator to draw over an existing
 [<img class="aligncenter wp-image-296 size-large" src="/wp-content/uploads/2014/07/IMG_20140710_134337-EFFECTS-1024x767.jpg" alt="" width="700" height="524" />](/wp-content/uploads/2014/07/IMG_20140710_134337-EFFECTS.jpg)
 
 <p style="text-align: left;">
-  I put all the circles in a jar, I think I have an oncoming hoarding problem. Anywho&#8230; I have to find the link to the inspiration to this, it will come along in an edit. It was a guy I saw on Reddit that did something not a million miles away on a plank of Oak with a drill. Different vibe but I thought I would give him his props.
+  I put all the circles in a jar, I think I have an oncoming hoarding problem. Anywho... I have to find the link to the inspiration to this, it will come along in an edit. It was a guy I saw on Reddit that did something not a million miles away on a plank of Oak with a drill. Different vibe but I thought I would give him his props.
 </p>
 
-<del>Also stay tuned for thingiverse files, I&#8217;ll link it up once I&#8217;ve made the changes.</del>
+<del>Also stay tuned for thingiverse files, I'll link it up once I've made the changes.</del>
 
 See the following link for the files to make your own! http://www.thingiverse.com/thing:561951

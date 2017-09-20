@@ -1,6 +1,6 @@
 ---
 id: 140
-title: 'The Deconstruction &#8211; Update 2'
+title: 'The Deconstruction - Update 2'
 date: 2013-02-24T22:49:48+00:00
 author: gregario
 layout: post
@@ -22,19 +22,19 @@ As an aside our testbed consisted of 3 Raspberry Pi’s running over our home ne
 
 # So what does it do?
 
-&#8211; Uses a sensor to measure light and temperature
+- Uses a sensor to measure light and temperature
   
-&#8211; This is sent via serial to the raspberry pi which takes it in via Python
+- This is sent via serial to the raspberry pi which takes it in via Python
   
-&#8211; The Python does all the control logic, deciding when the heating should be on and off, saving you money an keeping you warm!!!
+- The Python does all the control logic, deciding when the heating should be on and off, saving you money an keeping you warm!!!
   
-&#8211; We’re using the GPIO on the raspberry Pi to trigger an LED (in place of a relay for our  existing thermostat)
+- We’re using the GPIO on the raspberry Pi to trigger an LED (in place of a relay for our  existing thermostat)
   
-&#8211; Theres a boost button on the GPIO too, in case someone felt chilly and wanted to turn on their heating manually
+- Theres a boost button on the GPIO too, in case someone felt chilly and wanted to turn on their heating manually
   
-&#8211;  then the Raspberry Pi is a web server also, allowing to see if the heating is on and what temperature/light level your home is
+-  then the Raspberry Pi is a web server also, allowing to see if the heating is on and what temperature/light level your home is
   
-&#8211; the site is mobile optimised, as checking on your phone is the easiest way to do these things!
+- the site is mobile optimised, as checking on your phone is the easiest way to do these things!
 
 We wanted to actually control our heating in the apartment, renting we felt playing with gas boilers may be an ever so slightly dangerous so we simulated with an LED, same difference from the outset, with the right relay (not in our box of tricks unfortunately) the logic doesn’t need to be changed. I’ll include how to do this in our documentation.
 
@@ -52,11 +52,11 @@ It works and we’re delighted! We’ve developed a web enabled thermostat, whic
 
 The mobile website! It displays temperature along with a picture to say what the thermostat is doing.
   
-&#8211; The sun means that the room is too warm and the heating is therefore turned off
+- The sun means that the room is too warm and the heating is therefore turned off
   
-&#8211; The leaf means that you are in your ideal zone, 18-22 degrees, we chose a leaf as keeping the system in this zone saves you money and is environmentally friendly
+- The leaf means that you are in your ideal zone, 18-22 degrees, we chose a leaf as keeping the system in this zone saves you money and is environmentally friendly
   
-&#8211; there’s also a snowflake for when it is too cold and therefore the heating is turned on. (I couldn’t grab a shot of that as the room is really warm)
+- there’s also a snowflake for when it is too cold and therefore the heating is turned on. (I couldn’t grab a shot of that as the room is really warm)
 
 Here’s a pic of the sensor/webserver:
 

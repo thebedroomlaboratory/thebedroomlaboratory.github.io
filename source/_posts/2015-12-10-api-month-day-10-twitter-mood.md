@@ -5,7 +5,7 @@ author: gregario
 tags:
   - API
 ---
-![](/wp-content/uploads/2015/12/oasisorblur.jpg)
+![oasisorblur](/wp-content/uploads/2015/12/oasisorblur.jpg)
 
 **API purpose** Interfacing and searching twitter
   
@@ -21,9 +21,9 @@ Today is so easy. After reading into the Twitter API it became obvious that peop
 
 After running
 
-{% codeblock %}
+```bash
 easy_install twitter
-{% endcodeblock %}
+```
 
 Just look at this resource: <a href="https://github.com/ideoforms/python-twitter-examples" target="_blank">https://github.com/ideoforms/python-twitter-examples </a>
 
@@ -33,4 +33,4 @@ Make sure you have installed twitter tools (via the above command) and not pytho
 
 Apparently it's Blur!
 
-![](/wp-content/uploads/2015/12/Day10Output.jpg)
+![Day10](/wp-content/uploads/2015/12/Day10Output.jpg)

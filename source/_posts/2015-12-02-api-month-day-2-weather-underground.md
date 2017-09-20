@@ -1,6 +1,6 @@
 ---
 id: 721
-title: 'API Month Day 2 &#8211; Weather Underground'
+title: 'API Month Day 2 - Weather Underground'
 date: 2015-12-02T16:24:23+00:00
 author: gregario
 layout: post
@@ -14,15 +14,16 @@ tags:
 ---
 **Highlights**
 
-> **API purpose:** Weather Conditions
+**API purpose:** Weather Conditions
   
-> **Signup: **<a href="http://www.wunderground.com/weather/api/" target="_blank">http://www.wunderground.com/weather/api/</a>
+**Signup: **<a href="http://www.wunderground.com/weather/api/" target="_blank">http://www.wunderground.com/weather/api/</a>
   
-> **Documentation:** <a href="http://www.wunderground.com/weather/api/d/docs" target="_blank">http://www.wunderground.com/weather/api/d/docs<br /> </a>**Github:** <a href="http://bit.ly/1OxwFrc" target="_blank">http://bit.ly/1OxwFrc</a>
+**Documentation:** <a href="http://www.wunderground.com/weather/api/d/docs" target="_blank">http://www.wunderground.com/weather/api/d/docs</a>
+**Github:** <a href="http://bit.ly/1OxwFrc" target="_blank">http://bit.ly/1OxwFrc</a>
   
 > **Comment:** Feature rich and worldwide weather!
 
-OK so day two of API month. Exciting, right? Yesterday it occured to me if I&#8217;m making a decision when debating my cycle vs tube debate it would also be good to see the near term forecast. So I did some reading and found weather underground. Its a system of weather stations around the world, with data provided by official and hobbyist sources. Their API is pretty good too!
+OK so day two of API month. Exciting, right? Yesterday it occured to me if I'm making a decision when debating my cycle vs tube debate it would also be good to see the near term forecast. So I did some reading and found weather underground. Its a system of weather stations around the world, with data provided by official and hobbyist sources. Their API is pretty good too!
 
 **Getting the Data**
 
@@ -32,13 +33,14 @@ So I swung over and setup an account. Straight forward process. I want to pull r
 
 Pretty straightforward. A slightly different system than citymapper but very usable. It returned this: ``
 
-> <pre>{
+```json
+{
   "response": {
-  "version":"0.1",
-  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
-  "features": {
-  "conditions": 1
-  }
+      "version":"0.1",
+      "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+      "features": {
+        "conditions": 1
+      }
     }
   , "current_observation": {
         "image": {
@@ -124,86 +126,57 @@ Pretty straightforward. A slightly different system than citymapper but very usa
         "ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=53.463554,-6.249463",
         "nowcast":""
     }
-}</pre>
+}
+```
 
-Wow&#8230; That is a lot more info than our last tutorial. This is great though, it gives me a chance to play with more information. Here&#8217;s what I wrote up.
+Wow... That is a lot more info than our last tutorial. This is great though, it gives me a chance to play with more information. Here's what I wrote up.
 
-> [code language=&#8221;python&#8221;]
-   
-> import requests
-   
-> import json
-   
-> import sys # needed to pass arguments from command line
-> 
-> country= str(sys.argv[1])
-   
-> location = str(sys.argv[2])
-   
-> url = "http://api.wunderground.com/api/[INSERTAPIKEY]/conditions/q/"+str(country)+"/"+str(location)+".json"
-> 
-> r = requests.get(url).json()
-   
-> print("The current wind speed (mph) is: "+ str(r\[&#8216;current\_observation&#8217;\]\[&#8216;wind\_mph&#8217;\]))
-   
-> print("The current temperature (C) is: " +str(r\[&#8216;current\_observation&#8217;\]\[&#8216;temp\_c&#8217;\]))
-   
-> print("Sure what&#8217;s the weather like? : "+ str(r\[&#8216;current_observation&#8217;\]\[&#8216;icon&#8217;\]))
-   
-> print("The current relative RH is: "+str(r\[&#8216;current\_observation&#8217;\]\[&#8216;relative\_humidity&#8217;\]))
-   
-> print("Will it rain soon? : "+str(r\[&#8216;current\_observation&#8217;\]\[&#8216;precip\_1hr_metric&#8217;\]))
-> 
-> [/code]
+```python
+# -*- coding: utf-8 -*-
+# Program to check how long it will take me to get to work
+# Greg Jackson 1st dev 2015
+# Twitter @gr3gario or github gregario
+# Day one of the Month of API
 
-So as before I import requests and JSON to deal with requesting the data from the API service and using that data once it&#8217;s available. This is very similar to yesterday but I&#8217;ve added the following little tricks:
+import requests
+import json 
+import sys # needed to pass arguments from command line 
 
-  * Passing arguments from the command line
-  * Clever string concatenation
-  * Nested JSON variable operations
 
-**Passing arguments from command line**
 
-&#8220;import sys&#8221; is used here. This allows us to work with our operating system. In my case here I define country and location using sys.argv[1] and sys.argv[2]. This looks complicated but I&#8217;ll talk through what I&#8217;m doing here with an example. So if I run the program with the command:
+country=  str(sys.argv[1])
+location = str(sys.argv[2])
+url = "http://api.wunderground.com/api/[INSERTAPIKEY]/conditions/q/"+str(country)+"/"+str(location)+".json"
 
-> python Weather.py UK London
+r = requests.get(url).json()
+print("The current wind speed (mph) is: "+ str(r['current_observation']['wind_mph']))
+print("The current temperature (C) is: " +str(r['current_observation']['temp_c']))
+print("Sure what's the weather like? : "+ str(r['current_observation']['icon']))
+print("The current relative RH is: "+str(r['current_observation']['relative_humidity']))
+print("Will it rain soon? : "+str(r['current_observation']['precip_1hr_metric']))
 
-This gets python to run my script and defines two variables (or system arguments) after the script. This allows me to feed in data to my script without rewriting it every time. So you may have figured out sys.argv[1] does that. The &#8220;sys&#8221; calls the above imported &#8220;sys&#8221; and argv is a function within that. Then you pass 1 to that function. Put all that together and you are asking the system to grab the first argument declared when the program was run. Cool!
+# So I have a good indication of the weather from a current loation. 
+# I introduced two super simple things here. 
+# One is string concatonation in python. This lets us declare a location by variable instead of in line. 
+# this can be better than the payload option as it gives you more flexibility. 
 
-**String Concatenation**
+## Finally I thought I could declare from the command line the location to search. 
+## I've always wondered how this could be done so now I know! 
 
-So once I have the country and city names I want to lookup I need to pass them into the API call I want to do. If you want to add a variable at the end of a string its super easy, you just do:
-
-> [code language=&#8221;python&#8221;]
-  
-> var = "bar"
-  
-> print "foo" + var
-  
-> [/code]
-
-Its a little trickier if you want to insert words mid string. The following syntax does this.
-
-> [code language=&#8221;python&#8221;]
-  
-> var = "bar"
-   
-> print "foo" +bar+ "right??!?"
-  
-> [/code]
+```
 
 Still pretty straightforward too!
 
 **Nested JSON**
 
-Yesterday our JSON was super easy. It was one series of machine tag pairs inside a JSON object. We asked for our machine tag (estimated\_time) in that array and we were good to go with the value associated with that. However in JSON, each variable in an array can have an array of machine tags nested inside it. Its actually quite elegant if you work through the logic but we don&#8217;t care about this, we just want the data, right?!!! So let&#8217;s take wind speed from above. We wanted to get the current\_observation array and inside that get the wind_mph tag and its associated value. To do this we used the following syntax.
+Yesterday our JSON was super easy. It was one series of machine tag pairs inside a JSON object. We asked for our machine tag (estimated\_time) in that array and we were good to go with the value associated with that. However in JSON, each variable in an array can have an array of machine tags nested inside it. Its actually quite elegant if you work through the logic but we don't care about this, we just want the data, right?!!! So let's take wind speed from above. We wanted to get the current\_observation array and inside that get the wind_mph tag and its associated value. To do this we used the following syntax.
 
-> [code language=&#8221;python&#8221;]
-  
-> print("The current wind speed (mph) is: "+ str(r\[&#8216;current\_observation&#8217;\]\[&#8216;wind\_mph&#8217;\]))
-> 
-> [/code]
+```python
+
+print("The current wind speed (mph) is: "+ str(r\['current\_observation'\]\['wind\_mph'\]))
+
+```
 
 **So What Next? **
 
-So that&#8217;s that for today. Another simple example with some useful tricks to get you going with weather APIs. So what shall I do tomorrow??? I like this work around my commute to work. I think I&#8217;m going to solve a final challenge tomorrow with a good one, I live a 4 minute walk from my local train to work. The train comes every 15 minutes. The arrival time of the next train dictates if I have breakfast each day. I check this every day on google maps so I want to write a script that checks the TFL API and displays the next train time for me so I can quickly glance and see how long I have!
+So that's that for today. Another simple example with some useful tricks to get you going with weather APIs. So what shall I do tomorrow??? I like this work around my commute to work. I think I'm going to solve a final challenge tomorrow with a good one, I live a 4 minute walk from my local train to work. The train comes every 15 minutes. The arrival time of the next train dictates if I have breakfast each day. I check this every day on google maps so I want to write a script that checks the TFL API and displays the next train time for me so I can quickly glance and see how long I have!

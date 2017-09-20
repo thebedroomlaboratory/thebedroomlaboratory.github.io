@@ -23,7 +23,7 @@ categories:
 
 ### Day 2
 
-  * Design of look &#8211; wireframing
+  * Design of look - wireframing
   * Chat about logo
   * Finish arduino stuff
   * OpenCV
@@ -33,10 +33,10 @@ categories:
 
 ### Day 1
 
-  * Circuit making was postponed as we couldn&#8217;t locate the sensors, hopefully we&#8217;ll get to it on Day 2.
+  * Circuit making was postponed as we couldn't locate the sensors, hopefully we'll get to it on Day 2.
   * Arduino code writiten: 
       * We have a <a href="http://maniacbug.wordpress.com/2012/03/30/rf24network/" target="_blank">network</a> of 3 Arduino nodes tested talking to each other 🙂
-      * Same as for point one above 🙂 Couldn&#8217;t get the sensors so we&#8217;ll hopefully get to it on Day 2.
+      * Same as for point one above 🙂 Couldn't get the sensors so we'll hopefully get to it on Day 2.
       * A endeavour into getting the <a href="http://knolleary.net/arduino-client-for-mqtt/" target="_blank">Arduino mqtt library</a> working with <a href="http://maniacbug.github.io/RF24/" target="_blank">nRF24L01(+)</a> instead of <a href="http://arduino.cc/en/reference/ethernet" target="_blank">Ethernet</a> was also made.
   * The raspberry camera was <a title="setup" href="http://www.raspberrypi.org/documentation/usage/camera/" target="_blank">setup </a>and tested, with the installation of the environment to make use of the <a title="python" href="http://www.raspberrypi.org/documentation/usage/camera/python/README.md" target="_blank">python</a> library underway.
   * A laptop setup with base <a href="http://xubuntu.org/" target="_blank">xubuntu</a> with added ssh and apache2 packages is ready for setting up the rest of the server.
@@ -45,7 +45,7 @@ categories:
 
   * Mick and John made it along for day two so it was nearly all hands on deck (Greg was at the Paris Maker Faire)
   * The first item on the list was a discussion about our Github 
-      * We&#8217;ve decided to break the whole project into separate repositories for each discrete module
+      * We've decided to break the whole project into separate repositories for each discrete module
       * We can then import each repository into the Dublin Maker repository as submodules
   * Code for Arduino was improved to add profiles for the different types of sensor/devices 
       * this is still getting tidied up and then will go into the Github

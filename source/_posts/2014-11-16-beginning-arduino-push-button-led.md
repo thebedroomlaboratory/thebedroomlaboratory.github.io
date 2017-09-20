@@ -16,11 +16,11 @@ tags:
 ---
 So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner.
 
-I could do the boring, pointless Arduino version of Hello Wold, [Blink!](http://arduino.cc/en/Tutorial/Blink?from=Tutorial.BlinkingLED "Boring Hello World Blink tutorial"), tutorial that most people start with, but it doesn&#8217;t involve enough as far as I am concerned ( it&#8217;s all already done for you), but go ahead if you feel its worth it. For me, I want to be able to interact with it.
+I could do the boring, pointless Arduino version of Hello Wold, [Blink!](http://arduino.cc/en/Tutorial/Blink?from=Tutorial.BlinkingLED "Boring Hello World Blink tutorial"), tutorial that most people start with, but it doesn't involve enough as far as I am concerned ( it's all already done for you), but go ahead if you feel its worth it. For me, I want to be able to interact with it.
 
 So for my first Arduino project I want to press a button to turn on an LED. This involves 2 Arduino Fundamentals, reading input (the button), processing it in our program (an Arduino sketch) and output a result ( turning on or off an L.E.D.).
 
-so without boring you, lets Jump straight in&#8230;
+so without boring you, lets Jump straight in...
 
 **Components we need**:
 
@@ -111,7 +111,7 @@ So here was [my Question to the community](http://electronics.stackexchange.com/
 
 What I learned was that the reason the L.E.D was lighting when my hand was close to the circuit was due to _ambient electromagnetic interference_ . As ‘[Shubham](http://electronics.stackexchange.com/users/4940/shubham)’ explained to me
 
-> It&#8217;s because your button pin is floating (susceptible to ambient electromagnetic interference).
+> It's because your button pin is floating (susceptible to ambient electromagnetic interference).
 
 All the second resistor is doing is draining a little current from power to ground, when it should actually be functioning as the pull-down resistor for the button pin.To fix this issue I made the following change to the circuit:
 
@@ -127,6 +127,6 @@ And now the Circuit behaves as expected.
 
 
 
-And there you go&#8230;a functional Arduino beginners project. I know some of you might be thinking &#8220;is it not a bit complex for simply turning on an L.E.D&#8221;. For that purpose yes, it is but imagine adding a few buttons, a few motors and a bit of work to the program, and it could turn into a basic remote controlled car. Or swap out the button for a light sensor and you could have an automated light that comes on when it gets dark. The possibilities are endless. But don&#8217;t worry, like you I&#8217;m a new to this too , so we can work on it together&#8230;
+And there you go...a functional Arduino beginners project. I know some of you might be thinking &#8220;is it not a bit complex for simply turning on an L.E.D&#8221;. For that purpose yes, it is but imagine adding a few buttons, a few motors and a bit of work to the program, and it could turn into a basic remote controlled car. Or swap out the button for a light sensor and you could have an automated light that comes on when it gets dark. The possibilities are endless. But don't worry, like you I'm a new to this too , so we can work on it together...
 
 I based this post on a post I wrote for [my own blog](http://blog.jonnie.io/push-button-control-led/)

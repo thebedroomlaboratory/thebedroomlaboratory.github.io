@@ -18,7 +18,7 @@ categories:
 </div>
 
 <div>
-  The final prep was/is upon us! We were incredibly tight to the deadline so we&#8217;re doing this one post hoc&#8230;
+  The final prep was/is upon us! We were incredibly tight to the deadline so we're doing this one post hoc...
 </div>
 
 <div>
@@ -51,7 +51,7 @@ categories:
 </div>
 
 <div>
-  Martin worked on the sensor aggregation and Greg worked on the sensor box enclosure and PCB design. The PCB came out awesome. It was made using the etching process described in a related post. It is surprisingly detailed!!! Check out the close up&#8230;
+  Martin worked on the sensor aggregation and Greg worked on the sensor box enclosure and PCB design. The PCB came out awesome. It was made using the etching process described in a related post. It is surprisingly detailed!!! Check out the close up...
 </div>
 
 <div>
@@ -77,7 +77,7 @@ categories:
 </div>
 
 <div>
-  The box came out alright! Pic of drawing it up with martin during the week&#8230; I&#8217;m going to write up a post about the process separately. It was quite nice to go from an idea to a working prototype in 3 days. shows the power of modern maker tools. Anywho, the output was pretty!
+  The box came out alright! Pic of drawing it up with martin during the week... I'm going to write up a post about the process separately. It was quite nice to go from an idea to a working prototype in 3 days. shows the power of modern maker tools. Anywho, the output was pretty!
 </div>
 
 <div>
@@ -91,7 +91,7 @@ categories:
 </div>
 
 <div>
-  It was cut in the UCL institute of making, on their super awesome laser cutter. we&#8217;re going to go through a big upload of the various parts of the design, between thingiverse and github. Stay tuned, we&#8217;ve a big lump of this to do over the coming month or so!
+  It was cut in the UCL institute of making, on their super awesome laser cutter. we're going to go through a big upload of the various parts of the design, between thingiverse and github. Stay tuned, we've a big lump of this to do over the coming month or so!
 </div>
 
 <div>
@@ -137,7 +137,7 @@ categories:
 </div>
 
 <div>
-  This obviously has its downsides&#8230; The response time of the material (or its {science term for what I&#8217;m talking about}) is quite slow and cannot account for sudden reducitions in hot or cold water. This is why a flush of your toilet can scald you or someone turning on the hot tap in the kitchen makes you super cold. Anyway I digress&#8230; So 3/2 valv&#8230; Extension cords.
+  This obviously has its downsides... The response time of the material (or its {science term for what I'm talking about}) is quite slow and cannot account for sudden reducitions in hot or cold water. This is why a flush of your toilet can scald you or someone turning on the hot tap in the kitchen makes you super cold. Anyway I digress... So 3/2 valv... Extension cords.
 </div>
 
 <div>
@@ -174,7 +174,7 @@ categories:
 </div>
 
 <div>
-  [I&#8217;m tagging in the gang WWE style here as I was sleeping]
+  [I'm tagging in the gang WWE style here as I was sleeping]
 </div>
 
 <div>
@@ -221,7 +221,7 @@ categories:
 </div>
 
 <div>
-  I spent a fair bit of my time at the intel stand as it was a bit of a work trip for me. It was a lot of fun, I played the Mrs. Doubtfire for the night (sans the crossdressing (or even a reversible shirt)) managed to get over to both for much of the day. I was showing a twitter activated bubble maker. I never thought I would utter the phrase &#8220;I just can&#8217;t get my bubble machine to connect to the internet&#8221; but alas I did. It looks pretty nice though!
+  I spent a fair bit of my time at the intel stand as it was a bit of a work trip for me. It was a lot of fun, I played the Mrs. Doubtfire for the night (sans the crossdressing (or even a reversible shirt)) managed to get over to both for much of the day. I was showing a twitter activated bubble maker. I never thought I would utter the phrase &#8220;I just can't get my bubble machine to connect to the internet&#8221; but alas I did. It looks pretty nice though!
 </div>
 
 <div>
@@ -238,7 +238,7 @@ categories:
 </div>
 
 <div>
-  Anywho, that was us. We look forward to the next one&#8230; Bring it on!!!
+  Anywho, that was us. We look forward to the next one... Bring it on!!!
 </div>
 
 <div>

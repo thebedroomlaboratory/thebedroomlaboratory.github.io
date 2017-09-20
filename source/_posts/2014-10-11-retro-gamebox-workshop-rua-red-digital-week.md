@@ -1,6 +1,6 @@
 ---
 id: 366
-title: 'Retro Gamebox Workshop &#8211; Rua Red &#8211; Digital Week'
+title: 'Retro Gamebox Workshop - Rua Red - Digital Week'
 date: 2014-10-11T10:58:15+00:00
 author: vykta
 layout: post
@@ -20,7 +20,7 @@ I am ecstatic to report that everyone got to complete their projects and go home
 
 You too can can have some Retro Gaming fun by checking out the [apcmag](http://apcmag.com/arduino-project-7-build-a-retro-gamebox.htm) tutorial derived from the [nootropicdesign](http://nootropicdesign.com/hackvision/games.html) games which we [updated to work with the uno](http://nootropicdesign.com/hackvision/games.html). Enjoy.
 
-A big shout out goes to Beccy and all the staff and participants during <a title="Rua Red" href="http://ruared.ie" target="_blank">Rua Red</a>&#8216;s <a title="Digital Week" href="http://ruared.ie/DigitalWeek.html" target="_blank">Digital Week</a>, which was a great success!
+A big shout out goes to Beccy and all the staff and participants during <a title="Rua Red" href="http://ruared.ie" target="_blank">Rua Red</a>'s <a title="Digital Week" href="http://ruared.ie/DigitalWeek.html" target="_blank">Digital Week</a>, which was a great success!
 
 <div id='gallery-1' class='gallery galleryid-366 gallery-columns-3 gallery-size-thumbnail'>
   <figure class='gallery-item'> 

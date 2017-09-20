@@ -15,33 +15,33 @@ categories:
 </p>
 
 <p style="text-align: justify;">
-  Apologies for the brief sabbatical, I&#8217;m sure you&#8217;ve all been eagerly checking the website every day and been bitterly disappointed. Thankfully your days of sitting in with a glass of pinot noir on a lonely friday evening wearing away the lettering of your F5 key are over, we are back!
+  Apologies for the brief sabbatical, I'm sure you've all been eagerly checking the website every day and been bitterly disappointed. Thankfully your days of sitting in with a glass of pinot noir on a lonely friday evening wearing away the lettering of your F5 key are over, we are back!
 </p>
 
 <p style="text-align: justify;">
-  We had our first meeting for the Dublin Maker event in July and I must say we are very excited. Last year we showed some of our homebrew solutions to&#8230; residential automation using various sensor and microcontroller bits and bobs.
+  We had our first meeting for the Dublin Maker event in July and I must say we are very excited. Last year we showed some of our homebrew solutions to... residential automation using various sensor and microcontroller bits and bobs.
 </p>
 
 [<img class="alignnone size-medium wp-image-234" src="/wp-content/uploads/2014/05/Maker13-300x225.jpg" alt="Maker13" width="300" height="225" />](/wp-content/uploads/2014/05/Maker13.jpg)
 
-_Weren&#8217;t we lovely!_
+_Weren't we lovely!_
 
-Anywho so we don&#8217;t want to give everything away but we have a plan. It is displayed here in stunning pictorial form:
+Anywho so we don't want to give everything away but we have a plan. It is displayed here in stunning pictorial form:
 
 [<img class="alignnone size-medium wp-image-235" src="/wp-content/uploads/2014/05/unnamed-300x225.jpg" alt="unnamed" width="300" height="225" />](/wp-content/uploads/2014/05/unnamed.jpg)
 
-We&#8217;ve broken down the tasks into the following:
+We've broken down the tasks into the following:
 
 <p style="text-align: justify;">
-  Smart Powerstrip &#8211; smart power strip that lets us control our devices over the web and see how much power they&#8217;re using, cool eh. Victor &#8220;I love databases&#8221; Muia and Martin &#8220;current is cool&#8221; Kennedy will be plugging away at this.
+  Smart Powerstrip - smart power strip that lets us control our devices over the web and see how much power they're using, cool eh. Victor &#8220;I love databases&#8221; Muia and Martin &#8220;current is cool&#8221; Kennedy will be plugging away at this.
 </p>
 
 <p style="text-align: justify;">
-  Wireless Sensors &#8211; extending our sensor bits using low power wireless and have them talk to a Galileo which will act as a gateway for the home automation system. Martin &#8220;ZigBee is for wimps&#8221; Kennedy and Greg &#8220;I work for Intel now&#8221; Jackson will be having a go at that.
+  Wireless Sensors - extending our sensor bits using low power wireless and have them talk to a Galileo which will act as a gateway for the home automation system. Martin &#8220;ZigBee is for wimps&#8221; Kennedy and Greg &#8220;I work for Intel now&#8221; Jackson will be having a go at that.
 </p>
 
 <p style="text-align: justify;">
-  Rasp Pi cam &#8211; Looking at doing image/face detection using a Pi and Pi camera, could stream to android phone and be used for security or to dynamically adjust the feel of a house to the users mood. Colin &#8220;I&#8217;m just happy to be here&#8221; Greene will be selfie-ing himself for the sake of science for the foreseeable future.
+  Rasp Pi cam - Looking at doing image/face detection using a Pi and Pi camera, could stream to android phone and be used for security or to dynamically adjust the feel of a house to the users mood. Colin &#8220;I'm just happy to be here&#8221; Greene will be selfie-ing himself for the sake of science for the foreseeable future.
 </p>
 
 <p style="text-align: justify;">
@@ -49,5 +49,5 @@ We&#8217;ve broken down the tasks into the following:
 </p>
 
 <p style="text-align: justify;">
-  So that&#8217;s us. Stay tuned people, same bed time same bed channel!
+  So that's us. Stay tuned people, same bed time same bed channel!
 </p>

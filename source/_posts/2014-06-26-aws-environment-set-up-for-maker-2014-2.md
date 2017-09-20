@@ -69,7 +69,7 @@ The configuration script just sets up what ever environment variables required a
 
 The `make` utility is to determine automatically which pieces of Node.js needs to be recompiled, and issues the commands to recompile them. 
 
-Node should be all set now so let&#8217;s test by checking the version
+Node should be all set now so let's test by checking the version
 
 <pre><code class="lang-bash">   node -v
    &lt;span class="hljs-comment">#Should output something like the following depending on the version you installed: v0.10.22&lt;/span>
@@ -91,7 +91,7 @@ Node should be all set now so let&#8217;s test by checking the version
 
 ## Mongodb Setup
 
-MongoDB is an open-source document database, and the leading NoSQL database. Among its features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is especially useful with node since we are already working with Javascript, and in a prototyping and rapid development environment it means we don&#8217;t have to get hung up on our models and can change them on the fly.
+MongoDB is an open-source document database, and the leading NoSQL database. Among its features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is especially useful with node since we are already working with Javascript, and in a prototyping and rapid development environment it means we don't have to get hung up on our models and can change them on the fly.
 
 We will use `.deb` packages to install MongoDB. While Ubuntu includes its own MongoDB packages, the official MongoDB packages are generally more up-to-date.
   
@@ -129,7 +129,7 @@ Finally you can start running MongoDB with the command `mongod` Or `sudo /etc/in
   
 Again I recommend changing the permissions so that sudo is not required.
 
-#### Coming soon&#8230;.. 
+#### Coming soon..... 
 
 I will follow thing up with a tutorial on creating a minimal starting point for a Node Restful service which we will eventually use to communicate with our arduino, intel galileo and Raspberry Pi (I will also follow up on getting a similar setup installed on a Pi)
 

@@ -10,7 +10,7 @@ image: /wp-content/uploads/2014/11/led-Bar-graph-pic1.jpg
 categories:
   - Projects
 ---
-For This Project We are going to use the pervious circuit (see the [LED light bar tutorial](http://thebedlab.com/beginning-arduino-led-light-bar "LED Light Bar tutorial")) to build on top off. We don&#8217;t need to change it at all, we are just going to add to it and write some new code. What we are going to make is an LED bar graph. The kind of LED display used to give feedback for things like volume control on a speaker system. For us, we are simply going to use a Potentiometer to increase and decrease the number of LED&#8217;s turned on.
+For This Project We are going to use the pervious circuit (see the [LED light bar tutorial](http://thebedlab.com/beginning-arduino-led-light-bar "LED Light Bar tutorial")) to build on top off. We don't need to change it at all, we are just going to add to it and write some new code. What we are going to make is an LED bar graph. The kind of LED display used to give feedback for things like volume control on a speaker system. For us, we are simply going to use a Potentiometer to increase and decrease the number of LED's turned on.
 
 Components required:
 
@@ -19,7 +19,7 @@ Components required:
   * 3. Wires
   * 4. 8 x 220 Ω resistors
   * 5. 8 x LEDs
-  * **Potentiometer** &#8211; this and 3 extra cables are the only additions to the pervious tutorial component list
+  * **Potentiometer** - this and 3 extra cables are the only additions to the pervious tutorial component list
 
 So here is the original circuit from the LED light bar tutorial.
 
@@ -33,7 +33,7 @@ If thats a little overwhelming, here is the potentiometer circuit on its own.
 
 [<img src="http://thebedlab.com/wp-content/uploads/2014/11/potentiometer-1024x518.png" alt="potentiometer" width="700" height="354" class="alignleft size-large wp-image-573" />](http://localhost/wp-content/uploads/2014/11/potentiometer1.png)
 
-That&#8217;s not so complex at all.
+That's not so complex at all.
 
 The potentiometer acts as a voltage divider, which basically means that the voltage seen on the middle pin will be somewhere between the voltage levels applied to the other two pins. You can change the voltage on the middle pin by turning the knob, but it will never go outside the bounds of the voltages on the other two pins. In the circuit above, it means that we can turn the knob on the potentiometer to get any voltage between 0V and 5V on the middle pin. This pin is then connected to our analog input (A0 on the Arduino board). The Arduino reads the voltage level and performs an Analog to Digital Conversion (ADC), i.e. it changes the voltage to a number between 0 and 1023. This is just a simple scale to represent voltage level where 0 = 0V and 1023 = 5V.
 
@@ -95,13 +95,13 @@ digitalWrite(leds[i], LOW);
 
 **The map function** takes five parameters used to map a value in one scale range to another scale. We are looking to map each LED 8 steps as values between 0 & 1023 (because this is the range of readings the Analog input can read).
   
-The Map() function&#8217;s five parameters are:
+The Map() function's five parameters are:
 
   * The current **value** we wish to map to a particular scale 
-  * The **fromLow** value which set&#8217;s the minimum value of the scale we are mapping from, in our case the minimum value that can be read from the analog pin A0 i.e. 0 
+  * The **fromLow** value which set's the minimum value of the scale we are mapping from, in our case the minimum value that can be read from the analog pin A0 i.e. 0 
   * The **fromHigh**, which is the maximum value for the scale we a mapping from, 1023 in our case
   * The **toLow** which is 0 in our case as we will have 0 LED lighting when the reading is 0 
-  * The **toHigh** which is 8 in this example as we want all our LED&#8217;s lighting when the potentiometer is turned up to full 
+  * The **toHigh** which is 8 in this example as we want all our LED's lighting when the potentiometer is turned up to full 
 
 Now plug upload the code to the Arduino and you should have the result shown below.
 
