@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>API Month Day 1 - Citymapper | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="So day one has arrived, if you are curious as to what I’m talking about have a look here. So I have to decide every day if I am going to cycle to work or take my local train. Lots of info helps me mak">
+<meta name="keywords" content="API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API Month Day 1 - Citymapper">
+<meta property="og:url" content="http://thebedlab.com/2015/12/01//2015/12/01/api-month-day-1-citymapper//index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="So day one has arrived, if you are curious as to what I’m talking about have a look here. So I have to decide every day if I am going to cycle to work or take my local train. Lots of info helps me mak">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API Month Day 1 - Citymapper">
+<meta name="twitter:description" content="So day one has arrived, if you are curious as to what I’m talking about have a look here. So I have to decide every day if I am going to cycle to work or take my local train. Lots of info helps me mak">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/2015/12/01/api-month-day-1-citymapper/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/01/2015/12/01/api-month-day-1-citymapper/" class="article-date">
+  <time datetime="2015-12-01T17:08:47.000Z" itemprop="datePublished">2015-12-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorised/">Uncategorised</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      API Month Day 1 - Citymapper
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So day one has arrived, if you are curious as to what I’m talking about have a look here. So I have to decide every day if I am going to cycle to work or take my local train. Lots of info helps me make this decision.</p>
+<p>How long will the train take?</p>
+<p>Will it rain?</p>
+<p>How hungover am I?</p>
+<p>Now API’s can’t help with the last one (although google now is getting pretty close to being able to guess) but it can help with the first two. To start today I thought I would start with a really simple one, how long will it take to get to work by train?</p>
+<p>This can very variable. I have to change from train to tube and then change tube too to get to work. It’s a pain. So hence why I check. So I wrote this simple program, Train.py, to check to see my estimated commuting time to work. As my bike commute is a pretty predictable 44-48 minutes i can then make a decision.</p>
+<p>This is a simple piece of code but I’ll describe what you need to use an API and the practicalities around using it in python and manipulating its output.</p>
+<p>Lets start with the Citymapper API itself. It’s very straightforward:</p>
+<ul>
+<li><p>Head <a href="https://content.citymapper.com/i/897/citymapper-for-developers" target="_blank" rel="external">here</a> to register for an account and an API key.</p>
+</li>
+<li><p>Head <a href="https://citymapper.3scale.net/docs" target="_blank" rel="external">here</a> to check out the API documentation.</p>
+</li>
+</ul>
+<p>You can use the documentation page to do a sample push and get an idea of the form of a request. I use a chrome extension called postman to check my calls and responses to make sure I have everything right before I start programming. So as an example to check the API to see travel time between two points you would call:</p>
+<blockquote>
+<p><a href="https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERT" target="_blank" rel="external">https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERT</a> KEY]</p>
+</blockquote>
+<p>So its pretty human readable, to go through it, you are checking the Citymapper mapper API server for a travel time. Then after the ? you can specify a list of parameters, the order doesn’t matter but there are required inputs. You can see above I specify start location, end location, arrival time and my key.</p>
+<p>I obviously haven’t included my own key but if you were to put your own key there and put that whole message into POSTMAN or your browser you would see the following response.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; <span class="attr">"travel_time_minutes"</span>: <span class="number">54</span>, <span class="attr">"diagnostic"</span>: &#123;<span class="attr">"milliseconds"</span>: <span class="number">2907</span>&#125; &#125;</div></pre></td></tr></table></figure>
+<p>Again this is in a lovely human readable JSON (Just Simple Ordinary Notation) format. If we were to do some JSON parsing we could pull out the ‘54’ minutes variable and we’d have our answer.</p>
+<p>So how do I program this? I use python for all my programming needs so I’ll discuss this now. The requests library is your friend so if you don’t have it installed pop  over to your favourite terminal window and run:</p>
+<blockquote>
+<p>sudo easy_install requests</p>
+</blockquote>
+<p>Once that is installed, you can run the following python program to print out on the command line what we just ran in a browser window.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Program to check how long it will take me to get to work</span></div><div class="line"><span class="comment"># Greg Jackson 1st dev 2015</span></div><div class="line"><span class="comment"># Twitter @gr3gario or github gregario</span></div><div class="line"><span class="comment"># Day one of the Month of API</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> json </div><div class="line"></div><div class="line">url = <span class="string">"https://developer.citymapper.com/api/1/traveltime/"</span></div><div class="line">payload = &#123;<span class="string">'startcoord'</span>: <span class="string">'51.4618199,-0.1793686'</span>, <span class="string">'endcoord'</span>: <span class="string">'51.560117,-0.0722408'</span>,<span class="string">'time_type'</span>:<span class="string">'arrival'</span>,<span class="string">'key'</span>:<span class="string">'INSERTKEY'</span>&#125;</div><div class="line">r = requests.get(url, params=payload).json()</div></pre></td></tr></table></figure>
+<p>Output looks like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; "travel_time_minutes: 54, "diagnostic": &#123; "milliseconds": 2907&#125; &#125;</div></pre></td></tr></table></figure>
+<p>Look familiar? Yes? Great. If you use the following code you will just return 54.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">r = requests.get(<span class="string">"https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2188199%2C-0.1013686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERTKEYHERE]"</span>).json()</div><div class="line"></div><div class="line">print(r[<span class="string">'travel_time_minutes'</span>])</div></pre></td></tr></table></figure>
+<p>There you go. If you want to play with JSON more have a look at this tutorial <a href="http://docs.python-guide.org/en/latest/scenarios/json/" target="_blank" rel="external">here</a>. I found it super helpful. Finally I want to make this a little more user friendly by including the payload as a separate variable. This way you can make changes easily or include this as a function in a larger program or load the start/end coordinates from a file.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">url = &amp;<span class="comment">#8220;https://developer.citymapper.com/api/1/traveltime/&amp;#8221;</span></div><div class="line">  </div><div class="line">payload = &#123;<span class="string">'startcoord'</span>: <span class="string">'51.4618199,-0.1793686'</span>, <span class="string">'endcoord'</span>: <span class="string">'51.560117,-0.0722408&amp;#8242;,'</span>time_type<span class="string">':'</span>arrival<span class="string">','</span>key<span class="string">':'</span>INSERTKEYHERE<span class="string">'&#125;</span></div><div class="line"><span class="string">  </span></div><div class="line"><span class="string">r = requests.get(url, params=payload).json()</span></div><div class="line"><span class="string">  </span></div><div class="line"><span class="string">print(r['</span>travel_time_minutes<span class="string">'])</span></div></pre></td></tr></table></figure></p>
+<p>So that’s me, day one was pretty simple but this is a learning experience for me. I haven’t played with a lot of these simple programming methods before so I’m learning as I go. My code is up on Github <a href="https://github.com/gregario/API-Month/tree/master/Day%201%20-%20Time%20to%20train" target="_blank" rel="external">here</a> if you want to play.</p>
+<p>I got curious to see how much this commuting time varied over the course of a day. So I wrote another program TrainLoop.py that ran forever, checking once every 90 seconds and piping out a file that I can plot tomorrow. Why 90 seconds you ask? There’s a 1000 call limit per day on the free API for Citymapper. 24 hours / 1000 is a API call every 86 seconds.</p>
+<p>Tomorrow I’ll look at a weather service to find out will it rain and if it will rain during the day. Could be useful for a comparison. Should be fun 🙂</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2015/12/01/2015/12/01/api-month-day-1-citymapper/" data-id="cj7ulv36b002qutnp08y790x5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/02/2015/12/02/api-month-day-2-weather-underground/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          API Month Day 2 - Weather Underground
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/30/2015/11/30/api-month/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">API Month</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

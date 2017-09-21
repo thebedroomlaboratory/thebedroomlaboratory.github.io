@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="The Bedroom Laboratory">
+<meta property="og:url" content="http://thebedlab.com/page/2/index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Bedroom Laboratory">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-/2015/12/01/api-month-day-1-citymapper/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/01/2015/12/01/api-month-day-1-citymapper/" class="article-date">
+  <time datetime="2015-12-01T17:08:47.000Z" itemprop="datePublished">2015-12-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorised/">Uncategorised</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/01/2015/12/01/api-month-day-1-citymapper/">API Month Day 1 - Citymapper</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So day one has arrived, if you are curious as to what I’m talking about have a look here. So I have to decide every day if I am going to cycle to work or take my local train. Lots of info helps me make this decision.</p>
+<p>How long will the train take?</p>
+<p>Will it rain?</p>
+<p>How hungover am I?</p>
+<p>Now API’s can’t help with the last one (although google now is getting pretty close to being able to guess) but it can help with the first two. To start today I thought I would start with a really simple one, how long will it take to get to work by train?</p>
+<p>This can very variable. I have to change from train to tube and then change tube too to get to work. It’s a pain. So hence why I check. So I wrote this simple program, Train.py, to check to see my estimated commuting time to work. As my bike commute is a pretty predictable 44-48 minutes i can then make a decision.</p>
+<p>This is a simple piece of code but I’ll describe what you need to use an API and the practicalities around using it in python and manipulating its output.</p>
+<p>Lets start with the Citymapper API itself. It’s very straightforward:</p>
+<ul>
+<li><p>Head <a href="https://content.citymapper.com/i/897/citymapper-for-developers" target="_blank" rel="external">here</a> to register for an account and an API key.</p>
+</li>
+<li><p>Head <a href="https://citymapper.3scale.net/docs" target="_blank" rel="external">here</a> to check out the API documentation.</p>
+</li>
+</ul>
+<p>You can use the documentation page to do a sample push and get an idea of the form of a request. I use a chrome extension called postman to check my calls and responses to make sure I have everything right before I start programming. So as an example to check the API to see travel time between two points you would call:</p>
+<blockquote>
+<p><a href="https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERT" target="_blank" rel="external">https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERT</a> KEY]</p>
+</blockquote>
+<p>So its pretty human readable, to go through it, you are checking the Citymapper mapper API server for a travel time. Then after the ? you can specify a list of parameters, the order doesn’t matter but there are required inputs. You can see above I specify start location, end location, arrival time and my key.</p>
+<p>I obviously haven’t included my own key but if you were to put your own key there and put that whole message into POSTMAN or your browser you would see the following response.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; <span class="attr">"travel_time_minutes"</span>: <span class="number">54</span>, <span class="attr">"diagnostic"</span>: &#123;<span class="attr">"milliseconds"</span>: <span class="number">2907</span>&#125; &#125;</div></pre></td></tr></table></figure>
+<p>Again this is in a lovely human readable JSON (Just Simple Ordinary Notation) format. If we were to do some JSON parsing we could pull out the ‘54’ minutes variable and we’d have our answer.</p>
+<p>So how do I program this? I use python for all my programming needs so I’ll discuss this now. The requests library is your friend so if you don’t have it installed pop  over to your favourite terminal window and run:</p>
+<blockquote>
+<p>sudo easy_install requests</p>
+</blockquote>
+<p>Once that is installed, you can run the following python program to print out on the command line what we just ran in a browser window.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Program to check how long it will take me to get to work</span></div><div class="line"><span class="comment"># Greg Jackson 1st dev 2015</span></div><div class="line"><span class="comment"># Twitter @gr3gario or github gregario</span></div><div class="line"><span class="comment"># Day one of the Month of API</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> json </div><div class="line"></div><div class="line">url = <span class="string">"https://developer.citymapper.com/api/1/traveltime/"</span></div><div class="line">payload = &#123;<span class="string">'startcoord'</span>: <span class="string">'51.4618199,-0.1793686'</span>, <span class="string">'endcoord'</span>: <span class="string">'51.560117,-0.0722408'</span>,<span class="string">'time_type'</span>:<span class="string">'arrival'</span>,<span class="string">'key'</span>:<span class="string">'INSERTKEY'</span>&#125;</div><div class="line">r = requests.get(url, params=payload).json()</div></pre></td></tr></table></figure>
+<p>Output looks like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; "travel_time_minutes: 54, "diagnostic": &#123; "milliseconds": 2907&#125; &#125;</div></pre></td></tr></table></figure>
+<p>Look familiar? Yes? Great. If you use the following code you will just return 54.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">r = requests.get(<span class="string">"https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2188199%2C-0.1013686&amp;endcoord=51.560117%2C-0.0722408&amp;time_type=arrival&amp;key=[INSERTKEYHERE]"</span>).json()</div><div class="line"></div><div class="line">print(r[<span class="string">'travel_time_minutes'</span>])</div></pre></td></tr></table></figure>
+<p>There you go. If you want to play with JSON more have a look at this tutorial <a href="http://docs.python-guide.org/en/latest/scenarios/json/" target="_blank" rel="external">here</a>. I found it super helpful. Finally I want to make this a little more user friendly by including the payload as a separate variable. This way you can make changes easily or include this as a function in a larger program or load the start/end coordinates from a file.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">url = &amp;<span class="comment">#8220;https://developer.citymapper.com/api/1/traveltime/&amp;#8221;</span></div><div class="line">  </div><div class="line">payload = &#123;<span class="string">'startcoord'</span>: <span class="string">'51.4618199,-0.1793686'</span>, <span class="string">'endcoord'</span>: <span class="string">'51.560117,-0.0722408&amp;#8242;,'</span>time_type<span class="string">':'</span>arrival<span class="string">','</span>key<span class="string">':'</span>INSERTKEYHERE<span class="string">'&#125;</span></div><div class="line"><span class="string">  </span></div><div class="line"><span class="string">r = requests.get(url, params=payload).json()</span></div><div class="line"><span class="string">  </span></div><div class="line"><span class="string">print(r['</span>travel_time_minutes<span class="string">'])</span></div></pre></td></tr></table></figure></p>
+<p>So that’s me, day one was pretty simple but this is a learning experience for me. I haven’t played with a lot of these simple programming methods before so I’m learning as I go. My code is up on Github <a href="https://github.com/gregario/API-Month/tree/master/Day%201%20-%20Time%20to%20train" target="_blank" rel="external">here</a> if you want to play.</p>
+<p>I got curious to see how much this commuting time varied over the course of a day. So I wrote another program TrainLoop.py that ran forever, checking once every 90 seconds and piping out a file that I can plot tomorrow. Why 90 seconds you ask? There’s a 1000 call limit per day on the free API for Citymapper. 24 hours / 1000 is a API call every 86 seconds.</p>
+<p>Tomorrow I’ll look at a weather service to find out will it rain and if it will rain during the day. Could be useful for a comparison. Should be fun 🙂</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2015/12/01/2015/12/01/api-month-day-1-citymapper/" data-id="cj7ulv36b002qutnp08y790x5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2015/11/30/api-month/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/30/2015/11/30/api-month/" class="article-date">
+  <time datetime="2015-11-30T12:08:37.000Z" itemprop="datePublished">2015-11-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/30/2015/11/30/api-month/">API Month</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I do a lot of tinkering with API’s for work. They make operating with other people’s systems super simple and for IoT, an open API is often touted as an easy way for third parties to use your data for monitization purposes, like Intel’s Mashery, or as a public service with TFL (transport for London).</p>
+<p><strong>I just threw out a lot of acronyms so very quickly, what are API’s?</strong></p>
+<p>Application Programming Interfaces are a way of accessing or controlling a third party system with a well documented set of commands. A good programmer builds in such capabilities into their product so it can be used easily by others wanting to implement/build upon their work. A good example of this is Google Maps API was used to build Citymapper, a fantastic mapping service that is now in dozens of cities around the world.  It takes google’s data and mushes it together (the technical term would be data fusion but I prefer &#8220;mushes together&#8221;) with other local data sources for traffic/transport/weather to make a better mapping service.</p>
+<p><strong>And what is IoT?</strong></p>
+<p>IoT is the Internet of Things, its so hot right now… Simply, its about making dumb objects smart. Fridge becomes Smart Fridge. To become smart it needs to sense its environment in order to make its own decisions. Sensing the environment creates a bunch of data about said environment. API’s let you easily access said data.</p>
+<p>Anywho, I just thought that it would be a cool idea to have an API month. Every day I will create a simple app to do something using an API at its core. It will definitely be simple and most probably be written in python. It may have a physical implementation depending on how busy I am but it will definitely pull some data from a service for some silly/informative/instructional purpose.</p>
+<p>Tomorrow will be day one. I’m going to start with an easy one. I decide each morning if I should cycle or take the train to work in London. The train is super variable every as I have to go train to tube to another tube to get to work. If any of them are down or have delays its takes forever. So I thought I could write a script that automatically check to see how long my commute will be.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2015/11/30/2015/11/30/api-month/" data-id="cj7ulv368002kutnpjo6b52q5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IoT/">IoT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2015/05/15/global-datafest-winners/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/15/2015/05/15/global-datafest-winners/" class="article-date">
+  <time datetime="2015-05-15T21:24:03.000Z" itemprop="datePublished">2015-05-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/15/2015/05/15/global-datafest-winners/">Global Datafest Winners</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p style="text-align: center;"><br>  We are delighted and proud to be part of the <a href="https://twitter.com/DatafestNet/status/599313618648190976" target="_blank" rel="external">Social Cycle</a>. o/<br></p>
+
+<p style="text-align: center;"><br>  Congratulations to all the winners and thank you to all the <a href="http://www.global.datafest.net/about/judges" target="_blank" rel="external">fellow participants</a>  for an unforgettable hackathon.<br></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2015/05/15/2015/05/15/global-datafest-winners/" data-id="cj7ulv369002nutnpt978w2mq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/12/16/hour-of-code/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/16/2014/12/16/hour-of-code/" class="article-date">
+  <time datetime="2014-12-16T13:48:25.000Z" itemprop="datePublished">2014-12-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/16/2014/12/16/hour-of-code/">Hour of code</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The <a href="https://scratched.gse.harvard.edu/hoc/" target="_blank" rel="external">Gaelscoil Thulach na nÓg</a> were a great success last week. Students and facilitators alike had great fun. Students learnt and taught each other a great deal about coding and produced wonderful festive greeting cards.</p>
+<p>Originally the plan by <span style="font-size: medium;">Pól,  Bernie and Fiona - the session facilitators  - was to introduce the students to coding via the <a href="http://www.raspberrypi.org/test-tims-nuscratch-beta/" target="_blank" rel="external">Scratch</a>.</span></p>
+<p>Some of the inspiring creations exhibited included: Santa bouncing on a trampoline - presents flying out of his sack - as he bid the viewer &#8220;Ho! Ho! Ho! Merry Christmas&#8221;, Ice skating reindeer and Dublin City sleigh rides.</p>
+<p>Hopefully we will be back gain soon to build on those sessions, maybe adding <span style="font-size: medium;"><a href="http://www.raspberrypi.org/test-tims-nuscratch-beta/" target="_blank" rel="external">Arduino Scratch </a>elements to the amazing greeting cards already created.</span></p>
+<p>Nollaig Shona!</p>
+<p><img src="/wp-content/uploads/2014/12/IMAG0702_BURST0021-300x169.jpg" alt="IMAG0704_BURST002"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/12/16/2014/12/16/hour-of-code/" data-id="cj7ulv364002dutnp7e2yoz3a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/12/08/arduino-beginner-led-bar-graph/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/08/2014/12/08/arduino-beginner-led-bar-graph/" class="article-date">
+  <time datetime="2014-12-08T11:45:20.000Z" itemprop="datePublished">2014-12-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/08/2014/12/08/arduino-beginner-led-bar-graph/">An LED Bar Graph</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>For This Project We are going to use the pervious circuit (see the <a href="http://thebedlab.com/beginning-arduino-led-light-bar" title="LED Light Bar tutorial">LED light bar tutorial</a>) to build on top off. We don’t need to change it at all, we are just going to add to it and write some new code. What we are going to make is an LED bar graph. The kind of LED display used to give feedback for things like volume control on a speaker system. For us, we are simply going to use a Potentiometer to increase and decrease the number of LED’s turned on.</p>
+<p>Components required:</p>
+<ul>
+<li><ol>
+<li>Arduino board</li>
+</ol>
+</li>
+<li><ol>
+<li>Breadboard</li>
+</ol>
+</li>
+<li><ol>
+<li>Wires</li>
+</ol>
+</li>
+<li><ol>
+<li>8 x 220 Ω resistors</li>
+</ol>
+</li>
+<li><ol>
+<li>8 x LEDs</li>
+</ol>
+</li>
+<li><strong>Potentiometer</strong> - this and 3 extra cables are the only additions to the pervious tutorial component list</li>
+</ul>
+<p>So here is the original circuit from the LED light bar tutorial.</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-1024x621.png" alt="full LED Light Bar circuit"></p>
+<p>Now we add in the Potentiometer.</p>
+<p><img src="/wp-content/uploads/2014/11/led-bar-graph1-1024x543.png" alt="led bar graph"></p>
+<p>If thats a little overwhelming, here is the potentiometer circuit on its own.</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/potentiometer-1024x518.png" alt="potentiometer"></p>
+<p>That’s not so complex at all.</p>
+<p>The potentiometer acts as a voltage divider, which basically means that the voltage seen on the middle pin will be somewhere between the voltage levels applied to the other two pins. You can change the voltage on the middle pin by turning the knob, but it will never go outside the bounds of the voltages on the other two pins. In the circuit above, it means that we can turn the knob on the potentiometer to get any voltage between 0V and 5V on the middle pin. This pin is then connected to our analog input (A0 on the Arduino board). The Arduino reads the voltage level and performs an Analog to Digital Conversion (ADC), i.e. it changes the voltage to a number between 0 and 1023. This is just a simple scale to represent voltage level where 0 = 0V and 1023 = 5V.</p>
+<p>The biggest change from the LED Light bar is the code we use. Create a new Sketch and add the following:</p>
+<p>[c]</p>
+<p>//Define which analog input used for potentiometer</p>
+<p>const int potentiometer = A0;</p>
+<p>//number of LEDs in our array</p>
+<p>const int numberOfLEDs = 8;</p>
+<p>// digital pins corresponding to our LED circuits</p>
+<p>int leds[] = {2,3,4,5,6,7,8,9};</p>
+<p>void setup(){</p>
+<p>// loop through our digital pins to set them to Output</p>
+<p>for(int i =0; i &amp;lt; numberOfLEDs; i++){</p>
+<p>pinMode(leds[i], OUTPUT);</p>
+<p>}</p>
+<p>}</p>
+<p>void loop(){</p>
+<p>// take a reading from the potentiometer</p>
+<p>int reading = analogRead(potentiometer);</p>
+<p>// for an explanation of the map function, see below</p>
+<p>int level = map(reading, 0, 1023, 0, numberOfLEDs);</p>
+<p>for(int i = 0; i &amp;lt; numberOfLEDs; i++){</p>
+<p>if(i &amp;lt; level){</p>
+<p>digitalWrite(leds[i], HIGH);</p>
+<p>} else {</p>
+<p>digitalWrite(leds[i], LOW);</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>[/c]</p>
+<p><strong>The map function</strong> takes five parameters used to map a value in one scale range to another scale. We are looking to map each LED 8 steps as values between 0 &amp; 1023 (because this is the range of readings the Analog input can read).</p>
+<p>The Map() function’s five parameters are:</p>
+<ul>
+<li>The current <strong>value</strong> we wish to map to a particular scale </li>
+<li>The <strong>fromLow</strong> value which set’s the minimum value of the scale we are mapping from, in our case the minimum value that can be read from the analog pin A0 i.e. 0 </li>
+<li>The <strong>fromHigh</strong>, which is the maximum value for the scale we a mapping from, 1023 in our case</li>
+<li>The <strong>toLow</strong> which is 0 in our case as we will have 0 LED lighting when the reading is 0 </li>
+<li>The <strong>toHigh</strong> which is 8 in this example as we want all our LED’s lighting when the potentiometer is turned up to full </li>
+</ul>
+<p>Now plug upload the code to the Arduino and you should have the result shown below.</p>
+<p>This Tutorial is based <a href="http://blog.jonnie.io/led-bar-graph/" title="jonnie.io : led-bar-graph" target="_blank" rel="external">on a post on my own blog</a>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/12/08/2014/12/08/arduino-beginner-led-bar-graph/" data-id="cj7ulv365002futnp1e02fwgj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/12/01/beginning-arduino-led-light-bar/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/01/2014/12/01/beginning-arduino-led-light-bar/" class="article-date">
+  <time datetime="2014-12-01T11:00:43.000Z" itemprop="datePublished">2014-12-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/01/2014/12/01/beginning-arduino-led-light-bar/">An LED Light Bar</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>For the second project in our Beginning Arduino series I decided to build an LED Light Bar (think of Knight Rider). This will teach us some of the basics of working with multiple outputs and it will allow us to build things like Christmas light decorations. We will also gain a good foundation for working with a 7 Segment LED which we will look at in a later date.</p>
+<p>What we need:</p>
+<ul>
+<li><ol>
+<li>Arduino board</li>
+</ol>
+</li>
+<li><ol>
+<li>Breadboard</li>
+</ol>
+</li>
+<li><ol>
+<li>Wires</li>
+</ol>
+</li>
+<li><ol>
+<li>8 x 220 Ω resistors</li>
+</ol>
+</li>
+<li><ol>
+<li>8 x LEDs</li>
+</ol>
+</li>
+</ul>
+<p>It isn’t essential to have 8 LEDS/Resistors, you can have less or more you just need to have a resistor for each LED and a digital out on the Arduino.</p>
+<p>Put all the components together as shown in the image below</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-1024x621.png" alt="full LED Light Bar circuit"></p>
+<p>In case that circuit is a little overwhelming here is a circuit with just a single LED wired up. All the other LED’s follow the same layout but with their input from a different digital out on the Arduino.</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/single-circuit-1024x553.png" alt="single circuit"></p>
+<p>Now fire up the Arduino IDE and create a new sketch with the following code:</p>
+<p>[c]</p>
+<p>void setup(){</p>
+<p>//looping through the digital pins 2-9</p>
+<p>//and setting the mode to output</p>
+<p>for(int i= 2;i &amp;amp;amp;amp;amp;amp;amp;lt;= 9;i++){</p>
+<p>pinMode(i, OUTPUT);</p>
+<p>}</p>
+<p>}</p>
+<p>// Simple function to loop through all LEDs to turn them off</p>
+<p>void turnLEDsOff(){</p>
+<p>for(int i= 2;i &amp;amp;amp;amp;amp;amp;amp;lt;= 9;i++){</p>
+<p>digitalWrite(i, LOW);</p>
+<p>// wait 200ms</p>
+<p>delay(200);</p>
+<p>}</p>
+<p>}</p>
+<p>//main loop</p>
+<p>void loop(){</p>
+<p>// move through the LEDs lighting single led at time</p>
+<p>for(int i= 2;i &amp;amp;amp;amp;amp;amp;amp;lt;= 9;i++){</p>
+<p>//turn off All LEDs</p>
+<p>turnLEDsOff();</p>
+<p>// turn on single LED @ position i</p>
+<p>digitalWrite(i, HIGH);</p>
+<p>// wait 200ms</p>
+<p>delay(200);</p>
+<p>}</p>
+<p>// same as above but in reverse order</p>
+<p>for(int i= 2;i &amp;amp;amp;amp;amp;amp;amp;lt;= 9;i++){</p>
+<p>//turn off All LEDs</p>
+<p>turnLEDsOff();</p>
+<p>// turn on single LED @ position i</p>
+<p>digitalWrite(i, HIGH);</p>
+<p>// wait 200ms</p>
+<p>delay(200);</p>
+<p>}</p>
+<p>}</p>
+<p>[/c]</p>
+<p>Plug in the Arduino to a power supply and There you have it, an LED Light bar.</p>
+<h2 id="Issues-I-experienced"><a href="#Issues-I-experienced" class="headerlink" title="Issues I experienced"></a>Issues I experienced</h2><p>While doing this project I came across an issue where the last LED would not light up for me. I tried swapping LED’s, resistors and cables but found nothing was faulty. Could the breadboard of been faulty? Sort of, but not really. I basically didn’t realise the was a break in the ground rail on the bottom. So I had to bridge the break ( see the image below).</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-fix-1024x623.png" alt="full circuit with bridge fix"></p>
+<p>But Why did the other LEDs on the same side of the break work? Because when an IO pin is configured as an OUTPUT, and is set LOW, it is effectively connected to ground, allowing the rest of the circuit to behave as normal</p>
+<p>Here is a video show this issue:</p>
+<p>I based this tutorial on a post I wrote for my own blog and on the LED Light Bar project in <a href="http://www.amazon.com/Arduino-Project-Handbook-Complete-Creating/dp/0992952603" title="Arduino Project Handbook" target="_blank" rel="external">Arduino Project Handbook</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/12/01/2014/12/01/beginning-arduino-led-light-bar/" data-id="cj7ulv361002autnpwlyvte88" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/11/28/retro-gamebox-kit/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/28/2014/11/28/retro-gamebox-kit/" class="article-date">
+  <time datetime="2014-11-28T15:35:50.000Z" itemprop="datePublished">2014-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/28/2014/11/28/retro-gamebox-kit/">Retro GameBox Kit</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>Project files: <a href="https://drive.google.com/folderview?id=0B06YemMHUafCWGZvVVBneWUxTEU&amp;usp=sharing" target="_blank" rel="external">Google Drive</a></em></p>
+<p>A while ago we ran a <a href="http://thebedlab.com/retro-gamebox-workshop-rua-red-digital-week/">workshop in Rua Red</a>, where the participants built their own Arduino-powered Retro games console. It was a great success; all the consoles worked and we all got a little bit better at Space Invaders, Parachutes, Asteroids and Sudoku.</p>
+<p>In <a href="http://thebedlab.com/gearing-up-for-retro-gamebox-workshop/">preparation for that workshop</a>, I put in a good bit of work sourcing parts cheaply both online and locally. On top of that, we all chipped in with making up an instruction document, getting the tools we’d need together and checking that stuff actually worked. When the workshop went off so well, we got to thinking that it’d make for a really nice kit. Especially since all the hard kit preparation work was already done!<figure id="attachment_359" style="width: 150px" class="wp-caption alignright"></figure></p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/10/GameBox-150x150.jpg" alt="GameBox"><figcaption class="wp-caption-text">Lunch Box Case</figcaption> </p>
+<p>One remaining task for packaging the Retro GameBox up into kit form was the project’s enclosure. You may remember that we were using lunch boxes on the night as our console cases. Well, I recently started playing around with laser cutting, so did up a quick enclosure using <a href="http://www.makercase.com/" target="_blank" rel="external">http://www.makercase.com/</a> and added in all the mounting holes for the hardware with Inkscape.</p>
+<p>The design files (available in the Project files link at top) are still a little rough and will definitely be improved in the future but I’m pretty happy with this as a starting point! It was made with 4mm Birch Plywood Moisture Resistant BB/BB(MR) from <a href="http://www.woodworkers.ie" target="_blank" rel="external">woodworkers.ie</a>. We decided to go down the wood route because you really can’t get much more retro than that.</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/RGB-Bottom-1024x682.jpg" alt="RGB-Profile"></p>
+<p>Among the changes I’d like to make are:</p>
+<ul>
+<li>Change the box design from T-Slot to Finger joints for everything but the top face, so that we can save on nuts/bolts <ul>
+<li>Means we’ll need some corner pads on the bottom so that it sits on a level surface with no wobbles</li>
+</ul>
+</li>
+<li>Our logo didn’t come out in the final DXF file, so we’d need to fix that</li>
+<li>Maybe some branding on the top face too</li>
+</ul>
+<p>Once the design has been fixed up, we’ll get it up on thingiverse and also release the project as a kit. Feel free to comment below if you’d be interested in the kits or have any feedback/suggestions for us. Who knows, maybe this time next year we’ll be showing it on the Late Late Toy Show!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/28/2014/11/28/retro-gamebox-kit/" data-id="cj7ulv35y0025utnpvumyn5dq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/11/25/battleshots/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/25/2014/11/25/battleshots/" class="article-date">
+  <time datetime="2014-11-25T18:01:33.000Z" itemprop="datePublished">2014-11-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/25/2014/11/25/battleshots/">BattleShots</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So I made a game…</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/Build1.jpg" alt="Build1"></p>
+<p>Battleshots has been born… Its a drinking game based on battleships. You get 5 ships, 1X5 test tubes, 1X4, 2X3 and 1X2 test tubes. Fill those tubes with a responsible level of the alcohol of your choice. The aim of the game is to sink all your buddies ships before they sink yours! And there’s drinking. You get hit and you take a shot… ALL the fun. Anywho… Proof of the fun can be found here:</p>
+<p><img class="aligncenter" src="https://lh3.googleusercontent.com/-TI2GKHaj5q4/U8EanpUlhDI/AAAAAAAAJvs/GZ9xfnl-9dM/w1153-h865-no/IMG_20140711_222231.jpg" alt=""></p>
+<p>I’ve made some changes from the above to make everything symmetrical and the board wider as the slot for the upright piece in the above photo was very close to the edge and could easily break. I’ve put the files on thingiverse for anyone wanting a go: <a href="http://www.thingiverse.com/thing:561822" target="_blank" rel="external">http://www.thingiverse.com/thing:561822</a></p>
+<p>The design is pretty straightforward and the link covers the basics of how to put it together. In terms of assembly I thought I’d talk through some of the design. Firstly you’ll need:</p>
+<ul>
+<li>1* 600*400mm sheet of 3mm white acrylic</li>
+<li>2* 600*400mm sheets of 3mm laserply</li>
+<li>8* 120mm carraige bolts (M6 I think…) and 24 nuts to do the gaps (or some tubing cut to length… that would be neater)</li>
+<li>A purple whiteboard marker</li>
+<li>Test Tubes: <a href="http://www.amazon.co.uk/dp/B005ZR5S8W/" target="_blank" rel="external">http://www.amazon.co.uk/dp/B005ZR5S8W/</a> You need 40 to have a couple of spares so 60 may be overkill</li>
+<li>A laser cutter</li>
+</ul>
+<p>The whole thing cost around £30 (sans the lasercutter) but I think it could be done for 20-25 if you find a cheap supplier for the test tubes. Anywho I thought I would talk through providing contrast on lasercut acrylic. I thought the purple on white came out really well and was very simple to do.</p>
+<p><img src="/wp-content/uploads/2014/11/Capture1.png" alt="Capture"></p>
+<p>Its very straightforward. Just engrave on the material and then highlight the crap out of it. Use a whiteboard marker rather than a permanent marker. In the third photo above you can see one pass. If you clean it off with a papertowel and do a couple of passes you will have a similar output to the final photo… Neat, eh?</p>
+<p>I have since seen acrylic paint on solid engravings on transparent acrylic which looks lovely too and I must try out in the future!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/25/2014/11/25/battleshots/" data-id="cj7ulv35x0022utnpeby47icb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/11/24/edison-introduction-as-an-iot-device/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/" class="article-date">
+  <time datetime="2014-11-24T15:56:32.000Z" itemprop="datePublished">2014-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/">Edison as an IoT Device</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://thebedlab.com/wp-content/uploads/2014/11/20141124_134215.jpg" alt="Introduction to Edison"> </p>
+<h1 id="Introduction-to-Edison"><a href="#Introduction-to-Edison" class="headerlink" title="Introduction to Edison"></a>Introduction to Edison</h1><p>I’ve been playing with the Edison that I got at the hardware hackathon BedLab attended a few weeks back. Thanks to the guys from Intel for donating a few to the BedLab fund. (Full disclosure on the post, I work for Intel over in London (<a href="http://www.cities.io" target="_blank" rel="external">http://www.cities.io</a> so I’ll try to keep the gushing praise to a minimum)</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/20141124_155131-1024x768.jpg" alt="20141124_155131"></p>
+<p>Its pretty cool, out of the box its a lot more functional than the Gen one Intel Galileo and was pretty easy to get updated and up and running. I won’t go into the detail of setting it up as there was a pretty straightforward step by step guide for doing it. Broadly the steps are:</p>
+<ul>
+<li>Install FTDI driver for the board</li>
+<li>Install Arduino IDE with Intel addon</li>
+<li>Install Edison drivers</li>
+</ul>
+<p>Being on the internal trial for the Edison pre release they did a good job of integrating all the tools into one installer in order to talk to and work with the board.</p>
+<p>The drivers in particular are cool, they let you:</p>
+<ul>
+<li>connect to the device over serial (using putty to access the linux side of things),</li>
+<li>Transfer Arduino scripts if you want to program it via Arduino</li>
+<li>Access the storage on the Edison as an external drive</li>
+</ul>
+<p>So pretty functional. Anywho links are here…</p>
+<blockquote>
+<p>Getting started: <a href="https://communities.intel.com/docs/DOC-23147" target="_blank" rel="external">https://communities.intel.com/docs/DOC-23147</a>.</p>
+</blockquote>
+<p>The one quirk I’ll say is that you need two USB’s to connect to a computer to do the programming, which is a little cumbersome.I set mine up and connected it to my home wifi and then just SSH’ed into it, this is where you should be at once you complete the above getting started guide.</p>
+<p>Some other handy things to know when playing with the device. You are not limited to Yocto, the native Linux distro that comes with the board. If you like to work through Python or Node you can use their package managers to get most things working. Working with Yocto itself can be challenging for the hobbyist. There’s no apt-get for instance, which is a bit of a pain. Yocto was designed to be for robust embedded applications. Its designed to be made from source for a specific application. Its a barebones version of linux where you only load the parts of the stack you need for your application. The theory holds that the less stuff on the build the less can go wrong and the more robust your system will be.</p>
+<p>So if you want to make a smart thermostat you can only load the systems you need, if you want to prototype something though it can take 4 hours to add that new wifi driver and build the system again from source. If you want to play with Debian on the board Emutex have released a debian build at <a href="http://www.emutexlabs.com/blog/220-emutex-release-ubilinux-for-intel-edison" target="_blank" rel="external">emutexlabs.com</a></p>
+<p>The next handy thing is accessing the edison as an external hard drive. You can plug it in and transfer over any files you want. SCP also works if you want to go down that route but if you want to transfer big files or pass information via a PC easily this is a nice trick. Found the inspiration here:  <a href="https://communities.intel.com/thread/55510" target="_blank" rel="external">https://communities.intel.com/thread/55510</a>. Once you’ve transferred your files from the PC to the edison, the next step is to mount the drive on the Edison  itself.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">rmmod g_multi</div><div class="line"></div><div class="line">mkdir /update</div><div class="line"></div><div class="line">losetup -o 8192 /dev/loop0 /dev/disk/by-partlabel/update</div><div class="line"></div><div class="line">mount /dev/loop0 /update</div><div class="line">``` </div><div class="line"></div><div class="line">Then <span class="keyword">if</span> you want to reverse the process:</div><div class="line"></div><div class="line">```bash </div><div class="line"><span class="built_in">cd</span> /</div><div class="line">modprobe g_multi</div><div class="line">umount /update</div><div class="line"><span class="keyword">then</span> pull the usb cable and re-insert it, at <span class="built_in">which</span> stage the disk should re-appear on your host machine.</div></pre></td></tr></table></figure>
+<p>Finally there’s been some nice benchmarking done by <a href="raspberry-pi-beaglebone-black-intel-edison-benchmarked">David Hunt</a> (He also has made some pretty cool photography hacks, its worth checking out his work)</p>
+<h1 id="Cloud-Infrastructures"><a href="#Cloud-Infrastructures" class="headerlink" title="Cloud Infrastructures"></a>Cloud Infrastructures</h1><p>The Edison is pitched as an enabler of the internet of things (IoT) so I thought I would talk a little bit about using the Edison as a platform for sensors. There are lots of cloud based infrastructures that one can use to send data from these devices. I’m going to stick to the Linux side of things as I’m used to operating in that environment rather than through the arduino cross compiler.</p>
+<p>There’s actually an IoT development kit baked into the Edison, it posts to an intel backend. It seemed quick to setup, I had a bit of a play of a Monday evening to see what its like. There’s a tutorial <a href="http://iotkit-comm-js.s3-website-us-west-2.amazonaws.com" target="_blank" rel="external">here</a> if you’re interested. There’s a node and C version depending on preference. In an hour or so I had an account setup and the device associated with its backend sending a virtual sensor reading. Can’t speak to its scalability/feature set but it had a shallow learning curve at the very least.</p>
+<p>Another option is to build your own cloud storage system. At Bedlab this is becoming a bit of a specialty with with a bunch of different types of IoT style systems with various time series datastore types being made and even (feel free to correct me here guys)  3 RESTful API’s being built at this stage for various projects. Check out the following for more info:</p>
+<ul>
+<li>BrewLab backend storage and graphing</li>
+<li>NodeRed implementation for Treo</li>
+<li>How to build your own RESTful API tutorial over at <a href="http://blog.jonnie.io/creating-a-restful-api-with-node-js/" target="_blank" rel="external">http://blog.jonnie.io/creating-a-restful-api-with-node-js/</a> by our own Jonnie.</li>
+</ul>
+<p>There’s other online based systems that can quickly be setup to do the heavy lifting for your IoT device. I’ve had a play with GERAS from the guys over at www.1248.io, its quite good, doing exactly what you need it to, reminiscent of the old Pachube system. Xively is probably the best known system. Formerly Cosm, Formerly Pachube… Its so good they named it trice. Anywho, how I’ve finished kludgening that previous sentence into my post lets wrap up. I’ll write a follow up post on playing with the Edison over Xively. Stay tuned for more .</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/" data-id="cj7ulv35v001yutnpo6ebfqah" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/11/16/beginning-arduino-push-button-led/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/16/2014/11/16/beginning-arduino-push-button-led/" class="article-date">
+  <time datetime="2014-11-16T15:15:31.000Z" itemprop="datePublished">2014-11-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/16/2014/11/16/beginning-arduino-push-button-led/">Turning on an LED from a Button</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner.</p>
+<p>I could do the boring, pointless Arduino version of Hello Wold, <a href="http://arduino.cc/en/Tutorial/Blink?from=Tutorial.BlinkingLED" title="Boring Hello World Blink tutorial" target="_blank" rel="external">Blink!</a>, tutorial that most people start with, but it doesn’t involve enough as far as I am concerned ( it’s all already done for you), but go ahead if you feel its worth it. For me, I want to be able to interact with it.</p>
+<p>So for my first Arduino project I want to press a button to turn on an LED. This involves 2 Arduino Fundamentals, reading input (the button), processing it in our program (an Arduino sketch) and output a result ( turning on or off an L.E.D.).</p>
+<p>so without boring you, lets Jump straight in…</p>
+<p><strong>Components we need</strong>:</p>
+<ul>
+<li>Arduino</li>
+<li>Breadboard</li>
+<li>Wires</li>
+<li>LED</li>
+<li>Push Button</li>
+<li>1 x 10k Ω Resistor</li>
+<li>1 x 220 Ω</li>
+</ul>
+<p>First I Followed the Tutorial in <a href="http://www.amazon.com/Arduino-Project-Handbook-Complete-Creating/dp/0992952603" target="_blank" rel="external">Arduino Project Handbook</a> by setting up my circuit as in the image below:</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png" alt="Push Button LED circuit"></p>
+<p><strong>IMPORTANT: </strong> The LED legs must be in the correct direction, make sure the Negitive Leg ( the shorter leg on the side of the flat edge of the LED) is connected to the ground and the Positive Leg ( the longer leg at the side of the rounded edge of the LED) is connected to the input pin, otherwise you will likely burn out your LED.</p>
+<p>I then started up the Adruino IDE, available <a href="http://arduino.cc/en/Main/Software" title="Arduino Downloads" target="_blank" rel="external">here</a>.</p>
+<p>Inside the sketch I added the following code:</p>
+<p>[c]</p>
+<p>const int buttonPin = 2;</p>
+<p>const int ledPin = 13;</p>
+<p>int buttonState = 0;</p>
+<p>void setup(){</p>
+<p>pinMode(ledPin, OUTPUT);</p>
+<p>pinMode(buttonPin, INPUT);</p>
+<p>}</p>
+<p>void loop(){</p>
+<p>buttonState = digitalRead(buttonPin);</p>
+<p>if(buttonState == HIGH){</p>
+<p>digitalWrite(ledPin, HIGH);</p>
+<p>} else{</p>
+<p>digitalWrite(ledPin, LOW);</p>
+<p>}</p>
+<p>}</p>
+<p>[/c]</p>
+<p>If you need more information about what the code is doing, have a look at the <a href="http://arduino.cc/en/Reference/HomePage" target="_blank" rel="external">Reference page</a>, but it should be mostly obvious, I hope.</p>
+<p>Selected the Arduino Uno the menu: <strong>Tools &gt; Board &gt; Arduino Uno</strong> </p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno-1024x949.png" alt="Select Uno"></p>
+<p>Then select the Arduino Port:</p>
+<ul>
+<li>For Linux/windows <strong>Tools &gt; Board &gt; Comx</strong> where x is usually 3 or higher</li>
+<li>For Mac <strong>Tools &gt; Board &gt; tty.usbmodemxxxx</strong> where xxxx is some number</li>
+</ul>
+<p><img src="/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM-1024x901.png" alt="Screen Shot 2014-11-16 at 7.01.13 PM"></p>
+<p>Then plug in the USB into your computer and Arduino and upload the code using the button as shown in the picture below</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino-856x1024.png" alt="upload to Arduino"></p>
+<p>When the program is uploaded you are supposed to be able to press the the button which the program is continuously reading in the loop function and light the L.E.D. while the button is pressed….</p>
+<p>BUT…… for me this was not the case, at least not completely. I found that when I put my hand anywhere near the circuit without actually touching the button the L.E.D. would still light up and sometimes the L.E.D. would just light up and stay on with out even touching the button as shown in the video below.</p>
+<p>Frustrated yet? I was. So what to do when the instructions don’t work? Well for me usually I turn to <a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a> for programming problems. So I had a look on the <a href="http://stackexchange.com/" target="_blank" rel="external">stackexchange</a> which is the parent website of stack overflow and found an <a href="http://electronics.stackexchange.com/" title="electronics.stackexchange.com" target="_blank" rel="external">electronics subsection</a>.</p>
+<p>So I posted my issue, along with the steps I took myself to try and solve the problem (<strong>N.B.:</strong> <em>if you go to any stack exchange and don’t show you made an effort, often you will be dismissed with comments like “have you even tried Googling it yourself”, So make the effort</em>)</p>
+<p>So here was <a href="http://electronics.stackexchange.com/questions/137220/why-when-i-touch-the-input-cable-or-put-my-hand-near-it-the-led-comes-on" title="StackExchange Question" target="_blank" rel="external">my Question to the community</a></p>
+<p>What I learned was that the reason the L.E.D was lighting when my hand was close to the circuit was due to <em>ambient electromagnetic interference</em> . As ‘<a href="http://electronics.stackexchange.com/users/4940/shubham" target="_blank" rel="external">Shubham</a>’ explained to me</p>
+<blockquote>
+<p>It’s because your button pin is floating (susceptible to ambient electromagnetic interference).</p>
+</blockquote>
+<p>All the second resistor is doing is draining a little current from power to ground, when it should actually be functioning as the pull-down resistor for the button pin.To fix this issue I made the following change to the circuit:</p>
+<p>I changed this:</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png" alt="Floating Button"></p>
+<p>To this:</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png" alt="Non Floating Button: Resistor acting as pull down resistor"></p>
+<p>And now the Circuit behaves as expected.</p>
+<p>And there you go…a functional Arduino beginners project. I know some of you might be thinking &#8220;is it not a bit complex for simply turning on an L.E.D&#8221;. For that purpose yes, it is but imagine adding a few buttons, a few motors and a bit of work to the program, and it could turn into a basic remote controlled car. Or swap out the button for a light sensor and you could have an automated light that comes on when it gets dark. The possibilities are endless. But don’t worry, like you I’m a new to this too , so we can work on it together…</p>
+<p>I based this post on a post I wrote for <a href="http://blog.jonnie.io/push-button-control-led/" target="_blank" rel="external">my own blog</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/16/2014/11/16/beginning-arduino-push-button-led/" data-id="cj7ulv35u001wutnprlb07coa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">next &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

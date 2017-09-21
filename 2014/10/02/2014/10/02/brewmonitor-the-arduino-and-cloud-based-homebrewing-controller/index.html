@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BrewMonitor: the Arduino-powered, cloud-based homebrewing controller | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Demo: http://dev.thebedroomlaboratory.com/~martin/brewmonitor/    Github: https://github.com/thebedroomlaboratory/BrewMonitor  I recently started brewing beer at home with a group of friends and one">
+<meta name="keywords" content="ESP8266,Homebrew,REST API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BrewMonitor: the Arduino-powered, cloud-based homebrewing controller">
+<meta property="og:url" content="http://thebedlab.com/2014/10/02//2014/10/02/brewmonitor-the-arduino-and-cloud-based-homebrewing-controller//index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="Demo: http://dev.thebedroomlaboratory.com/~martin/brewmonitor/    Github: https://github.com/thebedroomlaboratory/BrewMonitor  I recently started brewing beer at home with a group of friends and one">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/10/BrewMonitor-Site-300x254.png">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BrewMonitor: the Arduino-powered, cloud-based homebrewing controller">
+<meta name="twitter:description" content="Demo: http://dev.thebedroomlaboratory.com/~martin/brewmonitor/    Github: https://github.com/thebedroomlaboratory/BrewMonitor  I recently started brewing beer at home with a group of friends and one">
+<meta name="twitter:image" content="http://thebedlab.com/wp-content/uploads/2014/10/BrewMonitor-Site-300x254.png">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/2014/10/02/brewmonitor-the-arduino-and-cloud-based-homebrewing-controller/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/02/2014/10/02/brewmonitor-the-arduino-and-cloud-based-homebrewing-controller/" class="article-date">
+  <time datetime="2014-10-02T14:07:32.000Z" itemprop="datePublished">2014-10-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Blog/">Blog</a>►<a class="article-category-link" href="/categories/Blog/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      BrewMonitor: the Arduino-powered, cloud-based homebrewing controller
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <address><br>  Demo: <a href="http://dev.thebedroomlaboratory.com/%7Emartin/brewmonitor/" target="_blank">http://dev.<wbr>thebedroomlaboratory.com/~<wbr>martin/brewmonitor/</a><br></address>
+
+<address><br>  Github: <a href="https://github.com/thebedroomlaboratory/BrewMonitor" target="_blank" rel="external">https://github.com/thebedroomlaboratory/BrewMonitor</a><br></address>
+
+<p>I recently started brewing beer at home with a group of friends and one of the things that quickly came to light, is that maintaining a steady fermention temperature can be the key to a good brew. We have a stick on thermometer on our fermenter buckets which we can use for reading the temperature of the beer, locally, but I was wondering if there was a system I could hook up, so that all of us could check in on the beer via the web. Lo and behold, there are a few systems available for monitoring/controlling the temperature of a batch of homebrew beer as it ferments. But most of them require expensive equipment and the ones that don’t are still based on the <a href="http://shop.brewpi.com/index.php?route=product/combos" target="_blank" rel="external">Arduino-sensor and Raspberry Pi-gateway</a> model, which will set you back the bones of €80, if you <a href="http://www.homebrewtalk.com/f51/howto-make-brewpi-fermentation-controller-cheap-466106/" target="_blank" rel="external">make it yourself</a>. As well as that, the webserver for the BrewPi system (most popular as far as I could see) runs on the Raspberry Pi in your home network. This means you have to configure port forwarding and something like dyndns to access it from outside the house, making the system configuration a bit of a chore.</p>
+<p><img src="/wp-content/uploads/2014/10/BrewMonitor-Site-300x254.png" alt="BrewMonitor-Site">With that in mind, have a gander at this: <a href="http://dev.thebedroomlaboratory.com/%7Emartin/brewmonitor/" target="_blank">http://dev.<wbr>thebedroomlaboratory.com/~<wbr>martin/brewmonitor/</a> It’s just a basic site, based on <a href="http://scotch.io/tutorials/php/create-a-laravel-and-angular-single-page-comment-application" target="_blank" rel="external">this Scotch.io tutorial</a>, which is currently plotting the temperature in my sitting room. It’s got a PHP backend (<a href="http://laravel.com/" target="_blank" rel="external">Laravel framework</a> with RESTful API), <a href="http://www.mysql.com/" target="_blank" rel="external">MySQL</a> database and an <a href="https://angularjs.org/" target="_blank" rel="external">AngularJS</a> frontend with (<a href="http://n3-charts.github.io/line-chart/#/" target="_blank" rel="external">n3-chart/d3</a> for the graph). In the house, I’ve whacked together a quick breadboard circuit which comprises of an <a href="http://www.dx.com/p/diy-funduino-uno-r3-development-board-microcontroller-w-usb-cable-240588" target="_blank" rel="external">Arduino clone</a>, a <a href="http://www.adafruit.com/product/381" target="_blank" rel="external">DS18B20 Temperature Sensor</a> (with resistor for the i2c connection) and an <a href="https://nurdspace.nl/ESP8266" target="_blank" rel="external">ESP8266 module</a>. Every minute, this wireless sensor POSTs the temperature to our REST API. This value is saved in the database and will appear in the graph whenever the page is opened. To hook it up to a fermenter, the sensor would just be placed in a <a href="https://www.hopandgrape.co.uk/thermowell-stopper.html" target="_blank" rel="external">thermowell</a> in the fermenter bucket so we can see the beer temperature over time.</p>
+<p>It will be easy to add extra functionality to this basic system as time goes on (i.e. user accounts on the cloud, authentication, a screen for the Arduino, OTA firmware updates for the Arduino, relay control of a fridge/heater, etc.). The real beauty of this system, however, is that everything is saved to the <em>Cloud</em> and we don’t need an extra gateway device (Raspberry Pi) to get it there. This reduces the cost and complexity of the installation of the system immensely! The parts for the above circuit only set me back €17.20 (DS18B20, ESP8266 and 12v Adapter from ebay and Funduino from dx.com), and these costs could be reduced again by single boarding everything, instead of using the Arduino clone (we have done this for some of our other projects already)… Potential crowd-funding campaign possibly? I’ll keep you in the loop.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/10/02/2014/10/02/brewmonitor-the-arduino-and-cloud-based-homebrewing-controller/" data-id="cj7ulv35g001cutnpw7esormx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/REST-API/">REST API</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/02/2014/10/02/digital-week-workshops-at-rua-red/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Digital Week Workshops at Rua Red
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/07/19/2014/07/19/fumblings-in-home-pcb-maunfacture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Fumblings in Home PCB Maunfacture</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

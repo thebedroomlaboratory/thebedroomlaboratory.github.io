@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>API Month Day 2 - Weather Underground | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Highlights API purpose: Weather Conditions Signup: http://www.wunderground.com/weather/api/ Documentation: http://www.wunderground.com/weather/api/d/docsGithub: http://bit.ly/1OxwFrc  Comment: Feature">
+<meta name="keywords" content="API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API Month Day 2 - Weather Underground">
+<meta property="og:url" content="http://thebedlab.com/2015/12/02//2015/12/02/api-month-day-2-weather-underground//index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="Highlights API purpose: Weather Conditions Signup: http://www.wunderground.com/weather/api/ Documentation: http://www.wunderground.com/weather/api/d/docsGithub: http://bit.ly/1OxwFrc  Comment: Feature">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API Month Day 2 - Weather Underground">
+<meta name="twitter:description" content="Highlights API purpose: Weather Conditions Signup: http://www.wunderground.com/weather/api/ Documentation: http://www.wunderground.com/weather/api/d/docsGithub: http://bit.ly/1OxwFrc  Comment: Feature">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/2015/12/02/api-month-day-2-weather-underground/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/02/2015/12/02/api-month-day-2-weather-underground/" class="article-date">
+  <time datetime="2015-12-02T16:24:23.000Z" itemprop="datePublished">2015-12-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Uncategorised/">Uncategorised</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      API Month Day 2 - Weather Underground
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Highlights</strong></p>
+<p><strong>API purpose:</strong> Weather Conditions</p>
+<p><strong>Signup: </strong><a href="http://www.wunderground.com/weather/api/" target="_blank" rel="external">http://www.wunderground.com/weather/api/</a></p>
+<p><strong>Documentation:</strong> <a href="http://www.wunderground.com/weather/api/d/docs" target="_blank" rel="external">http://www.wunderground.com/weather/api/d/docs</a><br><strong>Github:</strong> <a href="http://bit.ly/1OxwFrc" target="_blank" rel="external">http://bit.ly/1OxwFrc</a></p>
+<blockquote>
+<p><strong>Comment:</strong> Feature rich and worldwide weather!</p>
+</blockquote>
+<p>OK so day two of API month. Exciting, right? Yesterday it occured to me if I’m making a decision when debating my cycle vs tube debate it would also be good to see the near term forecast. So I did some reading and found weather underground. Its a system of weather stations around the world, with data provided by official and hobbyist sources. Their API is pretty good too!</p>
+<p><strong>Getting the Data</strong></p>
+<p>So I swung over and setup an account. Straight forward process. I want to pull relevant information from the API so I did a sample call for London to see what I would get.</p>
+<blockquote>
+<p><a href="http://api.wunderground.com/api/[INSERTKEY]/conditions/q/uk/London.json" target="_blank" rel="external">http://api.wunderground.com/api/[INSERTKEY]/conditions/q/uk/London.json</a></p>
+</blockquote>
+<p>Pretty straightforward. A slightly different system than citymapper but very usable. It returned this: ``</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"response"</span>: &#123;</div><div class="line">      <span class="attr">"version"</span>:<span class="string">"0.1"</span>,</div><div class="line">      <span class="attr">"termsofService"</span>:<span class="string">"http://www.wunderground.com/weather/api/d/terms.html"</span>,</div><div class="line">      <span class="attr">"features"</span>: &#123;</div><div class="line">        <span class="attr">"conditions"</span>: <span class="number">1</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  , <span class="attr">"current_observation"</span>: &#123;</div><div class="line">        <span class="attr">"image"</span>: &#123;</div><div class="line">        <span class="attr">"url"</span>:<span class="string">"http://icons.wxug.com/graphics/wu2/logo_130x80.png"</span>,</div><div class="line">        <span class="attr">"title"</span>:<span class="string">"Weather Underground"</span>,</div><div class="line">        <span class="attr">"link"</span>:<span class="string">"http://www.wunderground.com"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"display_location"</span>: &#123;</div><div class="line">        <span class="attr">"full"</span>:<span class="string">"Dublin, Ireland"</span>,</div><div class="line">        <span class="attr">"city"</span>:<span class="string">"Dublin"</span>,</div><div class="line">        <span class="attr">"state"</span>:<span class="string">""</span>,</div><div class="line">        <span class="attr">"state_name"</span>:<span class="string">"Ireland"</span>,</div><div class="line">        <span class="attr">"country"</span>:<span class="string">"IE"</span>,</div><div class="line">        <span class="attr">"country_iso3166"</span>:<span class="string">"IE"</span>,</div><div class="line">        <span class="attr">"zip"</span>:<span class="string">"00000"</span>,</div><div class="line">        <span class="attr">"magic"</span>:<span class="string">"1"</span>,</div><div class="line">        <span class="attr">"wmo"</span>:<span class="string">"03969"</span>,</div><div class="line">        <span class="attr">"latitude"</span>:<span class="string">"53.43000031"</span>,</div><div class="line">        <span class="attr">"longitude"</span>:<span class="string">"-6.25000000"</span>,</div><div class="line">        <span class="attr">"elevation"</span>:<span class="string">"85.00000000"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"observation_location"</span>: &#123;</div><div class="line">        <span class="attr">"full"</span>:<span class="string">"Paulie - Swords West, Swords, DUBLIN"</span>,</div><div class="line">        <span class="attr">"city"</span>:<span class="string">"Paulie - Swords West, Swords"</span>,</div><div class="line">        <span class="attr">"state"</span>:<span class="string">"DUBLIN"</span>,</div><div class="line">        <span class="attr">"country"</span>:<span class="string">"IRELAND"</span>,</div><div class="line">        <span class="attr">"country_iso3166"</span>:<span class="string">"IE"</span>,</div><div class="line">        <span class="attr">"latitude"</span>:<span class="string">"53.463554"</span>,</div><div class="line">        <span class="attr">"longitude"</span>:<span class="string">"-6.249463"</span>,</div><div class="line">        <span class="attr">"elevation"</span>:<span class="string">"138 ft"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"estimated"</span>: &#123;</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"station_id"</span>:<span class="string">"IDUBLINS3"</span>,</div><div class="line">        <span class="attr">"observation_time"</span>:<span class="string">"Last Updated on December 2, 4:08 PM GMT"</span>,</div><div class="line">        <span class="attr">"observation_time_rfc822"</span>:<span class="string">"Wed, 02 Dec 2015 16:08:49 +0000"</span>,</div><div class="line">        <span class="attr">"observation_epoch"</span>:<span class="string">"1449072529"</span>,</div><div class="line">        <span class="attr">"local_time_rfc822"</span>:<span class="string">"Wed, 02 Dec 2015 16:09:02 +0000"</span>,</div><div class="line">        <span class="attr">"local_epoch"</span>:<span class="string">"1449072542"</span>,</div><div class="line">        <span class="attr">"local_tz_short"</span>:<span class="string">"GMT"</span>,</div><div class="line">        <span class="attr">"local_tz_long"</span>:<span class="string">"Europe/Dublin"</span>,</div><div class="line">        <span class="attr">"local_tz_offset"</span>:<span class="string">"+0000"</span>,</div><div class="line">        <span class="attr">"weather"</span>:<span class="string">"Mostly Cloudy"</span>,</div><div class="line">        <span class="attr">"temperature_string"</span>:<span class="string">"51.1 F (10.6 C)"</span>,</div><div class="line">        <span class="attr">"temp_f"</span>:<span class="number">51.1</span>,</div><div class="line">        <span class="attr">"temp_c"</span>:<span class="number">10.6</span>,</div><div class="line">        <span class="attr">"relative_humidity"</span>:<span class="string">"99%"</span>,</div><div class="line">        <span class="attr">"wind_string"</span>:<span class="string">"Calm"</span>,</div><div class="line">        <span class="attr">"wind_dir"</span>:<span class="string">"SW"</span>,</div><div class="line">        <span class="attr">"wind_degrees"</span>:<span class="number">217</span>,</div><div class="line">        <span class="attr">"wind_mph"</span>:<span class="number">0.0</span>,</div><div class="line">        <span class="attr">"wind_gust_mph"</span>:<span class="number">0</span>,</div><div class="line">        <span class="attr">"wind_kph"</span>:<span class="number">0</span>,</div><div class="line">        <span class="attr">"wind_gust_kph"</span>:<span class="number">0</span>,</div><div class="line">        <span class="attr">"pressure_mb"</span>:<span class="string">"1017"</span>,</div><div class="line">        <span class="attr">"pressure_in"</span>:<span class="string">"30.04"</span>,</div><div class="line">        <span class="attr">"pressure_trend"</span>:<span class="string">"+"</span>,</div><div class="line">        <span class="attr">"dewpoint_string"</span>:<span class="string">"51 F (11 C)"</span>,</div><div class="line">        <span class="attr">"dewpoint_f"</span>:<span class="number">51</span>,</div><div class="line">        <span class="attr">"dewpoint_c"</span>:<span class="number">11</span>,</div><div class="line">        <span class="attr">"heat_index_string"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"heat_index_f"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"heat_index_c"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"windchill_string"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"windchill_f"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"windchill_c"</span>:<span class="string">"NA"</span>,</div><div class="line">        <span class="attr">"feelslike_string"</span>:<span class="string">"51.1 F (10.6 C)"</span>,</div><div class="line">        <span class="attr">"feelslike_f"</span>:<span class="string">"51.1"</span>,</div><div class="line">        <span class="attr">"feelslike_c"</span>:<span class="string">"10.6"</span>,</div><div class="line">        <span class="attr">"visibility_mi"</span>:<span class="string">"6.2"</span>,</div><div class="line">        <span class="attr">"visibility_km"</span>:<span class="string">"10.0"</span>,</div><div class="line">        <span class="attr">"solarradiation"</span>:<span class="string">"0"</span>,</div><div class="line">        <span class="attr">"UV"</span>:<span class="string">"0.0"</span>,<span class="attr">"precip_1hr_string"</span>:<span class="string">"0.00 in ( 0 mm)"</span>,</div><div class="line">        <span class="attr">"precip_1hr_in"</span>:<span class="string">"0.00"</span>,</div><div class="line">        <span class="attr">"precip_1hr_metric"</span>:<span class="string">" 0"</span>,</div><div class="line">        <span class="attr">"precip_today_string"</span>:<span class="string">"0.07 in (2 mm)"</span>,</div><div class="line">        <span class="attr">"precip_today_in"</span>:<span class="string">"0.07"</span>,</div><div class="line">        <span class="attr">"precip_today_metric"</span>:<span class="string">"2"</span>,</div><div class="line">        <span class="attr">"icon"</span>:<span class="string">"mostlycloudy"</span>,</div><div class="line">        <span class="attr">"icon_url"</span>:<span class="string">"http://icons.wxug.com/i/c/k/mostlycloudy.gif"</span>,</div><div class="line">        <span class="attr">"forecast_url"</span>:<span class="string">"http://www.wunderground.com/global/stations/03969.html"</span>,</div><div class="line">        <span class="attr">"history_url"</span>:<span class="string">"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IDUBLINS3"</span>,</div><div class="line">        <span class="attr">"ob_url"</span>:<span class="string">"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=53.463554,-6.249463"</span>,</div><div class="line">        <span class="attr">"nowcast"</span>:<span class="string">""</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Wow… That is a lot more info than our last tutorial. This is great though, it gives me a chance to play with more information. Here’s what I wrote up.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="comment"># Program to check how long it will take me to get to work</span></div><div class="line"><span class="comment"># Greg Jackson 1st dev 2015</span></div><div class="line"><span class="comment"># Twitter @gr3gario or github gregario</span></div><div class="line"><span class="comment"># Day one of the Month of API</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> json </div><div class="line"><span class="keyword">import</span> sys <span class="comment"># needed to pass arguments from command line </span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">country=  str(sys.argv[<span class="number">1</span>])</div><div class="line">location = str(sys.argv[<span class="number">2</span>])</div><div class="line">url = <span class="string">"http://api.wunderground.com/api/[INSERTAPIKEY]/conditions/q/"</span>+str(country)+<span class="string">"/"</span>+str(location)+<span class="string">".json"</span></div><div class="line"></div><div class="line">r = requests.get(url).json()</div><div class="line">print(<span class="string">"The current wind speed (mph) is: "</span>+ str(r[<span class="string">'current_observation'</span>][<span class="string">'wind_mph'</span>]))</div><div class="line">print(<span class="string">"The current temperature (C) is: "</span> +str(r[<span class="string">'current_observation'</span>][<span class="string">'temp_c'</span>]))</div><div class="line">print(<span class="string">"Sure what's the weather like? : "</span>+ str(r[<span class="string">'current_observation'</span>][<span class="string">'icon'</span>]))</div><div class="line">print(<span class="string">"The current relative RH is: "</span>+str(r[<span class="string">'current_observation'</span>][<span class="string">'relative_humidity'</span>]))</div><div class="line">print(<span class="string">"Will it rain soon? : "</span>+str(r[<span class="string">'current_observation'</span>][<span class="string">'precip_1hr_metric'</span>]))</div><div class="line"></div><div class="line"><span class="comment"># So I have a good indication of the weather from a current loation. </span></div><div class="line"><span class="comment"># I introduced two super simple things here. </span></div><div class="line"><span class="comment"># One is string concatonation in python. This lets us declare a location by variable instead of in line. </span></div><div class="line"><span class="comment"># this can be better than the payload option as it gives you more flexibility. </span></div><div class="line"></div><div class="line"><span class="comment">## Finally I thought I could declare from the command line the location to search. </span></div><div class="line"><span class="comment">## I've always wondered how this could be done so now I know!</span></div></pre></td></tr></table></figure>
+<p>Still pretty straightforward too!</p>
+<p><strong>Nested JSON</strong></p>
+<p>Yesterday our JSON was super easy. It was one series of machine tag pairs inside a JSON object. We asked for our machine tag (estimated_time) in that array and we were good to go with the value associated with that. However in JSON, each variable in an array can have an array of machine tags nested inside it. Its actually quite elegant if you work through the logic but we don’t care about this, we just want the data, right?!!! So let’s take wind speed from above. We wanted to get the current_observation array and inside that get the wind_mph tag and its associated value. To do this we used the following syntax.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">print(<span class="string">"The current wind speed (mph) is: "</span>+ str(r\[<span class="string">'current\_observation'</span>\]\[<span class="string">'wind\_mph'</span>\]))</div></pre></td></tr></table></figure>
+<p><strong>So What Next? </strong></p>
+<p>So that’s that for today. Another simple example with some useful tricks to get you going with weather APIs. So what shall I do tomorrow??? I like this work around my commute to work. I think I’m going to solve a final challenge tomorrow with a good one, I live a 4 minute walk from my local train to work. The train comes every 15 minutes. The arrival time of the next train dictates if I have breakfast each day. I check this every day on google maps so I want to write a script that checks the TFL API and displays the next train time for me so I can quickly glance and see how long I have!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2015/12/02/2015/12/02/api-month-day-2-weather-underground/" data-id="cj7ulv36d002sutnpnr3ptl3d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/API/">API</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/04/2015/12/04/api-month-day-3-tfl-api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          API Month Day 3 - TFL API
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/01/2015/12/01/api-month-day-1-citymapper/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">API Month Day 1 - Citymapper</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

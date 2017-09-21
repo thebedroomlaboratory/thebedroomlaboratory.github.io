@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AWS Environment set up for Maker 2014 | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="As part of our Maker 2014 project we decided to utilise an AWS server Martin had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS Environment set up for Maker 2014">
+<meta property="og:url" content="http://thebedlab.com/2014/06/26/aws-environment-set-up-for-maker-2014-2/index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="As part of our Maker 2014 project we decided to utilise an AWS server Martin had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to gi">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/06/aws1.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/3673943/3397003/7ab4c020-fd17-11e3-8c71-5f972dafdeba.jpg">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AWS Environment set up for Maker 2014">
+<meta name="twitter:description" content="As part of our Maker 2014 project we decided to utilise an AWS server Martin had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to gi">
+<meta name="twitter:image" content="http://thebedlab.com/wp-content/uploads/2014/06/aws1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-aws-environment-set-up-for-maker-2014-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/26/aws-environment-set-up-for-maker-2014-2/" class="article-date">
+  <time datetime="2014-06-26T15:35:23.000Z" itemprop="datePublished">2014-06-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AWS Environment set up for Maker 2014
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/wp-content/uploads/2014/06/aws1.png" alt="aws"></p>
+<p>As part of our Maker 2014 project we decided to utilise an AWS server <a href="">Martin</a> had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to give AWS a test run. As well as giving us a way to share an environment while working as a distributed team, the process of setting up the AWS will server to Document the setup we require for our project. The Aim would be to later create a script that does all the installs and setups for us.</p>
+<p>Originally posted on <a href="http://jonnie.io/blog/first/update/2014/06/24/aws-setup.html" target="_blank" rel="external">jonnie.io</a></p>
+<p><strong>Note: at the time of writing, this is a work in progress and I hope to keep it updated</strong></p>
+<p>So what do we need to install &amp; setup?</p>
+<ul>
+<li><a href="#beforestart">Before we start</a></li>
+<li><a href="#nodesetup">Node.js</a></li>
+<li><a href="#Mongodbsetup">Mongodb</a></li>
+</ul>
+<p><a name="beforestart"></a></p>
+<h3 id="Before-we-start"><a href="#Before-we-start" class="headerlink" title="Before we start"></a>Before we start</h3><p>Lets make sure everything is update on our system using <code>apt-get</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get upgrade </div><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<p><a name="nodesetup"></a></p>
+<h1 id="Node-js-Setup"><a href="#Node-js-Setup" class="headerlink" title="Node.js Setup"></a>Node.js Setup</h1><p>What is Node.js? It is a Server-side implementation of the Javascript platform which allows repaid development of applications.This is particularly true if you are using complete Javascript stack such as <a href="">MEAN</a>(MongoDB, Express.js,Angular.js &amp; Node.js) as development can be more consistent and be designed within the same system. This make rapid prototyping and proof of concept that much quicker.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/3673943/3397003/7ab4c020-fd17-11e3-8c71-5f972dafdeba.jpg" alt="nodejs.org"></p>
+<p>From my research online I have found that it is suggested building Node.js from source as packages in the Advanced Packaging Tool (AptGet) do not work always or are outdated at times on Ubuntu. So the first thing we need to do is install the some dependiences required for building Node.js</p>
+<ul>
+<li><a href="http://packages.ubuntu.com/lucid/build-essential" target="_blank" rel="external">build-essential</a> which is used to build Debian packages</li>
+<li><a href="https://help.ubuntu.com/community/ApacheMySQLPHP" target="_blank" rel="external">lamp-server</a> which installs Apache, MySQL &amp; PHP for linux</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential lamp-server^</div></pre></td></tr></table></figure>
+<p>Next we need to get the node packages to build, I went with v0.10.22 as I knew it was a stable release but if you wish to go for a newer version check out the <a href="http://nodejs.org/dist/" target="_blank" rel="external">Node.js dist</a> site for the verion number of your choice</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Get Node package</span></div><div class="line">wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz</div><div class="line"><span class="comment">#unarchive it</span></div><div class="line">tar -xvzf node-v0.10.22.tar.gz</div></pre></td></tr></table></figure>
+<p>Next we need to mov the the node directory, run the configuration script, build it and then install it</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Move into directory</span></div><div class="line"><span class="built_in">cd</span> node-v0.10.22</div><div class="line"><span class="comment">#Run the configuration script</span></div><div class="line">./configure</div><div class="line"> <span class="comment">#Build it</span></div><div class="line">make</div><div class="line"><span class="comment">#Install Node</span></div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<p>The Configuration script just sets up what ever enviroment variables required and performs checks required to build Node for our platform</p>
+<p>The <code>make</code> utility is to determine automatically which pieces of Node.js needs to be recompiled, and issues the commands to recompile them. </p>
+<p>Node should be all set Now so lets test by checking the version</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line"><span class="comment">#Should output something like the following depending on the version you installed: v0.10.22</span></div><div class="line"></div><div class="line">npm version</div><div class="line"><span class="comment"># should out put something like</span></div><div class="line"><span class="comment"># &#123; http_parser: '1.0',</span></div><div class="line"><span class="comment">#   node: '0.10.22',</span></div><div class="line"><span class="comment">#   v8: '3.14.5.9',</span></div><div class="line"><span class="comment">#   ares: '1.9.0-DEV',</span></div><div class="line"><span class="comment">#   uv: '0.10.19',</span></div><div class="line"><span class="comment">#   zlib: '1.2.3',</span></div><div class="line"><span class="comment">#   modules: '11',</span></div><div class="line"><span class="comment">#   openssl: '1.0.1e',</span></div><div class="line"><span class="comment">#   npm: '1.3.14' &#125;</span></div></pre></td></tr></table></figure>
+<p><a name="Mongodbsetup"></a></p>
+<h2 id="Mongodb-Setup"><a href="#Mongodb-Setup" class="headerlink" title="Mongodb Setup"></a>Mongodb Setup</h2><p>MongoDB is an open-source document database, and the leading NoSQL database. Among its features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is especially useful with node since we are already working with Javascript, and in a prototyping and rapid development environment it means we don’t have to get hung up on our models and can change them on the fly.</p>
+<p>We will use <code>.deb</code> packages to install MongoDB. While Ubuntu includes its own MongoDB packages, the official MongoDB packages are generally more up-to-date.<br>So the first thing we need to do is add the <a href="http://docs.mongodb.org/10gen-gpg-key.asc" target="_blank" rel="external">MongoDB public GPG Key </a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</div></pre></td></tr></table></figure>
+<p>Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'</span> | sudo tee /etc/apt/sources.list.d/mongodb.list</div></pre></td></tr></table></figure>
+<p>Now we need to reload local package database</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<h3 id="Install-mongoDB"><a href="#Install-mongoDB" class="headerlink" title="Install mongoDB"></a>Install mongoDB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mongodb-org</div></pre></td></tr></table></figure>
+<p>Create /data/db which is where our schemas will be stored (this may require sudo)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /data/db</div></pre></td></tr></table></figure>
+<p>Make sure you change the premissions of this folder so that you do not require sudo, I did this by giving my username and a specific group access</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R username.groupname /data/db</div></pre></td></tr></table></figure>
+<p>Finally you can start running MongoDB with the command <code>mongod</code> Or <code>sudo /etc/init.d/mongod start</code>.<br>Again I recommend changing the permissions so that sudo is not required.</p>
+<h4 id="Coming-soon…"><a href="#Coming-soon…" class="headerlink" title="Coming soon….."></a>Coming soon…..</h4><p>I will follow thing up with a tutorial on creating a minimal starting point for a Node Restful service which we will eventually use to communicate with our arduino, intel galileo and Raspberry Pi (I Will also follow up on getting a similar setup installed on a Pi)</p>
+<h5 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h5><ul>
+<li><a href="http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb" target="_blank" rel="external">http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb</a></li>
+<li><a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="external">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a></li>
+<li><a href="http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue" target="_blank" rel="external">http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/06/26/aws-environment-set-up-for-maker-2014-2/" data-id="cj7ulv3500012utnp9a7fenv2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/07/12/2014/07/12/map-making/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Map Making
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/06/21/2014/06/21/2162104-project-planning-dublin-maker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hacking Weekend (1)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

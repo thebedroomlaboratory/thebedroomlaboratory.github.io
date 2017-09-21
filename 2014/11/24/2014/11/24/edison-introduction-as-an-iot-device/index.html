@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Edison as an IoT Device | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Introduction to EdisonI’ve been playing with the Edison that I got at the hardware hackathon BedLab attended a few weeks back. Thanks to the guys from Intel for donating a few to the BedLab fund. (F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Edison as an IoT Device">
+<meta property="og:url" content="http://thebedlab.com/2014/11/24//2014/11/24/edison-introduction-as-an-iot-device//index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="Introduction to EdisonI’ve been playing with the Edison that I got at the hardware hackathon BedLab attended a few weeks back. Thanks to the guys from Intel for donating a few to the BedLab fund. (F">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/11/20141124_134215.jpg">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/11/20141124_155131-1024x768.jpg">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Edison as an IoT Device">
+<meta name="twitter:description" content="Introduction to EdisonI’ve been playing with the Edison that I got at the hardware hackathon BedLab attended a few weeks back. Thanks to the guys from Intel for donating a few to the BedLab fund. (F">
+<meta name="twitter:image" content="http://thebedlab.com/wp-content/uploads/2014/11/20141124_134215.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/2014/11/24/edison-introduction-as-an-iot-device/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/" class="article-date">
+  <time datetime="2014-11-24T15:56:32.000Z" itemprop="datePublished">2014-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Edison as an IoT Device
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://thebedlab.com/wp-content/uploads/2014/11/20141124_134215.jpg" alt="Introduction to Edison"> </p>
+<h1 id="Introduction-to-Edison"><a href="#Introduction-to-Edison" class="headerlink" title="Introduction to Edison"></a>Introduction to Edison</h1><p>I’ve been playing with the Edison that I got at the hardware hackathon BedLab attended a few weeks back. Thanks to the guys from Intel for donating a few to the BedLab fund. (Full disclosure on the post, I work for Intel over in London (<a href="http://www.cities.io" target="_blank" rel="external">http://www.cities.io</a> so I’ll try to keep the gushing praise to a minimum)</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/20141124_155131-1024x768.jpg" alt="20141124_155131"></p>
+<p>Its pretty cool, out of the box its a lot more functional than the Gen one Intel Galileo and was pretty easy to get updated and up and running. I won’t go into the detail of setting it up as there was a pretty straightforward step by step guide for doing it. Broadly the steps are:</p>
+<ul>
+<li>Install FTDI driver for the board</li>
+<li>Install Arduino IDE with Intel addon</li>
+<li>Install Edison drivers</li>
+</ul>
+<p>Being on the internal trial for the Edison pre release they did a good job of integrating all the tools into one installer in order to talk to and work with the board.</p>
+<p>The drivers in particular are cool, they let you:</p>
+<ul>
+<li>connect to the device over serial (using putty to access the linux side of things),</li>
+<li>Transfer Arduino scripts if you want to program it via Arduino</li>
+<li>Access the storage on the Edison as an external drive</li>
+</ul>
+<p>So pretty functional. Anywho links are here…</p>
+<blockquote>
+<p>Getting started: <a href="https://communities.intel.com/docs/DOC-23147" target="_blank" rel="external">https://communities.intel.com/docs/DOC-23147</a>.</p>
+</blockquote>
+<p>The one quirk I’ll say is that you need two USB’s to connect to a computer to do the programming, which is a little cumbersome.I set mine up and connected it to my home wifi and then just SSH’ed into it, this is where you should be at once you complete the above getting started guide.</p>
+<p>Some other handy things to know when playing with the device. You are not limited to Yocto, the native Linux distro that comes with the board. If you like to work through Python or Node you can use their package managers to get most things working. Working with Yocto itself can be challenging for the hobbyist. There’s no apt-get for instance, which is a bit of a pain. Yocto was designed to be for robust embedded applications. Its designed to be made from source for a specific application. Its a barebones version of linux where you only load the parts of the stack you need for your application. The theory holds that the less stuff on the build the less can go wrong and the more robust your system will be.</p>
+<p>So if you want to make a smart thermostat you can only load the systems you need, if you want to prototype something though it can take 4 hours to add that new wifi driver and build the system again from source. If you want to play with Debian on the board Emutex have released a debian build at <a href="http://www.emutexlabs.com/blog/220-emutex-release-ubilinux-for-intel-edison" target="_blank" rel="external">emutexlabs.com</a></p>
+<p>The next handy thing is accessing the edison as an external hard drive. You can plug it in and transfer over any files you want. SCP also works if you want to go down that route but if you want to transfer big files or pass information via a PC easily this is a nice trick. Found the inspiration here:  <a href="https://communities.intel.com/thread/55510" target="_blank" rel="external">https://communities.intel.com/thread/55510</a>. Once you’ve transferred your files from the PC to the edison, the next step is to mount the drive on the Edison  itself.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">rmmod g_multi</div><div class="line"></div><div class="line">mkdir /update</div><div class="line"></div><div class="line">losetup -o 8192 /dev/loop0 /dev/disk/by-partlabel/update</div><div class="line"></div><div class="line">mount /dev/loop0 /update</div><div class="line">``` </div><div class="line"></div><div class="line">Then <span class="keyword">if</span> you want to reverse the process:</div><div class="line"></div><div class="line">```bash </div><div class="line"><span class="built_in">cd</span> /</div><div class="line">modprobe g_multi</div><div class="line">umount /update</div><div class="line"><span class="keyword">then</span> pull the usb cable and re-insert it, at <span class="built_in">which</span> stage the disk should re-appear on your host machine.</div></pre></td></tr></table></figure>
+<p>Finally there’s been some nice benchmarking done by <a href="raspberry-pi-beaglebone-black-intel-edison-benchmarked">David Hunt</a> (He also has made some pretty cool photography hacks, its worth checking out his work)</p>
+<h1 id="Cloud-Infrastructures"><a href="#Cloud-Infrastructures" class="headerlink" title="Cloud Infrastructures"></a>Cloud Infrastructures</h1><p>The Edison is pitched as an enabler of the internet of things (IoT) so I thought I would talk a little bit about using the Edison as a platform for sensors. There are lots of cloud based infrastructures that one can use to send data from these devices. I’m going to stick to the Linux side of things as I’m used to operating in that environment rather than through the arduino cross compiler.</p>
+<p>There’s actually an IoT development kit baked into the Edison, it posts to an intel backend. It seemed quick to setup, I had a bit of a play of a Monday evening to see what its like. There’s a tutorial <a href="http://iotkit-comm-js.s3-website-us-west-2.amazonaws.com" target="_blank" rel="external">here</a> if you’re interested. There’s a node and C version depending on preference. In an hour or so I had an account setup and the device associated with its backend sending a virtual sensor reading. Can’t speak to its scalability/feature set but it had a shallow learning curve at the very least.</p>
+<p>Another option is to build your own cloud storage system. At Bedlab this is becoming a bit of a specialty with with a bunch of different types of IoT style systems with various time series datastore types being made and even (feel free to correct me here guys)  3 RESTful API’s being built at this stage for various projects. Check out the following for more info:</p>
+<ul>
+<li>BrewLab backend storage and graphing</li>
+<li>NodeRed implementation for Treo</li>
+<li>How to build your own RESTful API tutorial over at <a href="http://blog.jonnie.io/creating-a-restful-api-with-node-js/" target="_blank" rel="external">http://blog.jonnie.io/creating-a-restful-api-with-node-js/</a> by our own Jonnie.</li>
+</ul>
+<p>There’s other online based systems that can quickly be setup to do the heavy lifting for your IoT device. I’ve had a play with GERAS from the guys over at www.1248.io, its quite good, doing exactly what you need it to, reminiscent of the old Pachube system. Xively is probably the best known system. Formerly Cosm, Formerly Pachube… Its so good they named it trice. Anywho, how I’ve finished kludgening that previous sentence into my post lets wrap up. I’ll write a follow up post on playing with the Edison over Xively. Stay tuned for more .</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/" data-id="cj7ulv35v001yutnpo6ebfqah" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/25/2014/11/25/battleshots/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          BattleShots
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/16/2014/11/16/beginning-arduino-push-button-led/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Turning on an LED from a Button</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

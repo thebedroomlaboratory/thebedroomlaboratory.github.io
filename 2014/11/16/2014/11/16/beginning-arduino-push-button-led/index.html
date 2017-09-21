@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Turning on an LED from a Button | The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner. I could do the boring, pointless Arduino version of He">
+<meta name="keywords" content="Arduino,Beginner,tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Turning on an LED from a Button">
+<meta property="og:url" content="http://thebedlab.com/2014/11/16//2014/11/16/beginning-arduino-push-button-led//index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:description" content="So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner. I could do the boring, pointless Arduino version of He">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png">
+<meta property="og:image" content="http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno-1024x949.png">
+<meta property="og:image" content="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM-1024x901.png">
+<meta property="og:image" content="http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino-856x1024.png">
+<meta property="og:image" content="http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png">
+<meta property="og:image" content="http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png">
+<meta property="og:updated_time" content="2017-09-21T15:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Turning on an LED from a Button">
+<meta name="twitter:description" content="So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner. I could do the boring, pointless Arduino version of He">
+<meta name="twitter:image" content="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/2014/11/16/beginning-arduino-push-button-led/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/16/2014/11/16/beginning-arduino-push-button-led/" class="article-date">
+  <time datetime="2014-11-16T15:15:31.000Z" itemprop="datePublished">2014-11-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Turning on an LED from a Button
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>So you want to Learn to program and build projects with Arduino. Me too, and I want to help you learn from my experience, as I too am a beginner.</p>
+<p>I could do the boring, pointless Arduino version of Hello Wold, <a href="http://arduino.cc/en/Tutorial/Blink?from=Tutorial.BlinkingLED" title="Boring Hello World Blink tutorial" target="_blank" rel="external">Blink!</a>, tutorial that most people start with, but it doesn’t involve enough as far as I am concerned ( it’s all already done for you), but go ahead if you feel its worth it. For me, I want to be able to interact with it.</p>
+<p>So for my first Arduino project I want to press a button to turn on an LED. This involves 2 Arduino Fundamentals, reading input (the button), processing it in our program (an Arduino sketch) and output a result ( turning on or off an L.E.D.).</p>
+<p>so without boring you, lets Jump straight in…</p>
+<p><strong>Components we need</strong>:</p>
+<ul>
+<li>Arduino</li>
+<li>Breadboard</li>
+<li>Wires</li>
+<li>LED</li>
+<li>Push Button</li>
+<li>1 x 10k Ω Resistor</li>
+<li>1 x 220 Ω</li>
+</ul>
+<p>First I Followed the Tutorial in <a href="http://www.amazon.com/Arduino-Project-Handbook-Complete-Creating/dp/0992952603" target="_blank" rel="external">Arduino Project Handbook</a> by setting up my circuit as in the image below:</p>
+<p><img src="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png" alt="Push Button LED circuit"></p>
+<p><strong>IMPORTANT: </strong> The LED legs must be in the correct direction, make sure the Negitive Leg ( the shorter leg on the side of the flat edge of the LED) is connected to the ground and the Positive Leg ( the longer leg at the side of the rounded edge of the LED) is connected to the input pin, otherwise you will likely burn out your LED.</p>
+<p>I then started up the Adruino IDE, available <a href="http://arduino.cc/en/Main/Software" title="Arduino Downloads" target="_blank" rel="external">here</a>.</p>
+<p>Inside the sketch I added the following code:</p>
+<p>[c]</p>
+<p>const int buttonPin = 2;</p>
+<p>const int ledPin = 13;</p>
+<p>int buttonState = 0;</p>
+<p>void setup(){</p>
+<p>pinMode(ledPin, OUTPUT);</p>
+<p>pinMode(buttonPin, INPUT);</p>
+<p>}</p>
+<p>void loop(){</p>
+<p>buttonState = digitalRead(buttonPin);</p>
+<p>if(buttonState == HIGH){</p>
+<p>digitalWrite(ledPin, HIGH);</p>
+<p>} else{</p>
+<p>digitalWrite(ledPin, LOW);</p>
+<p>}</p>
+<p>}</p>
+<p>[/c]</p>
+<p>If you need more information about what the code is doing, have a look at the <a href="http://arduino.cc/en/Reference/HomePage" target="_blank" rel="external">Reference page</a>, but it should be mostly obvious, I hope.</p>
+<p>Selected the Arduino Uno the menu: <strong>Tools &gt; Board &gt; Arduino Uno</strong> </p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno-1024x949.png" alt="Select Uno"></p>
+<p>Then select the Arduino Port:</p>
+<ul>
+<li>For Linux/windows <strong>Tools &gt; Board &gt; Comx</strong> where x is usually 3 or higher</li>
+<li>For Mac <strong>Tools &gt; Board &gt; tty.usbmodemxxxx</strong> where xxxx is some number</li>
+</ul>
+<p><img src="/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM-1024x901.png" alt="Screen Shot 2014-11-16 at 7.01.13 PM"></p>
+<p>Then plug in the USB into your computer and Arduino and upload the code using the button as shown in the picture below</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino-856x1024.png" alt="upload to Arduino"></p>
+<p>When the program is uploaded you are supposed to be able to press the the button which the program is continuously reading in the loop function and light the L.E.D. while the button is pressed….</p>
+<p>BUT…… for me this was not the case, at least not completely. I found that when I put my hand anywhere near the circuit without actually touching the button the L.E.D. would still light up and sometimes the L.E.D. would just light up and stay on with out even touching the button as shown in the video below.</p>
+<p>Frustrated yet? I was. So what to do when the instructions don’t work? Well for me usually I turn to <a href="http://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a> for programming problems. So I had a look on the <a href="http://stackexchange.com/" target="_blank" rel="external">stackexchange</a> which is the parent website of stack overflow and found an <a href="http://electronics.stackexchange.com/" title="electronics.stackexchange.com" target="_blank" rel="external">electronics subsection</a>.</p>
+<p>So I posted my issue, along with the steps I took myself to try and solve the problem (<strong>N.B.:</strong> <em>if you go to any stack exchange and don’t show you made an effort, often you will be dismissed with comments like “have you even tried Googling it yourself”, So make the effort</em>)</p>
+<p>So here was <a href="http://electronics.stackexchange.com/questions/137220/why-when-i-touch-the-input-cable-or-put-my-hand-near-it-the-led-comes-on" title="StackExchange Question" target="_blank" rel="external">my Question to the community</a></p>
+<p>What I learned was that the reason the L.E.D was lighting when my hand was close to the circuit was due to <em>ambient electromagnetic interference</em> . As ‘<a href="http://electronics.stackexchange.com/users/4940/shubham" target="_blank" rel="external">Shubham</a>’ explained to me</p>
+<blockquote>
+<p>It’s because your button pin is floating (susceptible to ambient electromagnetic interference).</p>
+</blockquote>
+<p>All the second resistor is doing is draining a little current from power to ground, when it should actually be functioning as the pull-down resistor for the button pin.To fix this issue I made the following change to the circuit:</p>
+<p>I changed this:</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png" alt="Floating Button"></p>
+<p>To this:</p>
+<p><img src="http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png" alt="Non Floating Button: Resistor acting as pull down resistor"></p>
+<p>And now the Circuit behaves as expected.</p>
+<p>And there you go…a functional Arduino beginners project. I know some of you might be thinking &#8220;is it not a bit complex for simply turning on an L.E.D&#8221;. For that purpose yes, it is but imagine adding a few buttons, a few motors and a bit of work to the program, and it could turn into a basic remote controlled car. Or swap out the button for a light sensor and you could have an automated light that comes on when it gets dark. The possibilities are endless. But don’t worry, like you I’m a new to this too , so we can work on it together…</p>
+<p>I based this post on a post I wrote for <a href="http://blog.jonnie.io/push-button-control-led/" target="_blank" rel="external">my own blog</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/11/16/2014/11/16/beginning-arduino-push-button-led/" data-id="cj7ulv35u001wutnprlb07coa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/24/2014/11/24/edison-introduction-as-an-iot-device/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Edison as an IoT Device
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/07/2014/11/07/dublin-maker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Dublin Maker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

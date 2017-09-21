@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The Bedroom Laboratory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="The Bedroom Laboratory">
+<meta property="og:url" content="http://thebedlab.com/page/4/index.html">
+<meta property="og:site_name" content="The Bedroom Laboratory">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Bedroom Laboratory">
+  
+    <link rel="alternate" href="/atom.xml" title="The Bedroom Laboratory" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">The Bedroom Laboratory</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">A small apartment leaves little alternative</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://thebedlab.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-aws-environment-set-up-for-maker-2014-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/26/aws-environment-set-up-for-maker-2014-2/" class="article-date">
+  <time datetime="2014-06-26T15:35:23.000Z" itemprop="datePublished">2014-06-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/26/aws-environment-set-up-for-maker-2014-2/">AWS Environment set up for Maker 2014</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/wp-content/uploads/2014/06/aws1.png" alt="aws"></p>
+<p>As part of our Maker 2014 project we decided to utilise an AWS server <a href="">Martin</a> had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to give AWS a test run. As well as giving us a way to share an environment while working as a distributed team, the process of setting up the AWS will server to Document the setup we require for our project. The Aim would be to later create a script that does all the installs and setups for us.</p>
+<p>Originally posted on <a href="http://jonnie.io/blog/first/update/2014/06/24/aws-setup.html" target="_blank" rel="external">jonnie.io</a></p>
+<p><strong>Note: at the time of writing, this is a work in progress and I hope to keep it updated</strong></p>
+<p>So what do we need to install &amp; setup?</p>
+<ul>
+<li><a href="#beforestart">Before we start</a></li>
+<li><a href="#nodesetup">Node.js</a></li>
+<li><a href="#Mongodbsetup">Mongodb</a></li>
+</ul>
+<p><a name="beforestart"></a></p>
+<h3 id="Before-we-start"><a href="#Before-we-start" class="headerlink" title="Before we start"></a>Before we start</h3><p>Lets make sure everything is update on our system using <code>apt-get</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get upgrade </div><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<p><a name="nodesetup"></a></p>
+<h1 id="Node-js-Setup"><a href="#Node-js-Setup" class="headerlink" title="Node.js Setup"></a>Node.js Setup</h1><p>What is Node.js? It is a Server-side implementation of the Javascript platform which allows repaid development of applications.This is particularly true if you are using complete Javascript stack such as <a href="">MEAN</a>(MongoDB, Express.js,Angular.js &amp; Node.js) as development can be more consistent and be designed within the same system. This make rapid prototyping and proof of concept that much quicker.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/3673943/3397003/7ab4c020-fd17-11e3-8c71-5f972dafdeba.jpg" alt="nodejs.org"></p>
+<p>From my research online I have found that it is suggested building Node.js from source as packages in the Advanced Packaging Tool (AptGet) do not work always or are outdated at times on Ubuntu. So the first thing we need to do is install the some dependiences required for building Node.js</p>
+<ul>
+<li><a href="http://packages.ubuntu.com/lucid/build-essential" target="_blank" rel="external">build-essential</a> which is used to build Debian packages</li>
+<li><a href="https://help.ubuntu.com/community/ApacheMySQLPHP" target="_blank" rel="external">lamp-server</a> which installs Apache, MySQL &amp; PHP for linux</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential lamp-server^</div></pre></td></tr></table></figure>
+<p>Next we need to get the node packages to build, I went with v0.10.22 as I knew it was a stable release but if you wish to go for a newer version check out the <a href="http://nodejs.org/dist/" target="_blank" rel="external">Node.js dist</a> site for the verion number of your choice</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Get Node package</span></div><div class="line">wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz</div><div class="line"><span class="comment">#unarchive it</span></div><div class="line">tar -xvzf node-v0.10.22.tar.gz</div></pre></td></tr></table></figure>
+<p>Next we need to mov the the node directory, run the configuration script, build it and then install it</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Move into directory</span></div><div class="line"><span class="built_in">cd</span> node-v0.10.22</div><div class="line"><span class="comment">#Run the configuration script</span></div><div class="line">./configure</div><div class="line"> <span class="comment">#Build it</span></div><div class="line">make</div><div class="line"><span class="comment">#Install Node</span></div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<p>The Configuration script just sets up what ever enviroment variables required and performs checks required to build Node for our platform</p>
+<p>The <code>make</code> utility is to determine automatically which pieces of Node.js needs to be recompiled, and issues the commands to recompile them. </p>
+<p>Node should be all set Now so lets test by checking the version</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line"><span class="comment">#Should output something like the following depending on the version you installed: v0.10.22</span></div><div class="line"></div><div class="line">npm version</div><div class="line"><span class="comment"># should out put something like</span></div><div class="line"><span class="comment"># &#123; http_parser: '1.0',</span></div><div class="line"><span class="comment">#   node: '0.10.22',</span></div><div class="line"><span class="comment">#   v8: '3.14.5.9',</span></div><div class="line"><span class="comment">#   ares: '1.9.0-DEV',</span></div><div class="line"><span class="comment">#   uv: '0.10.19',</span></div><div class="line"><span class="comment">#   zlib: '1.2.3',</span></div><div class="line"><span class="comment">#   modules: '11',</span></div><div class="line"><span class="comment">#   openssl: '1.0.1e',</span></div><div class="line"><span class="comment">#   npm: '1.3.14' &#125;</span></div></pre></td></tr></table></figure>
+<p><a name="Mongodbsetup"></a></p>
+<h2 id="Mongodb-Setup"><a href="#Mongodb-Setup" class="headerlink" title="Mongodb Setup"></a>Mongodb Setup</h2><p>MongoDB is an open-source document database, and the leading NoSQL database. Among its features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is especially useful with node since we are already working with Javascript, and in a prototyping and rapid development environment it means we don’t have to get hung up on our models and can change them on the fly.</p>
+<p>We will use <code>.deb</code> packages to install MongoDB. While Ubuntu includes its own MongoDB packages, the official MongoDB packages are generally more up-to-date.<br>So the first thing we need to do is add the <a href="http://docs.mongodb.org/10gen-gpg-key.asc" target="_blank" rel="external">MongoDB public GPG Key </a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</div></pre></td></tr></table></figure>
+<p>Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'</span> | sudo tee /etc/apt/sources.list.d/mongodb.list</div></pre></td></tr></table></figure>
+<p>Now we need to reload local package database</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+<h3 id="Install-mongoDB"><a href="#Install-mongoDB" class="headerlink" title="Install mongoDB"></a>Install mongoDB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mongodb-org</div></pre></td></tr></table></figure>
+<p>Create /data/db which is where our schemas will be stored (this may require sudo)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /data/db</div></pre></td></tr></table></figure>
+<p>Make sure you change the premissions of this folder so that you do not require sudo, I did this by giving my username and a specific group access</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R username.groupname /data/db</div></pre></td></tr></table></figure>
+<p>Finally you can start running MongoDB with the command <code>mongod</code> Or <code>sudo /etc/init.d/mongod start</code>.<br>Again I recommend changing the permissions so that sudo is not required.</p>
+<h4 id="Coming-soon…"><a href="#Coming-soon…" class="headerlink" title="Coming soon….."></a>Coming soon…..</h4><p>I will follow thing up with a tutorial on creating a minimal starting point for a Node Restful service which we will eventually use to communicate with our arduino, intel galileo and Raspberry Pi (I Will also follow up on getting a similar setup installed on a Pi)</p>
+<h5 id="Sources"><a href="#Sources" class="headerlink" title="Sources"></a>Sources</h5><ul>
+<li><a href="http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb" target="_blank" rel="external">http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb</a></li>
+<li><a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="external">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a></li>
+<li><a href="http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue" target="_blank" rel="external">http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/06/26/aws-environment-set-up-for-maker-2014-2/" data-id="cj7ulv3500012utnp9a7fenv2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/06/21/2162104-project-planning-dublin-maker/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/21/2014/06/21/2162104-project-planning-dublin-maker/" class="article-date">
+  <time datetime="2014-06-21T20:28:40.000Z" itemprop="datePublished">2014-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/21/2014/06/21/2162104-project-planning-dublin-maker/">Hacking Weekend (1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h2><h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><ul>
+<li>Make circuits</li>
+<li>Write Arduino code <ul>
+<li>nRF working</li>
+<li>readings</li>
+</ul>
+</li>
+<li>Hook up camera to Pi</li>
+<li>Setup laptop as server</li>
+</ul>
+<h3 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h3><ul>
+<li>Design of look - wireframing</li>
+<li>Chat about logo</li>
+<li>Finish arduino stuff</li>
+<li>OpenCV</li>
+<li>Web app</li>
+</ul>
+<h2 id="AFTERMATH"><a href="#AFTERMATH" class="headerlink" title="AFTERMATH"></a>AFTERMATH</h2><h3 id="Day-1-1"><a href="#Day-1-1" class="headerlink" title="Day 1"></a>Day 1</h3><ul>
+<li>Circuit making was postponed as we couldn’t locate the sensors, hopefully we’ll get to it on Day 2.</li>
+<li>Arduino code writiten: <ul>
+<li>We have a <a href="http://maniacbug.wordpress.com/2012/03/30/rf24network/" target="_blank" rel="external">network</a> of 3 Arduino nodes tested talking to each other 🙂</li>
+<li>Same as for point one above 🙂 Couldn’t get the sensors so we’ll hopefully get to it on Day 2.</li>
+<li>A endeavour into getting the <a href="http://knolleary.net/arduino-client-for-mqtt/" target="_blank" rel="external">Ethernet</a> was also made.</li>
+</ul>
+</li>
+<li>The raspberry camera was <a title="setup" href="http://www.raspberrypi.org/documentation/usage/camera/" target="_blank">setup </a>and tested, with the installation of the environment to make use of the <a title="python" href="http://www.raspberrypi.org/documentation/usage/camera/python/README.md" target="_blank">python</a> library underway.</li>
+<li>A laptop setup with base <a href="http://xubuntu.org/" target="_blank" rel="external">xubuntu</a> with added ssh and apache2 packages is ready for setting up the rest of the server.</li>
+</ul>
+<h3 id="Day-2-1"><a href="#Day-2-1" class="headerlink" title="Day 2"></a>Day 2</h3><ul>
+<li>Mick and John made it along for day two so it was nearly all hands on deck (Greg was at the Paris Maker Faire)</li>
+<li>The first item on the list was a discussion about our Github <ul>
+<li>We’ve decided to break the whole project into separate repositories for each discrete module</li>
+<li>We can then import each repository into the Dublin Maker repository as submodules</li>
+</ul>
+</li>
+<li>Code for Arduino was improved to add profiles for the different types of sensor/devices <ul>
+<li>this is still getting tidied up and then will go into the Github</li>
+<li>Victor got cracking on the research for the power strip power measurement</li>
+</ul>
+</li>
+<li>Colin made some more headway with the Pi camera</li>
+<li>John set up our AWS server with node and web stuff so that we can use it as our backend</li>
+<li>Mick did a really nice sketch-up for the web frontend</li>
+</ul>
+<p><img src="/wp-content/uploads/2014/06/maker2014_mockupv1_doorOpen-300x240.jpg" alt="maker2014_mockupv1_doorClosed"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/06/21/2014/06/21/2162104-project-planning-dublin-maker/" data-id="cj7ulv34x000zutnpeoykfye1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/06/03/project-planning/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/03/2014/06/03/project-planning/" class="article-date">
+  <time datetime="2014-06-03T21:11:29.000Z" itemprop="datePublished">2014-06-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/03/2014/06/03/project-planning/">Project Planning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Every Tuesday for the last few months we have been meeting up to have a quick scrum meeting. A &#8220;School Night Scrum&#8221;, you could say. We use this for keeping on top of what we’re all up to and to plan out our future projects. After getting our notification of acceptance, today’s session dealt entirely with our <a href="http://www.dublinmaker.ie/" title="Dublin Maker" target="_blank" rel="external">Dublin Maker</a> project. Exciting and busy times ahead!</p>
+<p>First on tonight’s agenda was planning a hacking day for kick-starting work on our project. There are a few of us involved in the Dublin Maker preparations so we started by making up a quick doodle to get a date that suits us all.</p>
+<p>After that we proceeded to flesh out each of the project components a bit more in Github. We’ve setup a repository for all our code and design files for Dublin Maker and described each aspect of the project as issues in this repository:</p>
+<p>Break down <a href="https://github.com/thebedroomlaboratory/Maker2014/issues" target="_blank" rel="external">issues</a> into tasks, using the <a href="https://github.com/blog/1841-nested-task-lists" target="_blank" rel="external">nested task list feature</a></p>
+<ul>
+<li>John Maguire - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/4" target="_blank" rel="external">Server</a></li>
+<li>John Maguire - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/5" target="_blank" rel="external">Web Application</a></li>
+<li>Victor - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/6" target="_blank" rel="external">Power Strip</a></li>
+<li>Martin - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/1" target="_blank" rel="external">Wireless Sensors</a></li>
+<li>Victor - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/3" target="_blank" rel="external">Intel Galileo Gateway</a></li>
+<li>Martin - <a href="https://github.com/thebedroomlaboratory/Maker2014/issues/2" target="_blank" rel="external">Raspberry Pi Cam</a></li>
+</ul>
+<p>Finally we started talking about topics we’d like to write posts for this website on over the next couple of weeks. The website needs a good overhaul but even getting it up to date would make a huge difference.</p>
+<ul>
+<li>Martin - Python Threading and Queueing</li>
+<li>Victor - Open Source Continuous Integration(CI)</li>
+<li>The rest need to get the thinking caps on</li>
+</ul>
+<p>That’s it for tonight. More updates to follow.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/06/03/2014/06/03/project-planning/" data-id="cj7ulv34v000xutnpypw1540q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2014/05/23/dublin-maker-prep/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/05/23/2014/05/23/dublin-maker-prep/" class="article-date">
+  <time datetime="2014-05-23T18:30:08.000Z" itemprop="datePublished">2014-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/23/2014/05/23/dublin-maker-prep/">Dublin Maker Prep</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p style="text-align: justify;"><br>  Hello gentle viewer,<br></p>
+
+<p style="text-align: justify;"><br>  Apologies for the brief sabbatical, I’m sure you’ve all been eagerly checking the website every day and been bitterly disappointed. Thankfully your days of sitting in with a glass of pinot noir on a lonely friday evening wearing away the lettering of your F5 key are over, we are back!<br></p>
+
+<p style="text-align: justify;"><br>  We had our first meeting for the Dublin Maker event in July and I must say we are very excited. Last year we showed some of our homebrew solutions to… residential automation using various sensor and microcontroller bits and bobs.<br></p>
+
+<p><img src="/wp-content/uploads/2014/05/Maker13-300x225.jpg" alt="Maker13"></p>
+<p><em>Weren’t we lovely!</em></p>
+<p>Anywho so we don’t want to give everything away but we have a plan. It is displayed here in stunning pictorial form:</p>
+<p><img src="/wp-content/uploads/2014/05/unnamed-300x225.jpg" alt="unnamed"></p>
+<p>We’ve broken down the tasks into the following:</p>
+<p style="text-align: justify;"><br>  Smart Powerstrip - smart power strip that lets us control our devices over the web and see how much power they’re using, cool eh. Victor &#8220;I love databases&#8221; Muia and Martin &#8220;current is cool&#8221; Kennedy will be plugging away at this.<br></p>
+
+<p style="text-align: justify;"><br>  Wireless Sensors - extending our sensor bits using low power wireless and have them talk to a Galileo which will act as a gateway for the home automation system. Martin &#8220;ZigBee is for wimps&#8221; Kennedy and Greg &#8220;I work for Intel now&#8221; Jackson will be having a go at that.<br></p>
+
+<p style="text-align: justify;"><br>  Rasp Pi cam - Looking at doing image/face detection using a Pi and Pi camera, could stream to android phone and be used for security or to dynamically adjust the feel of a house to the users mood. Colin &#8220;I’m just happy to be here&#8221; Greene will be selfie-ing himself for the sake of science for the foreseeable future.<br></p>
+
+<p style="text-align: justify;"><br>  Finally we will have a server that will manage the data and make the different parts of the system talk to each other and a web app with whopper user experience to let people use all this kit in an intuitive way. John &#8220;AngularJawS&#8221; Maguire and Michael &#8220;Just Keano&#8221; Keane will be knocking this one out of the park.<br></p>
+
+<p style="text-align: justify;"><br>  So that’s us. Stay tuned people, same bed time same bed channel!<br></p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2014/05/23/2014/05/23/dublin-maker-prep/" data-id="cj7ulv34s000uutnph17rp1rm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/03/21/school-night-session-5-with-pith-3/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/20/2013/03/21/school-night-session-5-with-pith-3/" class="article-date">
+  <time datetime="2013-03-21T00:05:26.000Z" itemprop="datePublished">2013-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/School-Night-Sessions/">School Night Sessions</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/20/2013/03/21/school-night-session-5-with-pith-3/">School Night Session #5 - WITH PITH 3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>As you can see we’ve gotten the thing working and not only that but the current draw of the system has been optimized hugely too. The photo shows a current draw of 4.3uA for when the chip is asleep. This climbs to 5mA when the system wakes up for 4ms at a time. This means that off a single 2.6Ah 3.7V battery we should get about 308 days of battery life out of the thing (if sleeping for 60ms at a time). I am basing the 60ms sleep period on some rough calculations which you can see here (60ms asleep and 4ms awake):</p>
+<p><img src="/wp-content/uploads/2013/03/WITH_PITH-HowLong-1024x610.png" alt="WITH_PITH-HowLong">I’ve popped the Arduino code up on github too, if people want to have a look at it. It is very rough at the moment but will be tidied up and made more compact in the near future: <a title="https://github.com/thebedroomlaboratory/WITHPITH" href="https://github.com/thebedroomlaboratory/WITHPITH" target="_blank">https://github.com/thebedroomlaboratory/WITHPITH</a> I have used two libraries in writing this code, Ken Shirriff’s <a href="http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html" target="_blank" rel="external">Low Power Library</a>. We were using the IR library to send a 38kHz pulse burst but the commands had additional overhead in the region of 30ms each for sending marks and spaces. This was unacceptable for our purposes here, so we migrated the library code into the sketch and changed how/when the delayMicroseconds() function was used. The Low Power Library is used for putting the 328p to sleep and setting a watchdog timer for waking it up 60ms later.</p>
+<p>In order to reduce the current draw of the system even more, we are now powering the TSOP28238 directly from a digital pin on the 328p, just for the duration required to check the IR beam. Additionally, we have moved from using an external 8MHz crystal to using the 8MHz internal oscillator on the 328p and removed the pullup resistor on the reset pin too. There are a few resources that were invaluable for when we were trying to optimize the current draw:</p>
+<ul>
+<li><a href="http://qed.princeton.edu/main/CEE474/LowPower" target="_blank" rel="external">http://qed.princeton.edu/main/CEE474/LowPower</a></li>
+<li><a href="http://www.gammon.com.au/forum/?id=11497" target="_blank" rel="external">http://www.gammon.com.au/forum/?id=11497</a></li>
+<li><a href="http://www.sparkfun.com/tutorials/309" target="_blank" rel="external">http://www.sparkfun.com/tutorials/309</a></li>
+</ul>
+<p>We are currently waiting on screens to arrive from dx.com but then will go ahead with the full build of the system. More on that again. Maybe the same time next week 😉</p>
+<p><img src="/wp-content/uploads/2013/03/Its-Alive-1024x546.png" alt="It&#39;s Alive"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/03/20/2013/03/21/school-night-session-5-with-pith-3/" data-id="cj7ulv34r000sutnp2an5zp7s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/03/13/school-night-session-4-with-pith-2/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/13/2013/03/13/school-night-session-4-with-pith-2/" class="article-date">
+  <time datetime="2013-03-13T23:31:19.000Z" itemprop="datePublished">2013-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/13/2013/03/13/school-night-session-4-with-pith-2/">School Night Session #4 - WITH PITH 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We’ve begun the second run at the WITH PITH people counter. We’ve been learning how to bootload arduinos for the last hour, the following tutorial was really helpful! See the main photo above.</p>
+<p><a href="http://arduino.cc/en/Tutorial/ArduinoToBreadboard" target="_blank" rel="external">http://arduino.cc/en/Tutorial/ArduinoToBreadboard</a></p>
+<p>We have two bootloaded ATMEGA 328p’s to test with now. Martin is working on getting the low power modes to respectable levels to that the device will run for a long time off the battery and Greg is working on making the IR receiver throw an interrupt when it receives a signal…</p>
+<p><a href="/wp-content/uploads/2013/03/2013-03-13-21.20.02-Medium.jpg"> </a></p>
+<p><strong>Update 22:54 </strong></p>
+<p>Martins been playing with watchdog timers and we think we could get it down to 6uA in sleep mode, seriously low power.</p>
+<p>Greg built a basic EE101 style analogue circuit to start seeing current consumption.</p>
+<p>We started with this circuit:</p>
+<p><img src="/wp-content/uploads/2013/03/Capture.png" alt="Capture"></p>
+<p>Which in real life looks like this:</p>
+<p><img src="/wp-content/uploads/2013/03/20130313_230246-Medium-300x225.jpg" alt="20130313_230246 (Medium)"></p>
+<p>So the bit on the left is the infrared LED and the bit on the right is the phototransistor. Putting your hand in the middle and breaking the beam would be just like someone walking through a door. This induces a voltage change on the line marked output. We played with the passives and got the 360uA… A good start for a proof of concept!</p>
+<p><strong> Update 23:51</strong></p>
+<p>So we’ve been operating under the assumption that we would have two power units with two power supplies and two sets of timing. Using the millis() function was the only was to count between pulses to see if consecutive beam pulses had been blocked in this system.This went at odds with our need for low power and our hope for a 6-9 month lifetime! So playing around with different options we went back to the one unit idea for all the intelligence.</p>
+<p>This was a bit of a brick wall, we started thinking about single units. We started thinking about the reflector idea where the transmitter and receiver were on the same unit facing out and there was a mirror directly opposite. We didn’t like this though, the power needed to reach the opposite end and back would be double the original way and also we couldn’t be sure that at these power levels it wouldn’t reflect back from the person walking past the door and not be counted as a beam break.</p>
+<p>Then we started thinking about speakers. In particular their wires. Then we started thinking about windscreens and realised we had gone off topic. But then we started thinking about speakers again and decided we would just wire the transmitter around the frame of the door using speaker wire. This idea made martin do his happy dance:</p>
+<p><img src="/wp-content/uploads/2013/03/20130313_230546-Medium-225x300.jpg" alt="20130313_230546 (Medium)"></p>
+<p>Its such a blurry dance!</p>
+<p>So we got going making a very long wire, which looked something like this:</p>
+<p><img src="/wp-content/uploads/2013/03/20130313_231651-Medium-225x300.jpg" alt="20130313_231651 (Medium)"></p>
+<p>We made about 8ft of wire, for testing over distance. We found that using 1kOhm resister in series with the IR led was enough to be detected by the receiver. This is good as it consumes less power.</p>
+<p>We’re taking the bits of code and putting something together to test this now, our time is up (its 00:33 here and its a school night!!!) so we’ll document code and put up schematics on Github tomorrow. Don’t want to get you overly excited but the system seems to be working a treat 🙂</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/03/13/2013/03/13/school-night-session-4-with-pith-2/" data-id="cj7ulv34o000putnpevi546yn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/03/10/desk-design/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/10/2013/03/10/desk-design/" class="article-date">
+  <time datetime="2013-03-10T23:58:58.000Z" itemprop="datePublished">2013-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/10/2013/03/10/desk-design/">Desk Design</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I’ve been looking for a new desk for a while, moving around a lot tends to leave you with tiny desks that can be moved from apartment to apartment. I couldn’t find anything that wasn’t crazy expensive so I thought I’d just build one myself. I had a couple of design features I wanted to include:</p>
+<ul>
+<li><p>Area to integrate my PC</p>
+</li>
+<li><p>Storage for laptop</p>
+</li>
+<li><p>Large area for working + PC screen etc…</p>
+</li>
+<li><p>Some sort of whiteboard</p>
+</li>
+<li><p>Lamp with magnifier</p>
+</li>
+</ul>
+<p>I saw a couple of cool desk designs I wanted to work around:</p>
+<p><img src="/wp-content/uploads/2013/03/Whiteboard-Desk-300x225.jpg" alt="Whiteboard-Desk"></p>
+<p>I can’t remember where I saw this but if anyone knows please let me know and I’ll link it!</p>
+<p>I really like the idea that you can write directly onto your desk, you can do lovely doodles for projects directly onto your writing surface. There’s a nice kind of reversion thing going on there, turning the youthful rebellion of defacing school material into a useful tool really appeals to me!</p>
+<p>The second one I saw was from this blog:</p>
+<p><a href="http://www.apartmenttherapy.com/how-to-build-a-better-ikea-desk-174005" target="_blank" rel="external"> </a>They do a good guide for putting it together too.</p>
+<p>Here is what I ended up with:</p>
+<p><img src="/wp-content/uploads/2013/03/IMG_20120717_225109-300x225.jpg" alt="IMG_20120717_225109"></p>
+<p>It turned out pretty well I think, there’s a couple of more thing I want to do with it:</p>
+<ul>
+<li><p>I want to add the whiteboard material, I’ve a few options for this that I want to test</p>
+</li>
+<li><p>Varnish the wood, its nice at the minute (has that lovely wood smell) but its going to stain with use</p>
+</li>
+</ul>
+<p>Finally once the whiteboard material is in I’ve an idea I want to get up and running. I want to attach a webcam to the lamp, then I can take photos of the lists, diagrams and such and store them to the PC. I’ll probably need a script of some sort on the computer to take a photo and store it.</p>
+<p>Will update soon peeps with more photos and the whiteboard bits!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/03/10/2013/03/10/desk-design/" data-id="cj7ulv34n000nutnpz759zz3p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/03/09/printrbot-jr/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/09/2013/03/09/printrbot-jr/" class="article-date">
+  <time datetime="2013-03-09T22:37:56.000Z" itemprop="datePublished">2013-03-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/The-Lab/">The Lab</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/09/2013/03/09/printrbot-jr/">Printrbot Jr</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>After much research and deliberation I took the plunge and got a 3d printer. For those of you who wouldn’t be familiar with 3d printing, think of it like your desktop printer… Only in 3 dimensions. It uses a heated nozzle to put layers of plastic on top of each other to make a 3D shape.</p>
+<p>Everyone has been in this situation, you want to have a shot of tequila but every dish in the house is dirty.</p>
+<p>A genuine problem, now with a easy solution… Just 3D print a new one.</p>
+<p>For me I think a 3D printer is a very powerful thing. As a designer I think that for iterative design to be realised you need the tools to do so. For me, the ability to draw a design in CAD, print it out in 3D and then look and feel and test it. This lets me see any potential issues and then quickly update the design to improve upon a previous version!</p>
+<p>There’s another ecological side to it too, being able to print small parts that tend to break on household devices allows you to use devices that you might otherwise throw out for longer!</p>
+<p>It also creates a decentralised manufacturing system whereby goods are generated at source with no transport costs. This point only really holds true if you are sourcing your plastic at source also (such as the filabot project that  can take in plastics from things like milk containers).</p>
+<p>Anyway, I would be quite passionate about this idea as you can see gentle reader. Plus I thought I would learn a lot by building one. But which one you may ask? This article on engadget was very helpful:</p>
+<p><a href="http://www.engadget.com/2013/01/29/3d-printer-guide/" target="_blank" rel="external">http://www.engadget.com/2013/01/29/3d-printer-guide/</a></p>
+<p>When I ordered the Printrbot Jr, there was a slight hiccup in ordering to Ireland but Brook and David over at Printrbot were very friendly and helpful and it is now on its way! Will write up my build when it comes in… Cant wait!!!</p>
+<p><strong>Update 22/02/2013 </strong></p>
+<p><img src="/wp-content/uploads/2013/02/0v_JQiSUWaI_5f2RElkOd50Qv4qMflf1tLY_kr1NZbc-225x300.jpg" alt="0v_JQiSUWaI_5f2RElkOd50Qv4qMflf1tLY_kr1NZbc"></p>
+<p>Its here! Just arrived, can’t wait to put it together. (Work might take umbrage to me physically running from the building in the middle of the day). Going to make its assembly part of the deconstruction event. The plan is to assemble as the project goes on and then use it to print an enclosure for whatever we create!</p>
+<p><strong>Update 28/02/2013 - 09/03/2013</strong></p>
+<p>Decided to start putting it together during the deconstruction event. The box opening was very exciting! The kit is very well put packaged up and the online instructions (found here: <a href="http://printrbot.dozuki.com/Guide/Printrbot+Jr.+Kit+Build/25/1" target="_blank" rel="external">http://printrbot.dozuki.com/Guide/Printrbot+Jr.+Kit+Build/25/1</a>) it looks to be very easy to put together!.</p>
+<p><img src="/wp-content/uploads/2013/02/2013-03-09-17.54.44-Medium-300x225.jpg" alt="2013-03-09 17.54.44 (Medium)"></p>
+<p>Unboxing… Look at all those pieces!!!The assembly went smoothly. I got as far as the frame build but I stopped building it to focus on the decon event itself. I finally got back to it on 08/03.</p>
+<p>I won’t go into the details of the build, the instruction guide has everything you need to build it. My general view on the kit is that it is very solid, compact and has come clever features to allow the vast majority to be made from a laser cutter!</p>
+<p>Going to calibrate the software and start printing as soon as I can. Will update with pics of the prints as they come out.</p>
+<p><strong> Update 10/03/2013</strong></p>
+<p>The Printrbot is awesome, so I got the following software (all open source of course!) to get started:</p>
+<ul>
+<li><p>Serial firmware for the PC (You only really need these as a pointer to existing serials)</p>
+</li>
+<li><p>Pronterface (This allows you to manually move the steppers to calibrate the machine and end stops)</p>
+</li>
+<li><p>Slic3r (This is really cool, turns .stl files (drawings from CAD) into gcode (instructions for the printer)</p>
+</li>
+</ul>
+<p>This guide from Printrbot HQ was very helpful:</p>
+<p><a href="http://printrbot.com/wp-content/uploads/2012/04/Printrbot-Getting-Started-Guide2.pdf" target="_blank" rel="external">http://printrbot.com/wp-content/uploads/2012/04/Printrbot-Getting-Started-Guide2.pdf</a></p>
+<p>I got about half way through it before the power supply started giving me issues, it would pulse on the led on the brick part of the device and the printer would turn off (or at least disconnect from the computer). I read up on the power supply and apparently it does give issues…</p>
+<p>On this I did see a lot of people get annoyed with the part not working and being unreliable. For me, the kit is VERY good value, so heading onto ebay will get me a replacement very easily! Being in Ireland, the cost of delivery, plus duty and tax would make getting a replacement off printrbot inconvenient. Finally the guys over in printrbot were very helpful in getting me the kit in the first place!</p>
+<p>Once the new supply is in I’ll post an update with the first prints… Can’t wait!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/03/09/2013/03/09/printrbot-jr/" data-id="cj7ulv34l000kutnpt7h5kqph" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/03/06/school-night-session-3-with-pith/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/03/06/2013/03/06/school-night-session-3-with-pith/" class="article-date">
+  <time datetime="2013-03-06T21:16:39.000Z" itemprop="datePublished">2013-03-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Projects/">Projects</a>►<a class="article-category-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/03/06/2013/03/06/school-night-session-3-with-pith/">School Night Session #3 - WITH PITH</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Tonight we are going to design a people counter for entering and exiting rooms.</p>
+<p>We’re going to call it the WITH PITH (Who’s in the House, People in the House)</p>
+<p>We’re going to go for an IR transmitter receiver pair where it counts a person every time the beam is interrupted.</p>
+<p>We’re going to aim for the following features:</p>
+<ul>
+<li><p>Battery Powered</p>
+</li>
+<li><p>Two units, a transmitter and a receiver pair</p>
+</li>
+<li><p>Screen to display the number of people coming into the room</p>
+</li>
+<li><p>Buttons to reset the counter and turning off and on the screen</p>
+</li>
+</ul>
+<p>As we go we’re going to have to revisit this list, as we want it to be battery powered it will need to be ultra low power, so certain features may get &#8220;sidelined&#8221;… or dumped really!</p>
+<p>Martin will start designing the transmitter and Greg will work on the receiver.</p>
+<p>Will keep you updated.</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/03/06/2013/03/06/school-night-session-3-with-pith/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/03/06/2013/03/06/school-night-session-3-with-pith/" data-id="cj7ulv34g000futnpnip1bara" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-/2013/02/24/the-deconstruction-a-testimonial/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/02/24/2013/02/24/the-deconstruction-a-testimonial/" class="article-date">
+  <time datetime="2013-02-24T23:52:42.000Z" itemprop="datePublished">2013-02-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Blog/">Blog</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/02/24/2013/02/24/the-deconstruction-a-testimonial/">The Deconstruction - A testimonial</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="The-Team"><a href="#The-Team" class="headerlink" title="The Team"></a>The Team</h1><p><img src="http://thedeconstruction.org/wp-content/uploads/2013/02/Capture2-300x242.png" alt="Capture2"></p>
+<p>The guys (Greg, Martin, John, Colin and John from left to right) put together a quick summary of what they did and how they found the event.</p>
+<h2 id="Greg"><a href="#Greg" class="headerlink" title="Greg"></a>Greg</h2><p><strong>About Me</strong></p>
+<p>** Oh hi there, that’s me on the left in the jaunty hat. I’m an engineer in a renewable energy company in Ireland. I’m one half of the bedroom laboratory (www.thebedroomlaboratory.com) which is a new site which is all about design and electronic design for the open source world.</p>
+<p><strong>What I Did</strong></p>
+<p>** I mostly worked on the arduino sensor side, I got the light and temperature sensor up and running and hold the record for most things broken over the weekend (Xbee and 3310 screen to say the least). As has been mentioned previously I took the &#8220;de&#8221; in deconstruction a little too seriously.</p>
+<p><strong>How did I find the Event</strong></p>
+<p>** I just want to say personally I think the deconstruction.org carried out an excellent idea perfectly and I’ll be first in line to take part in the competition this time next year! For me this was all about learning, it was my first time working on most elements of this projects and what more could you want really??? I also got to chat to the presenters about what we’re doing, which was great fun (4G is for 4 Guinness in Ireland, I’ve totally stolen that joke!)</p>
+<h2 id="Martin"><a href="#Martin" class="headerlink" title="Martin"></a>Martin</h2><p><strong>About Me</strong></p>
+<p>** I’m Martin and I’m a Ph.D. student in Dublin City University (DCU). My areas of interest are in energy-aware mobile device optimization, wireless multimedia streaming and embedded device electronic projects. Outside of the work arena, I love music and play a couple of instruments. In order to get more involved in hobby electronics, Greg and I set up the Bedroom Laboratory in the last couple of weeks and we were immediately hooked on the idea of competing in this event.</p>
+<div><br>  <p><br>    <strong>What I Did<br> </strong>I worked on a variety of different aspects of the project. I mucked in with some of the other lads to set up the Raspberry Pi boards as web and database servers. I also set up the Github directory for our project, which is online and downloadable at <a href="http://github.com/thebedroomlaboratory/thedeconstruction" target="_blank" rel="external">http://github.com/thebedroomlaboratory/thedeconstruction</a>. I then moved on to trying to figure out the ZigBee communication between an Arduino and the Raspberry Pi but unfortunately, just when Greg and I got it sorted out, one of the XBee chips decided to fry. I then concentrated on getting data into the RPi from the Arduino, and wrote the code for reading sensor data from the Arduino over a USB connection. I also helped John Maguire with setting up the GPIO circuitry for reading a button press and lighting an LED whenever we &#8220;turned on the heating&#8221;. I then wrote all the control logic for the thermostat, database management and for handling the input of a manual override switch and a manual override toggle from the web interface.<br>  </p><br><br>  <p><br>    <strong>How did I find the Event<br> </strong>This event was absolutely brilliant because it was loads of fun (in a majorly geeky way) and gave me a chance to work on stuff I’ve never tried before. Also, it was great working with these lads and seeing my bits of work slotting in with the things the others did. The sense of satisfaction in seeing the whole project working together was amazing!<br>  </p><br></div>
+
+<h2 id="John-1"><a href="#John-1" class="headerlink" title="John 1"></a>John 1</h2><p><strong>About me</strong></p>
+<p>** I’m John, there in the middle. I’m a software Engineer who works mainly with web development and Java, and (Unfortunately ) Oracle. I know the lads through college (started in Mechatronics with Greg and changed to Digital Media Engineering with Martin and Colin), as for John, he just followed me home one day</p>
+<p><strong>What I did</strong></p>
+<p>** I worked Colin and Martin on setting up the environments, apache, php and python</p>
+<p>I also got interaction between the pi gpios and and led and switch to show basic input and output.</p>
+<p>I worked with martin on the main python script by creating functions which communicated with the database tables and the GPIOs</p>
+<p><strong>How did I find the event</strong></p>
+<p>** The deconstruction is the most productive I have ever been in my life (outside of work and college which don’t count). I had loads of fun and finally learned to do more then install xbmc on my Raspberry Pi. I definitely intend to continue this with the lads and hope to make it a regular thing.</p>
+<h2 id="Colin"><a href="#Colin" class="headerlink" title="Colin"></a>Colin</h2><p><strong>About Me</strong></p>
+<p>** My name is Colin, I am currently working as a computer programmer for a International Insurance Company in Ireland. I met the lads in college many moons ago, even though we have taken varying paths in life we all still share a big interest in technology and all things related.</p>
+<p><strong>What I did</strong></p>
+<p>** - Was involved in setting up Apache, MySQL and PHP running on all the Pis.</p>
+<ul>
+<li><p>Worked with Martin for a bit to try get the ZigBee’s talking to each other.</p>
+</li>
+<li><p>Created a database, using phpmyadmin, and also created two new tables in it.</p>
+</li>
+<li><p>Coded the server side logic that communicated with the database to pull in data.</p>
+</li>
+<li><p>Coded the php that displayed the updated temp,humidity,light and occupancy.</p>
+</li>
+</ul>
+<p><strong>How did I find the event</strong></p>
+<p>** Really enjoyed the event, I have found it difficult to set aside time at home to do things I promised myself I would do. This was a way to force myself into the promises I kept breaking. It was much more fun to do this project in a group as it provided some great banter throughout the weekend which kept it fun. I am going home to sleep Greg stop making me do this you Tyrant !!</p>
+<h2 id="John-2"><a href="#John-2" class="headerlink" title="John 2"></a>John 2</h2><p><strong>About me</strong></p>
+<p>** Hi, My name is John. I am a multimedia designer. Greg and Martin told me about The Deconconstruction event and invited me to take part. It sounded interesting so here I am! I was not familiar with many of the areas our team worked on over the weekend, which was great because I learned a shit load!</p>
+<p><strong>What I did</strong></p>
+<p>** I worked with Greg on the Arduino. This is an area that I am hoping to get more into and I tried to use this project to learn as much as I could. I also worked on getting the web interface to display the data from the web server. I’ve also put a lot of time into planning the group video and put a lot of time into the planning of the event!</p>
+<p><strong>How did I find the event</strong></p>
+<p>** Overall, I found The Deconstruction event a great way to learn. I think the time constraint worked very well as it made us more productive and kept us on our toes.</p>
+<p>`</p>
+<p>So we all learned, had fun and hopefully people think we created something useful!</p>
+<p>Thanks Deconstuction!!!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://thebedlab.com/2013/02/24/2013/02/24/the-deconstruction-a-testimonial/" data-id="cj7ulv34j000jutnpjeevny1t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">next &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Projects/">Projects</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maker/">Maker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/">Projects</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Projects/Tutorials/">Tutorials</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/School-Night-Sessions/">School Night Sessions</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-Lab/">The Lab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Uncategorised/">Uncategorised</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/API/">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beginner/">Beginner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Week/">Digital Week</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doodlebot/">Doodlebot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Drinking/">Drinking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESP8266/">ESP8266</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Homebrew/">Homebrew</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lasercutter/">Lasercutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Month/">Month</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST-API/">REST API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflow-Soldering-Oven/">Reflow Soldering Oven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Workshop/">Workshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homemade-equipment/">homemade equipment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/API/" style="font-size: 20px;">API</a> <a href="/tags/Arduino/" style="font-size: 13.33px;">Arduino</a> <a href="/tags/Beginner/" style="font-size: 13.33px;">Beginner</a> <a href="/tags/Digital-Week/" style="font-size: 16.67px;">Digital Week</a> <a href="/tags/Doodlebot/" style="font-size: 10px;">Doodlebot</a> <a href="/tags/Drinking/" style="font-size: 10px;">Drinking</a> <a href="/tags/ESP8266/" style="font-size: 10px;">ESP8266</a> <a href="/tags/Homebrew/" style="font-size: 10px;">Homebrew</a> <a href="/tags/IoT/" style="font-size: 10px;">IoT</a> <a href="/tags/Lasercutter/" style="font-size: 10px;">Lasercutter</a> <a href="/tags/Month/" style="font-size: 10px;">Month</a> <a href="/tags/REST-API/" style="font-size: 10px;">REST API</a> <a href="/tags/Reflow-Soldering-Oven/" style="font-size: 10px;">Reflow Soldering Oven</a> <a href="/tags/Workshop/" style="font-size: 16.67px;">Workshop</a> <a href="/tags/homemade-equipment/" style="font-size: 10px;">homemade equipment</a> <a href="/tags/tutorial/" style="font-size: 16.67px;">tutorial</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">February 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/07/api-month-day-11-movies/">API Month Day 11 - Movies</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/10/api-month-day-10-twitter-mood/">API Month Day 10 - Oasis or Blur</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/09/2015/12/09/api-month-day-9-petrol-stations/">API Month Day 9 - Petrol Stations</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/08/2015/12/08/api-month-day-8-space/">API Month Day 8 - SPACE</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/07/2015/12/07/api-month-day-7-where-is-my-air/">API Month Day 7 - Where is my air?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 The Bedroom Laboratory<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
