@@ -20,7 +20,6 @@ Just to let you know, we'll be facilitating a couple of workshops over the next 
 On Saturday, Oct. 4th, we'll be running a **Doodlebot workshop** for all ages, from 12 until 3pm. Doodlebots are wonderful little devices that you can build yourself. They have colouring markers for legs and when you turn yours on, it will add to the drawing we'll make together during the workshop. The best bit is that you can take your doodlebot home, to play with later. Just drop in and say hello and we'll get you up and drawing in no time!
 
 
-
 On Thursday, Oct. 9th, we'll be back to run a **&#8220;Make your own retro video game-box&#8221; workshop** at 6pm. Have you always wanted to play around with an Arduino? Do you like video-games? Then come along to this workshop and we'll show you some Arduino basics. You'll then make your very own Arduino-powered game console, for playing some of the old classics (Pong, Tetris, etc.) on your TV. All parts included. Places are limited for this workshop, so make sure to sign up with Rua Red in advance. Advised for ages 15+.
 
 There are lots of other fantastic events happening over the week, so make sure to check out the [programme here](http://www.ruared.ie/DigitalWeek.html).

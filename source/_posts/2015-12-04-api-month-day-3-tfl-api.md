@@ -16,25 +16,25 @@ API purpose: Commuting Data
   
 Signup: No Signup
   
-Documentation: <a href="https://api-portal.tfl.gov.uk/docs" target="_blank">https://api-portal.tfl.gov.uk/docs</a>
+Documentation: [https://api-portal.tfl.gov.uk/docs](https://api-portal.tfl.gov.uk/docs)
   
-Github: <a href="https://github.com/gregario/API-Month/tree/master/Day3%20Maps" target="_blank">https://github.com/gregario/API-Month/tree/master/Day3%20Maps </a> Comment: surprisingly challenging
+Github: [https://github.com/gregario/API-Month/tree/master/Day3%20Maps ](https://github.com/gregario/API-Month/tree/master/Day3%20Maps) Comment: surprisingly challenging
 
 So as I said yesterday today I want to find the arrival time of my local train so I can plan my morning breakfast intake! It turned out to be quite challenging... Firstly a comment on the TFL (transport for london) API services. They're all over the place. I found the following resources to extract data about journeys, stop locations and times:
 
-<a href="https://api.tfl.gov.uk/#Journey" target="_blank">https://api.tfl.gov.uk/#Journey</a>
+[https://api.tfl.gov.uk/#Journey](https://api.tfl.gov.uk/#Journey)
   
-<a href="http://countdown.tfl.gov.uk/" target="_blank">http://countdown.tfl.gov.uk/</a>
+[http://countdown.tfl.gov.uk/](http://countdown.tfl.gov.uk/)
 
 and two sets of documentation at:
 
-<a href="https://api-portal.tfl.gov.uk/docs" target="_blank">https://api-portal.tfl.gov.uk/docs</a>
+[https://api-portal.tfl.gov.uk/docs](https://api-portal.tfl.gov.uk/docs)
   
-<a href="https://api.tfl.gov.uk/" target="_blank">https://api.tfl.gov.uk/</a>
+[https://api.tfl.gov.uk/](https://api.tfl.gov.uk/)
 
 So I eventually used the API portal to get access to arrival times, it wasn't the most straightforward information set to work with however. Check out the photo!
   
-![JSON_TFL](/wp-content/uploads/2015/12/JSON_TFL.jpg)
+[JSON_TFL](/wp-content/uploads/2015/12/JSON_TFL.jpg)
 
 The photo shows a typical API response from a station arrival time call. We want one variable from this giant list! This is a good time to work with a list like this as many API's are complex like this one so it gives me an opportunity to go through the detail and figure out how to extract the data.
 
@@ -89,6 +89,6 @@ print ("The next train to work will arrive in " +str(time_delta))
 
 And it works!
   
-![Output_day3](/wp-content/uploads/2015/12/Output_day3.jpg)
+[Output_day3](/wp-content/uploads/2015/12/Output_day3.jpg)
 
 I've never been so happy to see some command line arguments! This was day three but I ran over time so I'm going to immediately do day 4 too 🙂 Stay tuned.

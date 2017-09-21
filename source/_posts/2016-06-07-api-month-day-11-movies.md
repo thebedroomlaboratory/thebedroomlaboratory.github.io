@@ -6,7 +6,7 @@ tags:
   - API
   - Month
 ---
-![API.png](/wp-content/uploads/2015/11/API.png)
+[API.png](/wp-content/uploads/2015/11/API.png)
 
 **API purpose** Interfacing and searching IMDB database
   
@@ -14,7 +14,7 @@ tags:
   
 **Documentation** http://www.omdbapi.com/
   
-**Github** <a href="https://github.com/gregario/API-Month/tree/master/Day11%20Movies" target="_blank">Click here for link</a>
+**Github** [Click here for link](https://github.com/gregario/API-Month/tree/master/Day11%20Movies)
   
 **Comment** Surprisingly fun game
 

@@ -26,42 +26,42 @@ A big shout out goes to Beccy and all the staff and participants during <a title
   <figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_200655_095/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_200655_0951.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_200655_095/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_200655_0951.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_202743_728/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_202743_7281.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_202743_728/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_202743_7281.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_195626_573/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_195626_5731.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_195626_573/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_195626_5731.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_195623_786/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_195623_7861.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_195623_786/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_195623_7861.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_195635_746/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_195635_7461.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_195635_746/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_195635_7461.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon portrait'>
-    <a href='http://localhost/img_20141009_195643_696/'><img width="85" height="150" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_195643_6961.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_195643_696/'><img width="85" height="150" src="/wp-content/uploads/2014/10/IMG_20141009_195643_6961.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_200735_066/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_200735_0661.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_200735_066/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_200735_0661.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon portrait'>
-    <a href='http://localhost/img_20141009_195617_757/'><img width="85" height="150" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_195617_7571.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_195617_757/'><img width="85" height="150" src="/wp-content/uploads/2014/10/IMG_20141009_195617_7571.jpg" class="attachment-thumbnail size-thumbnail" alt="" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_183011_910/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_183011_9101.jpg" class="attachment-thumbnail size-thumbnail" alt="Rua Red RetroGame TechWeek Workshop Photos" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_183011_910/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_183011_9101.jpg" class="attachment-thumbnail size-thumbnail" alt="Rua Red RetroGame TechWeek Workshop Photos" sizes="100vw" /></a>
   </div></figure><figure class='gallery-item'> 
   
   <div class='gallery-icon landscape'>
-    <a href='http://localhost/img_20141009_201039_734-motion/'><img width="150" height="85" src="http://localhost/wp-content/uploads/2014/10/IMG_20141009_201039_734-MOTION1.gif" class="attachment-thumbnail size-thumbnail" alt="Invade" aria-describedby="gallery-1-381" sizes="100vw" /></a>
+    <a href='http://localhost/img_20141009_201039_734-motion/'><img width="150" height="85" src="/wp-content/uploads/2014/10/IMG_20141009_201039_734-MOTION1.gif" class="attachment-thumbnail size-thumbnail" alt="Invade" aria-describedby="gallery-1-381" sizes="100vw" /></a>
   </div><figcaption class='wp-caption-text gallery-caption' id='gallery-1-381'> Invade </figcaption></figure>
 </div>

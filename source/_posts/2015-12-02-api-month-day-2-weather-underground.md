@@ -16,10 +16,10 @@ tags:
 
 **API purpose:** Weather Conditions
   
-**Signup: **<a href="http://www.wunderground.com/weather/api/" target="_blank">http://www.wunderground.com/weather/api/</a>
+**Signup: **[http://www.wunderground.com/weather/api/](http://www.wunderground.com/weather/api/)
   
-**Documentation:** <a href="http://www.wunderground.com/weather/api/d/docs" target="_blank">http://www.wunderground.com/weather/api/d/docs</a>
-**Github:** <a href="http://bit.ly/1OxwFrc" target="_blank">http://bit.ly/1OxwFrc</a>
+**Documentation:** [http://www.wunderground.com/weather/api/d/docs](http://www.wunderground.com/weather/api/d/docs)
+**Github:** [http://bit.ly/1OxwFrc](http://bit.ly/1OxwFrc)
   
 > **Comment:** Feature rich and worldwide weather!
 

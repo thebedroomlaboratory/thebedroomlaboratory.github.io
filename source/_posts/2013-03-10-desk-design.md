@@ -24,7 +24,7 @@ I've been looking for a new desk for a while, moving around a lot tends to leave
 
 I saw a couple of cool desk designs I wanted to work around:
 
-[<img class="alignnone size-medium wp-image-182" alt="Whiteboard-Desk" src="/wp-content/uploads/2013/03/Whiteboard-Desk-300x225.jpg" width="300" height="225" />](/wp-content/uploads/2013/03/Whiteboard-Desk.jpg)
+![Whiteboard-Desk](/wp-content/uploads/2013/03/Whiteboard-Desk-300x225.jpg)
 
 I can't remember where I saw this but if anyone knows please let me know and I'll link it!
   
@@ -32,11 +32,11 @@ I really like the idea that you can write directly onto your desk, you can do lo
 
 The second one I saw was from this blog:
   
-<a href="http://www.apartmenttherapy.com/how-to-build-a-better-ikea-desk-174005" target="_blank">http://www.apartmenttherapy.com/how-to-build-a-better-ikea-desk-174005<br /> </a>They do a good guide for putting it together too.
+[ ](http://www.apartmenttherapy.com/how-to-build-a-better-ikea-desk-174005)They do a good guide for putting it together too.
 
 Here is what I ended up with:
 
-[<img class="alignnone size-medium wp-image-183" alt="IMG_20120717_225109" src="/wp-content/uploads/2013/03/IMG_20120717_225109-300x225.jpg" width="300" height="225" />](/wp-content/uploads/2013/03/IMG_20120717_225109.jpg)
+![IMG_20120717_225109](/wp-content/uploads/2013/03/IMG_20120717_225109-300x225.jpg)
 
 It turned out pretty well I think, there's a couple of more thing I want to do with it:
 

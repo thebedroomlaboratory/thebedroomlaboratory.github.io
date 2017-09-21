@@ -29,17 +29,17 @@ categories:
   * OpenCV
   * Web app
 
-## AFTERmATH
+## AFTERMATH
 
 ### Day 1
 
   * Circuit making was postponed as we couldn't locate the sensors, hopefully we'll get to it on Day 2.
   * Arduino code writiten: 
-      * We have a <a href="http://maniacbug.wordpress.com/2012/03/30/rf24network/" target="_blank">network</a> of 3 Arduino nodes tested talking to each other 🙂
+      * We have a [network](http://maniacbug.wordpress.com/2012/03/30/rf24network/) of 3 Arduino nodes tested talking to each other 🙂
       * Same as for point one above 🙂 Couldn't get the sensors so we'll hopefully get to it on Day 2.
-      * A endeavour into getting the <a href="http://knolleary.net/arduino-client-for-mqtt/" target="_blank">Arduino mqtt library</a> working with <a href="http://maniacbug.github.io/RF24/" target="_blank">nRF24L01(+)</a> instead of <a href="http://arduino.cc/en/reference/ethernet" target="_blank">Ethernet</a> was also made.
+      * A endeavour into getting the [Ethernet](http://knolleary.net/arduino-client-for-mqtt/) was also made.
   * The raspberry camera was <a title="setup" href="http://www.raspberrypi.org/documentation/usage/camera/" target="_blank">setup </a>and tested, with the installation of the environment to make use of the <a title="python" href="http://www.raspberrypi.org/documentation/usage/camera/python/README.md" target="_blank">python</a> library underway.
-  * A laptop setup with base <a href="http://xubuntu.org/" target="_blank">xubuntu</a> with added ssh and apache2 packages is ready for setting up the rest of the server.
+  * A laptop setup with base [xubuntu](http://xubuntu.org/) with added ssh and apache2 packages is ready for setting up the rest of the server.
 
 ### Day 2
 
@@ -54,4 +54,4 @@ categories:
   * John set up our AWS server with node and web stuff so that we can use it as our backend
   * Mick did a really nice sketch-up for the web frontend
 
-[<img class="alignleft size-medium wp-image-278" src="/wp-content/uploads/2014/06/maker2014_mockupv1_doorClosed-300x240.jpg" alt="maker2014_mockupv1_doorClosed" width="300" height="240" />](/wp-content/uploads/2014/06/maker2014_mockupv1_doorClosed.jpg)[<img class="alignleft size-medium wp-image-277" src="/wp-content/uploads/2014/06/maker2014_mockupv1_doorOpen-300x240.jpg" alt="maker2014_mockupv1_doorOpen" width="300" height="240" />](/wp-content/uploads/2014/06/maker2014_mockupv1_doorOpen.jpg)
+![maker2014_mockupv1_doorClosed](/wp-content/uploads/2014/06/maker2014_mockupv1_doorOpen-300x240.jpg)

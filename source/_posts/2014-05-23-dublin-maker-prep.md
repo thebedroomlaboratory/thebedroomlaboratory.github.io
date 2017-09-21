@@ -22,13 +22,13 @@ categories:
   We had our first meeting for the Dublin Maker event in July and I must say we are very excited. Last year we showed some of our homebrew solutions to... residential automation using various sensor and microcontroller bits and bobs.
 </p>
 
-[<img class="alignnone size-medium wp-image-234" src="/wp-content/uploads/2014/05/Maker13-300x225.jpg" alt="Maker13" width="300" height="225" />](/wp-content/uploads/2014/05/Maker13.jpg)
+![Maker13](/wp-content/uploads/2014/05/Maker13-300x225.jpg)
 
 _Weren't we lovely!_
 
 Anywho so we don't want to give everything away but we have a plan. It is displayed here in stunning pictorial form:
 
-[<img class="alignnone size-medium wp-image-235" src="/wp-content/uploads/2014/05/unnamed-300x225.jpg" alt="unnamed" width="300" height="225" />](/wp-content/uploads/2014/05/unnamed.jpg)
+![unnamed](/wp-content/uploads/2014/05/unnamed-300x225.jpg)
 
 We've broken down the tasks into the following:
 

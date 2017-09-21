@@ -19,7 +19,6 @@ tags:
   - homemade equipment
   - Reflow Soldering Oven
 ---
-&nbsp;
 
 A goal I set myself when I decided to get into the open source, hardware design, hacking world was to build as many of my tools as I could myself. Part of this is purely for cost reasons, mainly it is due to the fact that the more of a tool or design you put together yourself the more you'll understand how it all works! It also has the nice benefit of being able to expand on projects to add new features as they are needed.
 

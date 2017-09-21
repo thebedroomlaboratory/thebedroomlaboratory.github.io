@@ -23,15 +23,15 @@ Components required:
 
 So here is the original circuit from the LED light bar tutorial.
 
-[<img src="http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-1024x621.png" alt="full LED Light Bar circuit" width="700" height="424" class="alignleft size-large wp-image-561" />](http://localhost/wp-content/uploads/2014/11/full-circuit1.png)
+![full LED Light Bar circuit](http://thebedlab.com/wp-content/uploads/2014/11/full-circuit-1024x621.png)
 
 Now we add in the Potentiometer.
 
-[<img src="http://localhost/wp-content/uploads/2014/11/led-bar-graph1-1024x543.png" alt="led bar graph" width="700" height="371" class="alignleft size-large wp-image-572" />](http://localhost/wp-content/uploads/2014/11/led-bar-graph1.png)
+![led bar graph](/wp-content/uploads/2014/11/led-bar-graph1-1024x543.png)
 
 If thats a little overwhelming, here is the potentiometer circuit on its own.
 
-[<img src="http://thebedlab.com/wp-content/uploads/2014/11/potentiometer-1024x518.png" alt="potentiometer" width="700" height="354" class="alignleft size-large wp-image-573" />](http://localhost/wp-content/uploads/2014/11/potentiometer1.png)
+![potentiometer](http://thebedlab.com/wp-content/uploads/2014/11/potentiometer-1024x518.png)
 
 That's not so complex at all.
 

@@ -40,7 +40,7 @@ We wanted to actually control our heating in the apartment, renting we felt play
 
 Also on the display, we had intended to do a display on the physical sensor so people could check and see in real time if they pressed the boost button. Greg, got the code working, schematic designed but managed to break the physical connector to the screen the nokia. He also set the Zigbee on fire… He is a man who has taken the word deconstruction a bit literally.
 
-[<img alt="2013-02-24 19.48.22" src="http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-19.48.22-300x225.jpg" width="300" height="225" />](http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-19.48.22.jpg)
+![2013-02-24 19.48.22](http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-19.48.22-300x225.jpg)
 
 The square on the left should be connected to the black wires. It isn’t…
 
@@ -48,7 +48,7 @@ The square on the left should be connected to the black wires. It isn’t…
 
 It works and we’re delighted! We’ve developed a web enabled thermostat, which will be documented and released open source for everyone to use, out of our components spares box in 40 hours! Some pictures for your viewing pleasure.
 
-[<img alt="Capture" src="http://thedeconstruction.org/wp-content/uploads/2013/02/Capture-242x300.png" width="242" height="300" />](http://thedeconstruction.org/wp-content/uploads/2013/02/Capture.png)     [<img alt="Capture1" src="http://thedeconstruction.org/wp-content/uploads/2013/02/Capture1-265x300.png" width="265" height="300" />](http://thedeconstruction.org/wp-content/uploads/2013/02/Capture1.png)
+![Capture1](http://thedeconstruction.org/wp-content/uploads/2013/02/Capture1-265x300.png)
 
 The mobile website! It displays temperature along with a picture to say what the thermostat is doing.
   
@@ -60,12 +60,12 @@ The mobile website! It displays temperature along with a picture to say what the
 
 Here’s a pic of the sensor/webserver:
 
-[<img alt="2013-02-24 20.04.15" src="http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-20.04.15-225x300.jpg" width="225" height="300" />](http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-20.04.15.jpg)
+![2013-02-24 20.04.15](http://thedeconstruction.org/wp-content/uploads/2013/02/2013-02-24-20.04.15-225x300.jpg)
 
-So the top Raspberry Pi is talking to the arduino, which is doing the heavy lifting re the sensors. I won’t go into detail here as we’re going to put up documentation separately! So we’d call this project a success (and look forward to our laser cutter ![:)](http://thedeconstruction.org/wp-includes/images/smilies/icon_smile.gif) ). Seriously though, we learned a lot and had a good time. Good work team deconstruction!!!!
+So the top Raspberry Pi is talking to the arduino, which is doing the heavy lifting re the sensors. I won’t go into detail here as we’re going to put up documentation separately! So we’d call this project a success (and look forward to our laser cutter [:)](http://thedeconstruction.org/wp-includes/images/smilies/icon_smile.gif) ). Seriously though, we learned a lot and had a good time. Good work team deconstruction!!!!
 
 We’re polishing code, documenting and finishing everything off for the upload tomorrow. Had a great time and we hope people use our work to make it even better and learn themselves.
 
-<em id="__mceDel"> <a href="http://thedeconstruction.org/wp-content/uploads/2013/02/DSC02622.jpg"><img alt="DSC02622" src="http://thedeconstruction.org/wp-content/uploads/2013/02/DSC02622-300x225.jpg" width="300" height="225" /></a></em>
+<em id="__mceDel"> [](http://thedeconstruction.org/wp-content/uploads/2013/02/DSC02622.jpg)</em>
 
 So from (left to right) Greg, Martin, John, Colin and John… Thanks for watching and keep watching the stores… eh, I mean stars.

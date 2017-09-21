@@ -34,15 +34,15 @@ so without boring you, lets Jump straight in...
 
 First I Followed the Tutorial in [Arduino Project Handbook](http://www.amazon.com/Arduino-Project-Handbook-Complete-Creating/dp/0992952603) by setting up my circuit as in the image below:
 
-[<img class="alignnone size-large wp-image-494" src="http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png" alt="Push Button LED circuit" width="700" height="354" />](http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM.png)
+![Push Button LED circuit](http://thebedlab.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-17-at-10.05.48-PM-1024x518.png)
 
 **IMPORTANT: ** The LED legs must be in the correct direction, make sure the Negitive Leg ( the shorter leg on the side of the flat edge of the LED) is connected to the ground and the Positive Leg ( the longer leg at the side of the rounded edge of the LED) is connected to the input pin, otherwise you will likely burn out your LED.
 
-&nbsp;
+
 
 I then started up the Adruino IDE, available [here](http://arduino.cc/en/Main/Software "Arduino Downloads").
 
-&nbsp;
+
 
 Inside the sketch I added the following code:
 
@@ -84,18 +84,18 @@ If you need more information about what the code is doing, have a look at the [R
 
 Selected the Arduino Uno the menu: **Tools > Board > Arduino Uno** 
 
-[<img class="alignnone size-large wp-image-123" src="http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno-1024x949.png" alt="Select Uno" width="550" height="509" />](http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno.png)
+![Select Uno](http://blog.jonnie.io/wp-content/uploads/2014/11/Select-Uno-1024x949.png)
 
 Then select the Arduino Port:
 
   * For Linux/windows **Tools > Board > Comx** where x is usually 3 or higher
   * For Mac **Tools > Board > tty.usbmodemxxxx** where xxxx is some number
 
-[<img class="alignnone  wp-image-476" src="/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM-1024x901.png" alt="Screen Shot 2014-11-16 at 7.01.13 PM" width="555" height="488" />](/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM.png)
+![Screen Shot 2014-11-16 at 7.01.13 PM](/wp-content/uploads/2014/11/Screen-Shot-2014-11-16-at-7.01.13-PM-1024x901.png)
 
 Then plug in the USB into your computer and Arduino and upload the code using the button as shown in the picture below
 
-[<img class="alignnone size-large wp-image-124" src="http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino-856x1024.png" alt="upload to Arduino" width="550" height="657" />](http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino.png)
+![upload to Arduino](http://blog.jonnie.io/wp-content/uploads/2014/11/upload-to-Arduino-856x1024.png)
 
 When the program is uploaded you are supposed to be able to press the the button which the program is continuously reading in the loop function and light the L.E.D. while the button is pressed….
 
@@ -117,11 +117,11 @@ All the second resistor is doing is draining a little current from power to grou
 
 I changed this:
 
-[<img class="alignnone size-full wp-image-125" src="http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png" alt="Floating Button" width="272" height="256" />](http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png)
+![Floating Button](http://blog.jonnie.io/wp-content/uploads/2014/11/Floating-button.png)
 
 To this:
   
-[<img class="alignnone size-large wp-image-126" src="http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png" alt="Non Floating Button: Resistor acting as pull down resistor" width="220" height="314" />](http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png)
+![Non Floating Button: Resistor acting as pull down resistor](http://blog.jonnie.io/wp-content/uploads/2014/11/non-floating-Button.png)
 
 And now the Circuit behaves as expected.
 

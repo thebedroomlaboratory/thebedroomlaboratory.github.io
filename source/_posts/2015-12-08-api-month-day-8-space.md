@@ -16,9 +16,9 @@ tags:
   
 **Signup** No signup necessary
   
-**Documentation** <a href="http://open-notify.org/Open-Notify-API/" target="_blank">http://open-notify.org/Open-Notify-API/</a>
+**Documentation** [http://open-notify.org/Open-Notify-API/](http://open-notify.org/Open-Notify-API/)
   
-**Github** <a href="https://github.com/gregario/API-Month/tree/master/Day8%20International%20Space%20Station" target="_blank">Click here for link</a>
+**Github** [Click here for link](https://github.com/gregario/API-Month/tree/master/Day8%20International%20Space%20Station)
   
 **Comment** Really fun dataset to play with
 
@@ -34,7 +34,7 @@ It did give me the opportunity to implement a few things:
 
 Its a nice little script, returns a little table of data like so:
 
-![Day8 Output](/wp-content/uploads/2015/12/Day8-Output.png)
+[Day8 Output](/wp-content/uploads/2015/12/Day8-Output.png)
 
 I also realised I've been consistently spelling longitude incorrectly all week for my variables. Oh well. Check out the code, again its all commented so hopefully is understandable. Any questions pop them in the comments.
 

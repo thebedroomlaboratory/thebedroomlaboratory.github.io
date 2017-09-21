@@ -16,9 +16,9 @@ API purpose: Finding local air quality from address
   
 Signup: air quality has no signup google, as always, does.
   
-Documentation: <a href="https://developers.google.com/maps/web-services/client-library" target="_blank">https://developers.google.com/maps/web-services/client-library</a>
+Documentation: [https://developers.google.com/maps/web-services/client-library](https://developers.google.com/maps/web-services/client-library)
   
-Github: <a href="https://github.com/gregario/API-Month/tree/master/Day7%20AQ%20Project" target="_blank">https://github.com/gregario/API-Month/tree/master/Day7%20AQ%20Project</a>
+Github: [https://github.com/gregario/API-Month/tree/master/Day7%20AQ%20Project](https://github.com/gregario/API-Month/tree/master/Day7%20AQ%20Project)
   
 Comment: Wrapping up the first week into a useful script
 
@@ -32,7 +32,7 @@ What I can then use this to do is to give Air quality information as an extensio
 
 As I've moved onto commenting inline the code should be self explanatory, it produces some nice pretty outputs too!
 
-![Screenshot](wp-content/uploads/2015/12/Screenshot-2015-12-07-12.29.20.png)
+[Screenshot](wp-content/uploads/2015/12/Screenshot-2015-12-07-12.29.20.png)
 
 ```python
 #coding: utf-8

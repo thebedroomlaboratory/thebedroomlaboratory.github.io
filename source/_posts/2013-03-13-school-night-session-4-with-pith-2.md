@@ -26,11 +26,11 @@ Greg built a basic EE101 style analogue circuit to start seeing current consumpt
 
 We started with this circuit:
   
-[<img class="alignnone size-full wp-image-189" alt="Capture" src="/wp-content/uploads/2013/03/Capture.png" width="236" height="235" />](/wp-content/uploads/2013/03/Capture.png)
+![Capture](/wp-content/uploads/2013/03/Capture.png)
 
 Which in real life looks like this:
   
-[<img class="alignnone size-medium wp-image-190" alt="20130313_230246 (Medium)" src="/wp-content/uploads/2013/03/20130313_230246-Medium-300x225.jpg" width="300" height="225" />](/wp-content/uploads/2013/03/20130313_230246-Medium.jpg)
+![20130313_230246 (Medium)](/wp-content/uploads/2013/03/20130313_230246-Medium-300x225.jpg)
 
 So the bit on the left is the infrared LED and the bit on the right is the phototransistor. Putting your hand in the middle and breaking the beam would be just like someone walking through a door. This induces a voltage change on the line marked output. We played with the passives and got the 360uA... A good start for a proof of concept!
 
@@ -42,15 +42,15 @@ This was a bit of a brick wall, we started thinking about single units. We start
 
 Then we started thinking about speakers. In particular their wires. Then we started thinking about windscreens and realised we had gone off topic. But then we started thinking about speakers again and decided we would just wire the transmitter around the frame of the door using speaker wire. This idea made martin do his happy dance:
 
-[<img class="alignnone size-medium wp-image-193" alt="20130313_230546 (Medium)" src="/wp-content/uploads/2013/03/20130313_230546-Medium-225x300.jpg" width="225" height="300" />
+![20130313_230546 (Medium)](/wp-content/uploads/2013/03/20130313_230546-Medium-225x300.jpg)
   
-I](/wp-content/uploads/2013/03/20130313_230546-Medium.jpg)ts such a blurry dance!
+Its such a blurry dance!
 
 So we got going making a very long wire, which looked something like this:
 
-[<img class="alignnone size-medium wp-image-194" alt="20130313_231651 (Medium)" src="/wp-content/uploads/2013/03/20130313_231651-Medium-225x300.jpg" width="225" height="300" />](/wp-content/uploads/2013/03/20130313_231651-Medium.jpg)
+![20130313_231651 (Medium)](/wp-content/uploads/2013/03/20130313_231651-Medium-225x300.jpg)
 
-&nbsp;
+
 
 We made about 8ft of wire, for testing over distance. We found that using 1kOhm resister in series with the IR led was enough to be detected by the receiver. This is good as it consumes less power.
 

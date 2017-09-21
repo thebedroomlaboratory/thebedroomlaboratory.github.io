@@ -12,7 +12,7 @@ categories:
 ---
 One of the main issues with using a bedroom as a laboratory is that storage space tends to become slim right from the get-go. In order to fight back against encroaching components, tools and clothes, I set out today with the idea of pimping out my room with some new shelves.
 
-[<img class="alignright size-medium wp-image-120" alt="aDSC02603" src="/wp-content/uploads/2013/02/aDSC02603-300x224.jpg" width="300" height="224" />](/wp-content/uploads/2013/02/aDSC02603.jpg)
+![aDSC02603](/wp-content/uploads/2013/02/aDSC02603-300x224.jpg)
   
 I live in an attic room which is shaped like a tent, thus vertical wall space for conventional shelves is just not there. On one side of the room however, I have an archway which is about 4 ft. high. It's an awkward shape to utilize well so I thought I should build some shelves into it. The design I went with was to have two parallel slats of wood (6&#8243; x 1&#8243;) in each shelf, supported by bricks. The nice thing about this solution is that A, I like the look of it and B, it's non-intrusive. I can take it down whenever I end up moving out.
 
@@ -25,10 +25,9 @@ Anyway, here are some photos of the installation at various stages. Before you j
 <div style="clear: both;">
 </div>
 
-[<img class="size-medium wp-image-121 alignnone" alt="aDSC02604" src="/wp-content/uploads/2013/02/aDSC02604-300x224.jpg" width="300" height="224" />](/wp-content/uploads/2013/02/aDSC02604.jpg)    [<img alt="aDSC02606" src="/wp-content/uploads/2013/02/aDSC02606-300x224.jpg" width="300" height="224" />](/wp-content/uploads/2013/02/aDSC02606.jpg)
+![aDSC02606](/wp-content/uploads/2013/02/aDSC02606-300x224.jpg)
 
-[<img class="alignnone size-medium wp-image-128" alt="aIMG_20130221_145134" src="/wp-content/uploads/2013/02/aIMG_20130221_145134-225x300.jpg" width="225" height="300" />](/wp-content/uploads/2013/02/aIMG_20130221_145134.jpg)                       [<img class="alignnone size-medium wp-image-123" alt="aDSC02607" src="/wp-content/uploads/2013/02/aDSC02607-300x224.jpg" width="300" height="224" />](/wp-content/uploads/2013/02/aDSC02607.jpg)
+![aDSC02607](/wp-content/uploads/2013/02/aDSC02607-300x224.jpg)
 
-[<img class="alignnone size-medium wp-image-124" alt="aDSC02608" src="/wp-content/uploads/2013/02/aDSC02608-300x224.jpg" width="300" height="224" />](/wp-content/uploads/2013/02/aDSC02608.jpg)    [<img alt="Lunch break" src="/wp-content/uploads/2013/02/aIMG_20130221_161633-300x225.jpg" width="300" height="225" />](/wp-content/uploads/2013/02/aIMG_20130221_161633.jpg)
+![Lunch break](/wp-content/uploads/2013/02/aIMG_20130221_161633-300x225.jpg)
 
-&nbsp;

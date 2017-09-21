@@ -36,7 +36,7 @@ Lets start with the Citymapper API itself. It's very straightforward:
 
 You can use the documentation page to do a sample push and get an idea of the form of a request. I use a chrome extension called postman to check my calls and responses to make sure I have everything right before I start programming. So as an example to check the API to see travel time between two points you would call:
 
-> https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&endcoord=51.560117%2C-0.0722408&time_type=arrival&key=[INSERT KEY]
+> https://developer.citymapper.com/api/1/traveltime/?startcoord=51.2688199%2C-0.1783686&endcoord=51.560117%2C-0.0722408&time_type=arrival&key=[INSERT_KEY]
 
 So its pretty human readable, to go through it, you are checking the Citymapper mapper API server for a travel time. Then after the ? you can specify a list of parameters, the order doesn't matter but there are required inputs. You can see above I specify start location, end location, arrival time and my key.
 

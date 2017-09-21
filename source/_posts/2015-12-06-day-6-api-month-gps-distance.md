@@ -16,9 +16,9 @@ API purpose: GPS Distance
   
 Signup: Using the google developer portal
   
-Documentation: <a href="https://developers.google.com/maps/web-services/client-library" target="_blank">https://developers.google.com/maps/web-services/client-library</a>
+Documentation: [https://developers.google.com/maps/web-services/client-library](https://developers.google.com/maps/web-services/client-library)
   
-Github: <a href="https://github.com/gregario/API-Month/tree/master/Day6%20GPS%20Distance" target="_blank">https://github.com/gregario/API-Month/tree/master/Day6%20GPS%20Distance</a>
+Github: [https://github.com/gregario/API-Month/tree/master/Day6%20GPS%20Distance](https://github.com/gregario/API-Month/tree/master/Day6%20GPS%20Distance)
   
 Comment: Continuation of day 4, interesting problem.
 
@@ -51,7 +51,7 @@ import math # Added to do sqrt
 
 # Geocoding an address
 geocode_result = gmaps.geocode(sys.argv[1]) # passes address given on command line to google maps geocoding api
-gmaps = googlemaps.Client(key= googlekey) # Get key from your google developer portal. 
+gmaps = googlemaps.Client(key=[INSERT_KEY]googlekey) # Get key from your google developer portal. 
 latlng = []
 latlngTB = [51.5054564,-0.0753565]
 

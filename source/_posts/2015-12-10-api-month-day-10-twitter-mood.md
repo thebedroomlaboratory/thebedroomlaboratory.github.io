@@ -5,15 +5,15 @@ author: gregario
 tags:
   - API
 ---
-![oasisorblur](/wp-content/uploads/2015/12/oasisorblur.jpg)
+[oasisorblur](/wp-content/uploads/2015/12/oasisorblur.jpg)
 
 **API purpose** Interfacing and searching twitter
   
-**Signup** <a href="https://dev.twitter.com/apps/new" target="_blank">https://dev.twitter.com/apps/new</a>
+**Signup** [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new)
   
-**Documentation** <a href="https://dev.twitter.com/rest/public" target="_blank">https://dev.twitter.com/rest/public</a>
+**Documentation** [https://dev.twitter.com/rest/public](https://dev.twitter.com/rest/public)
   
-**Github** <a href="https://github.com/gregario/API-Month/tree/master/Day10%20Twitter" target="_blank">Click here for link</a>
+**Github** [Click here for link](https://github.com/gregario/API-Month/tree/master/Day10%20Twitter)
   
 **Comment** So much that could be done with this
 
@@ -25,7 +25,7 @@ After running
 easy_install twitter
 ```
 
-Just look at this resource: <a href="https://github.com/ideoforms/python-twitter-examples" target="_blank">https://github.com/ideoforms/python-twitter-examples </a>
+Just look at this resource: [https://github.com/ideoforms/python-twitter-examples ](https://github.com/ideoforms/python-twitter-examples)
 
 It's so good, gives examples for searching by hashtag (both as a sample or from the streaming service), searching by area, posting to your feed and doing a bunch of general analytics.
 
@@ -33,4 +33,4 @@ Make sure you have installed twitter tools (via the above command) and not pytho
 
 Apparently it's Blur!
 
-![Day10](/wp-content/uploads/2015/12/Day10Output.jpg)
+[Day10](/wp-content/uploads/2015/12/Day10Output.jpg)

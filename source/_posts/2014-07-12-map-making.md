@@ -12,7 +12,7 @@ categories:
 ---
 So I made a map. What do you think?
 
-It was surprisingly straightforward. I used illustrator to draw over an existing map (Kavrayskiy VII map projection for the map nerds amongst) and &#8220;laser&#8221; cut it on some 5mm laser ply at the institute of making over in UCL. I think it came out pretty well, I'm going to make a few little tweaks, such as:
+It was surprisingly straightforward. I used illustrator to draw over an existing map (Kavrayskiy VII map projection for the map nerds amongst) and "laser"; cut it on some 5mm laser ply at the institute of making over in UCL. I think it came out pretty well, I'm going to make a few little tweaks, such as:
 
 <p style="text-align: left;">
   - South Africa is a little flat on the bottom
@@ -27,10 +27,10 @@ It was surprisingly straightforward. I used illustrator to draw over an existing
 </p>
 
 <p style="text-align: left;">
-  The holes &#8220;lasered&#8221; really well, sometimes you need to poke out some of the stubborn bits. A bonus of this is that all the circles cutout where left on the &#8220;laser&#8221; bed when I lifted out the cut. It made for a nicer picture than the original!
+  The holes 'lasered' really well, sometimes you need to poke out some of the stubborn bits. A bonus of this is that all the circles cutout where left on the &amp; "laser" bed when I lifted out the cut. It made for a nicer picture than the original!
 </p>
 
-[<img class="aligncenter wp-image-296 size-large" src="/wp-content/uploads/2014/07/IMG_20140710_134337-EFFECTS-1024x767.jpg" alt="" width="700" height="524" />](/wp-content/uploads/2014/07/IMG_20140710_134337-EFFECTS.jpg)
+![EFFECTS](/wp-content/uploads/2014/07/IMG_20140710_134337-EFFECTS-1024x767.jpg)
 
 <p style="text-align: left;">
   I put all the circles in a jar, I think I have an oncoming hoarding problem. Anywho... I have to find the link to the inspiration to this, it will come along in an edit. It was a guy I saw on Reddit that did something not a million miles away on a plank of Oak with a drill. Different vibe but I thought I would give him his props.

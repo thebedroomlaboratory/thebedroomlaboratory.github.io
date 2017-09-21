@@ -16,7 +16,7 @@ tags:
   
 **Signup** Via your google account
   
-**Documentation** <a href="https://developers.google.com/places/" target="_blank">https://developers.google.com/places/<br /> </a>**Github** <a href="https://github.com/gregario/API-Month/tree/master/Day10%20Twitter" target="_blank">Click here for link</a>
+**Documentation** [Click here for link](https://developers.google.com/places/)
   
 **Comment** So much that could be done with this
 
@@ -28,4 +28,4 @@ Nothing too tricky today, but it turns out there are not very many petrol statio
 
 Here is an example output from the script:
 
-![Day9Output](/wp-content/uploads/2015/12/Day9Output.jpg)
+[Day9Output](/wp-content/uploads/2015/12/Day9Output.jpg)

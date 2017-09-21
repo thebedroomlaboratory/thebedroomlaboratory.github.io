@@ -30,4 +30,4 @@ You should be able to get the cost down to about €1.50 per head, if you're car
 
 In case they're helpful, here are our posters from the day too:
 
-[<img class="aligncenter" src="/images/DoodleBot-1-A3.png" alt="Putting your bot together" width="4960" height="3508" />](/images/DoodleBot-1-A3.png)[<img class="aligncenter" src="/images/DoodleBot-2-A3.png" alt="Doing projects at home" width="4960" height="3508" />](/images/DoodleBot-2-A3.png)
+![Putting your bot together](/images/DoodleBot-2-A3.png)

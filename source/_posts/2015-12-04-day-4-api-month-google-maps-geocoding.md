@@ -14,9 +14,9 @@ API purpose: Getting GPS data (amongst a bunch of other things)
   
 Signup: Via your google account.
   
-Documentation: <a href="https://developers.google.com/maps/web-services/client-library" target="_blank">https://developers.google.com/maps/web-services/client-library</a>
+Documentation: [https://developers.google.com/maps/web-services/client-library](https://developers.google.com/maps/web-services/client-library)
   
-Github:<a href="https://github.com/gregario/API-Month/tree/master/Day4%20GPS" target="_blank"> https://github.com/gregario/API-Month/tree/master/Day4%20GPS</a>
+Github:[ https://github.com/gregario/API-Month/tree/master/Day4%20GPS](https://github.com/gregario/API-Month/tree/master/Day4%20GPS)
   
 Comment: Easy Peasy!
 
@@ -30,7 +30,7 @@ So the code today is super simple as a nice man made a python wrapper for all of
 
 You are basically good to go then. So I wrote two short scripts that are available on the github link above, the scripts are pretty easy and build on the python tricks I built up in the other tutorials.
 
-![JSON_Day4](/wp-content/uploads/2015/12/JSON_Day4.jpg)
+[JSON_Day4](/wp-content/uploads/2015/12/JSON_Day4.jpg)
 
 Here's the API call, very similar structure to the TFL structure!
 
@@ -60,4 +60,4 @@ print "Your londitude is: " +latlng[1]
 ```
 And it works! Go me.
   
-![day4 success](/wp-content/uploads/2015/12/day4-success.jpg)
+[day4 success](/wp-content/uploads/2015/12/day4-success.jpg)

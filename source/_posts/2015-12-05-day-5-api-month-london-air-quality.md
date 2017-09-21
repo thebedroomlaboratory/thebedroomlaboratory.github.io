@@ -16,17 +16,17 @@ API purpose: Getting London Air Quality Data
   
 Signup: None, its open data
   
-Documentation: <a href="http://api.erg.kcl.ac.uk/AirQuality/help" target="_blank">http://api.erg.kcl.ac.uk/AirQuality/help</a>
+Documentation: [http://api.erg.kcl.ac.uk/AirQuality/help](http://api.erg.kcl.ac.uk/AirQuality/help)
   
-Github: <a href="https://github.com/gregario/API-Month/tree/master/Day5%20AirQuality" target="_blank">https://github.com/gregario/API-Month/tree/master/Day5%20AirQuality</a>
+Github: [https://github.com/gregario/API-Month/tree/master/Day5%20AirQuality](https://github.com/gregario/API-Month/tree/master/Day5%20AirQuality)
   
 Comment: Really well made API, not real time though, about a day delay
 
 So Kings College run an array of air quality monitors across London. Its a really interesting piece of data to work with that is so relevant to our day to day lives. Thought I would have a look at the API and try to pull the data from my nearest air quality monitor to my home.
 
-The call from the API documentation requires the use of their site codes to work, which isn't the most intuitive. A quick peruse of the maps at <a href="http://www.londonair.org.uk/LondonAir/Default.aspx" target="_blank">http://www.londonair.org.uk/LondonAir/Default.aspx</a> found that my closest monitor was at Holloway Road and measures <a href="https://en.wikipedia.org/wiki/Carbon_monoxide" target="_blank">carbon monoxide</a>, <a href="https://en.wikipedia.org/wiki/Nitrogen_dioxide" target="_blank">nitrogen dioxide</a> and 10 micron <a href="https://en.wikipedia.org/wiki/Particulates" target="_blank">particulate matter</a>. Cool so IS2 is my air quality roadside monitor. As a bonus there's 15 years of data from the monitor.
+The call from the API documentation requires the use of their site codes to work, which isn't the most intuitive. A quick peruse of the maps at [particulate matter](http://www.londonair.org.uk/LondonAir/Default.aspx). Cool so IS2 is my air quality roadside monitor. As a bonus there's 15 years of data from the monitor.
 
-So <a href="http://api.erg.kcl.ac.uk/AirQuality/help/operations/GetRawDataSitesSpeciesJSON" target="_blank">here</a> is the link to the call we want. It actually leads to a pretty straightforward script. [Edit an hour later]. Getting strings converted to floats is apparently not straight forward. Anywho, here's the completed script. As always I explain the crap out of the code in the code so I think it kind of explains itself!
+So [here](http://api.erg.kcl.ac.uk/AirQuality/help/operations/GetRawDataSitesSpeciesJSON) is the link to the call we want. It actually leads to a pretty straightforward script. [Edit an hour later]. Getting strings converted to floats is apparently not straight forward. Anywho, here's the completed script. As always I explain the crap out of the code in the code so I think it kind of explains itself!
 
 ```python
 #coding: utf-8

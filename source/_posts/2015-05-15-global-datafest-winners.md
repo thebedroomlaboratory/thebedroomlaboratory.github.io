@@ -12,9 +12,9 @@ categories:
 format: image
 ---
 <p style="text-align: center;">
-  We are delighted and proud to be part of the <a href="https://twitter.com/DatafestNet/status/599313618648190976" target="_blank">winning team</a> at the Global Datafest: <a href="https://twitter.com/social_cycle" target="_blank">Social Cycle</a>. o/
+  We are delighted and proud to be part of the [Social Cycle](https://twitter.com/DatafestNet/status/599313618648190976). o/
 </p>
 
 <p style="text-align: center;">
-  Congratulations to all the winners and thank you to all the <a href="http://www.global.datafest.net/about/judges" target="_blank">judges</a>, and <a href="http://www.global.datafest.net/projects" target="_blank">fellow participants</a>  for an unforgettable hackathon.
+  Congratulations to all the winners and thank you to all the [fellow participants](http://www.global.datafest.net/about/judges)  for an unforgettable hackathon.
 </p>
